@@ -1,0 +1,911 @@
+==========================================================================================
+Plan: Joe Frazier
+------------------------------------------------------------------------------------------
+{
+  "question": "At what age is an employee eligible to participate in the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Joe Frazier",
+      "value": "18 years old",
+      "explanation": "The plan specifies that the eligibility condition for all contribution types is age 18 or older.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "14(e)",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan specifies that the eligibility age for all contribution types is 18 years old."
+}
+
+Cited sections/pages:
+  - 14. ELIGIBILITY (2.01). To become a Participant in the Plan, an Eligible Employee must satisfy (Choose one of (a), (b), or (c).): (Page NA)
+  - 39. NORMAL RETIREMENT AGE (5.01). A Participant attains Normal Retirement Age under the Plan on the following date (Choose one of (a) or (b).): (Page NA)
+  - 18. PROSPECTIVE/RETROACTIVE ENTRY DATE (2.02(D)). An Employee after satisfying the eligibility conditions in Election 14 will become a Participant (unless an Excluded Employee under Election 8) on the Entry Date (if employed on that date) (Choose one or more of (a) through (f). Choose Contribution Type as applicable.): (Page NA)
+==========================================================================================
+
+==========================================================================================
+Plan: Mca Adoption Agreement Knight Train 401K
+------------------------------------------------------------------------------------------
+{
+  "question": "At what age is an employee eligible to participate in the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Mca Adoption Agreement Knight Train 401K",
+      "value": "21 years old",
+      "explanation": "The plan specifies that an eligible employee must satisfy the eligibility condition of being at least 21 years old in order to participate in the plan.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "14(e)",
+          "page": "002"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The Mca Adoption Agreement Knight Train 401K plan specifies that an eligible employee must be at least 21 years old to participate in the plan."
+}
+
+Cited sections/pages:
+  - 14. ELIGIBILITY (2.01). To become a Participant in the Plan, an Eligible Employee must satisfy (Choose one of (a), (b), or (c).): (Page 002)
+  - 39. NORMAL RETIREMENT AGE (5.01). A Participant attains Normal Retirement Age under the Plan on the following date (Choose one of (a) or (b).): (Page 002)
+  - 18. PROSPECTIVE/RETROACTIVE ENTRY DATE (2.02(D)). An Employee after satisfying the eligibility conditions in Election 14 will become a Participant (unless an Excluded Employee under Election 8) on the Entry Date (if employed on that date) (Choose one or more of (a) through (f). Choose Contribution Type as applicable.): (Page 002)
+==========================================================================================
+
+==========================================================================================
+Plan: Tristate Manufacturing
+------------------------------------------------------------------------------------------
+{
+  "question": "At what age is an employee eligible to participate in the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Tristate Manufacturing",
+      "value": "21 years old",
+      "explanation": "The plan specifies that an eligible employee must be at least 21 years old to participate in the plan.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "14(e)",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The Tristate Manufacturing plan specifies that employees must be at least 21 years old to participate in the plan."
+}
+
+Cited sections/pages:
+  - 14. ELIGIBILITY (2.01). To become a Participant in the Plan, an Eligible Employee must satisfy (Choose one of (a), (b), or (c).): (Page NA)
+  - 39. NORMAL RETIREMENT AGE (5.01). A Participant attains Normal Retirement Age under the Plan on the following date (Choose one of (a) or (b).): (Page NA)
+  - 18. PROSPECTIVE/RETROACTIVE ENTRY DATE (2.02(D)). An Employee after satisfying the eligibility conditions in Election 14 will become a Participant (unless an Excluded Employee under Election 8) on the Entry Date (if employed on that date) (Choose one or more of (a) through (f). Choose Contribution Type as applicable.): (Page NA)
+==========================================================================================
+
+
+### Question 2: How long must an employee work to be eligible to participate in the plan?
+
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+==========================================================================================
+Plan: Joe Frazier
+------------------------------------------------------------------------------------------
+{
+  "question": "How long must an employee work to be eligible to participate in the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Joe Frazier",
+      "value": "1 year of service",
+      "explanation": "The plan requires 1 year of service (1,000 hours) for an employee to be eligible to participate in the plan.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 14. ELIGIBILITY (2.01)",
+          "page": "NA"
+        },
+        {
+          "section_or_election": "Section 16. YEAR OF SERVICE - ELIGIBILITY (2.02(A))",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan requires 1 year of service (1,000 hours) for an employee to be eligible to participate in the plan."
+}
+
+Cited sections/pages:
+  - 18. PROSPECTIVE/RETROACTIVE ENTRY DATE (2.02(D)). An Employee after satisfying the eligibility conditions in Election 14 will become a Participant (unless an Excluded Employee under Election 8) on the Entry Date (if employed on that date) (Choose one or more of (a) through (f). Choose Contribution Type as applicable.): (Page NA)
+  - 14. ELIGIBILITY (2.01). To become a Participant in the Plan, an Eligible Employee must satisfy (Choose one of (a), (b), or (c).): (Page NA)
+  - 16. YEAR OF SERVICE - ELIGIBILITY (2.02(A)). (Choose (a) and (b) as applicable.): (Page NA)
+==========================================================================================
+
+==========================================================================================
+Plan: Mca Adoption Agreement Knight Train 401K
+------------------------------------------------------------------------------------------
+{
+  "question": "How long must an employee work to be eligible to participate in the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Mca Adoption Agreement Knight Train 401K",
+      "value": "3 months",
+      "explanation": "The plan specifies that an eligible employee must satisfy a 3 month eligibility condition to become a participant in the plan for all contribution types.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 14. ELIGIBILITY (2.01)",
+          "page": "002"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The Mca Adoption Agreement Knight Train 401K plan requires a 3 month eligibility condition for all contribution types."
+}
+
+Cited sections/pages:
+  - 18. PROSPECTIVE/RETROACTIVE ENTRY DATE (2.02(D)). An Employee after satisfying the eligibility conditions in Election 14 will become a Participant (unless an Excluded Employee under Election 8) on the Entry Date (if employed on that date) (Choose one or more of (a) through (f). Choose Contribution Type as applicable.): (Page 002)
+  - 14. ELIGIBILITY (2.01). To become a Participant in the Plan, an Eligible Employee must satisfy (Choose one of (a), (b), or (c).): (Page 002)
+  - 16. YEAR OF SERVICE - ELIGIBILITY (2.02(A)). (Choose (a) and (b) as applicable.): (Page 002)
+==========================================================================================
+
+==========================================================================================
+Plan: Tristate Manufacturing
+------------------------------------------------------------------------------------------
+{
+  "question": "How long must an employee work to be eligible to participate in the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Tristate Manufacturing",
+      "value": "1 year of service (1,000 hours)",
+      "explanation": "The plan requires 1 year of service, defined as 1,000 hours of service, for an employee to be eligible to participate in the plan.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "14(f)",
+          "page": "NA"
+        },
+        {
+          "section_or_election": "16(a)",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The Tristate Manufacturing plan has a 1 year of service (1,000 hours) eligibility requirement for all contribution types."
+}
+
+Cited sections/pages:
+  - 18. PROSPECTIVE/RETROACTIVE ENTRY DATE (2.02(D)). An Employee after satisfying the eligibility conditions in Election 14 will become a Participant (unless an Excluded Employee under Election 8) on the Entry Date (if employed on that date) (Choose one or more of (a) through (f). Choose Contribution Type as applicable.): (Page NA)
+  - 14. ELIGIBILITY (2.01). To become a Participant in the Plan, an Eligible Employee must satisfy (Choose one of (a), (b), or (c).): (Page NA)
+  - 16. YEAR OF SERVICE - ELIGIBILITY (2.02(A)). (Choose (a) and (b) as applicable.): (Page NA)
+==========================================================================================
+
+
+### Question 3: When can an employee begin contributing to the plan?
+
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+==========================================================================================
+Plan: Joe Frazier
+------------------------------------------------------------------------------------------
+{
+  "question": "When can an employee begin contributing to the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Joe Frazier",
+      "value": "Immediately following or coincident with the date the Employee completes the eligibility conditions.",
+      "explanation": "According to Section 18 of the plan, an employee can begin contributing to the plan immediately following or coincident with the date they complete the eligibility conditions specified in Section 14.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 18. PROSPECTIVE/RETROACTIVE ENTRY DATE (2.02(D))",
+          "page": "NA"
+        },
+        {
+          "section_or_election": "Section 14. ELIGIBILITY (2.01)",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The provided context only includes information for one plan, so there is no comparison to be made across multiple plans."
+}
+
+Cited sections/pages:
+  - 18. PROSPECTIVE/RETROACTIVE ENTRY DATE (2.02(D)). An Employee after satisfying the eligibility conditions in Election 14 will become a Participant (unless an Excluded Employee under Election 8) on the Entry Date (if employed on that date) (Choose one or more of (a) through (f). Choose Contribution Type as applicable.): (Page NA)
+  - 14. ELIGIBILITY (2.01). To become a Participant in the Plan, an Eligible Employee must satisfy (Choose one of (a), (b), or (c).): (Page NA)
+  - 17. ENTRY DATE (2.02(D)). Entry Date means the Effective Date and (Choose one or more of (a) through (g). Choose Contribution Types as applicable.): (Page NA)
+==========================================================================================
+
+==========================================================================================
+Plan: Mca Adoption Agreement Knight Train 401K
+------------------------------------------------------------------------------------------
+{
+  "question": "When can an employee begin contributing to the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Mca Adoption Agreement Knight Train 401K",
+      "value": "Immediately following or coincident with the date the Employee completes the eligibility conditions.",
+      "explanation": "According to Section 18 of the plan, an employee can begin contributing to the plan immediately following or coincident with the date they complete the eligibility conditions specified in Section 14.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 18. PROSPECTIVE/RETROACTIVE ENTRY DATE (2.02(D))",
+          "page": "002"
+        },
+        {
+          "section_or_election": "Section 14. ELIGIBILITY (2.01)",
+          "page": "002"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan specifies that an employee can begin contributing to the plan immediately following or coincident with the date they complete the eligibility conditions."
+}
+
+Cited sections/pages:
+  - 18. PROSPECTIVE/RETROACTIVE ENTRY DATE (2.02(D)). An Employee after satisfying the eligibility conditions in Election 14 will become a Participant (unless an Excluded Employee under Election 8) on the Entry Date (if employed on that date) (Choose one or more of (a) through (f). Choose Contribution Type as applicable.): (Page 002)
+  - 14. ELIGIBILITY (2.01). To become a Participant in the Plan, an Eligible Employee must satisfy (Choose one of (a), (b), or (c).): (Page 002)
+  - 17. ENTRY DATE (2.02(D)). Entry Date means the Effective Date and (Choose one or more of (a) through (g). Choose Contribution Types as applicable.): (Page 002)
+==========================================================================================
+
+==========================================================================================
+Plan: Tristate Manufacturing
+------------------------------------------------------------------------------------------
+{
+  "question": "When can an employee begin contributing to the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Tristate Manufacturing",
+      "value": "Immediately following the date the Employee completes the eligibility conditions.",
+      "explanation": "According to Section 18(b) of the plan, an employee can begin contributing to the plan immediately following the date they complete the eligibility conditions specified in Section 14.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 18(b)",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan specifies that an employee can begin contributing to the plan immediately following the date they complete the eligibility conditions."
+}
+
+Cited sections/pages:
+  - 18. PROSPECTIVE/RETROACTIVE ENTRY DATE (2.02(D)). An Employee after satisfying the eligibility conditions in Election 14 will become a Participant (unless an Excluded Employee under Election 8) on the Entry Date (if employed on that date) (Choose one or more of (a) through (f). Choose Contribution Type as applicable.): (Page NA)
+  - 14. ELIGIBILITY (2.01). To become a Participant in the Plan, an Eligible Employee must satisfy (Choose one of (a), (b), or (c).): (Page NA)
+  - 17. ENTRY DATE (2.02(D)). Entry Date means the Effective Date and (Choose one or more of (a) through (g). Choose Contribution Types as applicable.): (Page NA)
+==========================================================================================
+
+
+### Question 4: Are there limits on the contributions/deferrals employee participants can make to the plan?
+
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+==========================================================================================
+Plan: Joe Frazier
+------------------------------------------------------------------------------------------
+{
+  "question": "Are there limits on the contributions/deferrals employee participants can make to the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Joe Frazier",
+      "value": "Yes, there are limits on the contributions/deferrals employee participants can make to the plan.",
+      "explanation": "The plan specifies a maximum deferral amount of 100% of compensation and a minimum deferral amount of 1% of compensation. The limitations apply based on the Plan Year/Participating Compensation.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "20. ELECTIVE DEFERRAL LIMITATIONS (3.02(A))",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan for Joe Frazier specifies limits on the contributions/deferrals employee participants can make to the plan."
+}
+
+Cited sections/pages:
+  - 20. ELECTIVE DEFERRAL LIMITATIONS (3.02(A)). The following limitations apply to Elective Deferrals under Election 6(b), which are in addition to those limitations imposed under the basic plan document (Choose (a) or choose (b) and (c) as applicable.): (Page NA)
+  - 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.): (Page NA)
+  - 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS (3.09). The following additional elections apply to Employee Contributions under Election 6(f). (Choose one or both of (a) and (b) if applicable.): (Page NA)
+==========================================================================================
+
+==========================================================================================
+Plan: Mca Adoption Agreement Knight Train 401K
+------------------------------------------------------------------------------------------
+{
+  "question": "Are there limits on the contributions/deferrals employee participants can make to the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Mca Adoption Agreement Knight Train 401K",
+      "value": "Yes, there are limits on the contributions/deferrals employee participants can make to the plan.",
+      "explanation": "The plan specifies a maximum deferral amount of 50% of compensation and a minimum deferral amount of 1% of compensation. These limits apply based on the Plan Year/Participating Compensation and only to Highly Compensated Employees (HCEs).",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 20. ELECTIVE DEFERRAL LIMITATIONS (3.02(A))",
+          "page": "002"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The provided context only includes information about limits on contributions/deferrals for the Mca Adoption Agreement Knight Train 401K plan. No other plan information is available to compare."
+}
+
+Cited sections/pages:
+  - 20. ELECTIVE DEFERRAL LIMITATIONS (3.02(A)). The following limitations apply to Elective Deferrals under Election 6(b), which are in addition to those limitations imposed under the basic plan document (Choose (a) or choose (b) and (c) as applicable.): (Page 002)
+  - 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.): (Page 002)
+  - 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS (3.09). The following additional elections apply to Employee Contributions under Election 6(f). (Choose one or both of (a) and (b) if applicable.): (Page 002)
+==========================================================================================
+
+==========================================================================================
+Plan: Tristate Manufacturing
+------------------------------------------------------------------------------------------
+{
+  "question": "Are there limits on the contributions/deferrals employee participants can make to the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Tristate Manufacturing",
+      "value": "No additional plan-imposed limits on employee contributions/deferrals",
+      "explanation": "The plan document states that there are no additional plan-imposed limits on elective deferrals, beyond those imposed under the basic plan document.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 20. ELECTIVE DEFERRAL LIMITATIONS (3.02(A))",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The Tristate Manufacturing plan does not impose any additional limits on employee contributions/deferrals beyond what is specified in the basic plan document."
+}
+
+Cited sections/pages:
+  - 20. ELECTIVE DEFERRAL LIMITATIONS (3.02(A)). The following limitations apply to Elective Deferrals under Election 6(b), which are in addition to those limitations imposed under the basic plan document (Choose (a) or choose (b) and (c) as applicable.): (Page NA)
+  - 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.): (Page NA)
+  - 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS (3.09). The following additional elections apply to Employee Contributions under Election 6(f). (Choose one or both of (a) and (b) if applicable.): (Page NA)
+==========================================================================================
+
+
+### Question 5: What type of contributions may an employee make to the plan?
+
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+==========================================================================================
+Plan: Joe Frazier
+------------------------------------------------------------------------------------------
+{
+  "question": "What type of contributions may an employee make to the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Joe Frazier",
+      "value": "The plan allows for the following employee contributions:",
+      "explanation": "The plan allows for Pre-Tax Deferrals and Roth Deferrals, as indicated by the checked boxes in Section 6. The plan also allows for Employee (after-tax) Contributions, as indicated in Section 36.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 6. CONTRIBUTION TYPES",
+          "page": "NA"
+        },
+        {
+          "section_or_election": "Section 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan allows for Pre-Tax Deferrals, Roth Deferrals, and Employee (after-tax) Contributions."
+}
+
+Cited sections/pages:
+  - 6. CONTRIBUTION TYPES (1.12). The selections made below should correspond with the selections made under Article III of this Adoption Agreement. (If this is a frozen Plan (i.e., all contributions have ceased), choose (a) only.): (Page NA)
+  - 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.): (Page NA)
+  - 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS (3.09). The following additional elections apply to Employee Contributions under Election 6(f). (Choose one or both of (a) and (b) if applicable.): (Page NA)
+==========================================================================================
+
+==========================================================================================
+Plan: Mca Adoption Agreement Knight Train 401K
+------------------------------------------------------------------------------------------
+{
+  "question": "What type of contributions may an employee make to the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Mca Adoption Agreement Knight Train 401K",
+      "value": "The plan allows for the following employee contributions: Pre-Tax Deferrals, Roth Deferrals, and Employee (after-tax) Contributions.",
+      "explanation": "The plan allows for Pre-Tax Deferrals (Section 6(b)), Roth Deferrals (Section 6(b)(1)), and Employee (after-tax) Contributions (Section 6(f)).",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 6. CONTRIBUTION TYPES",
+          "page": "002"
+        },
+        {
+          "section_or_election": "Section 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS",
+          "page": "002"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan allows for Pre-Tax Deferrals, Roth Deferrals, and Employee (after-tax) Contributions."
+}
+
+Cited sections/pages:
+  - 6. CONTRIBUTION TYPES (1.12). The selections made below should correspond with the selections made under Article III of this Adoption Agreement. (If this is a frozen Plan (i.e., all contributions have ceased), choose (a) only.): (Page 002)
+  - 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.): (Page 002)
+  - 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS (3.09). The following additional elections apply to Employee Contributions under Election 6(f). (Choose one or both of (a) and (b) if applicable.): (Page 002)
+==========================================================================================
+
+==========================================================================================
+Plan: Tristate Manufacturing
+------------------------------------------------------------------------------------------
+{
+  "question": "What type of contributions may an employee make to the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Tristate Manufacturing",
+      "value": "Employees may make the following types of contributions to the plan:",
+      "explanation": "The plan allows for the following employee contributions: Pre-Tax Deferrals, Roth Deferrals, and Employee (after-tax) Contributions.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 6. CONTRIBUTION TYPES",
+          "page": "NA"
+        },
+        {
+          "section_or_election": "Section 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The Tristate Manufacturing plan allows for Pre-Tax Deferrals, Roth Deferrals, and Employee (after-tax) Contributions."
+}
+
+Cited sections/pages:
+  - 6. CONTRIBUTION TYPES (1.12). The selections made below should correspond with the selections made under Article III of this Adoption Agreement. (If this is a frozen Plan (i.e., all contributions have ceased), choose (a) only.): (Page NA)
+  - 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.): (Page NA)
+  - 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS (3.09). The following additional elections apply to Employee Contributions under Election 6(f). (Choose one or both of (a) and (b) if applicable.): (Page NA)
+==========================================================================================
+
+
+### Question 6: What type of contributions will my employer make to the plan?
+
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+==========================================================================================
+Plan: Joe Frazier
+------------------------------------------------------------------------------------------
+{
+  "question": "What type of contributions will my employer make to the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Joe Frazier",
+      "value": "The employer will make the following contributions to the plan: Pre-Tax Deferrals, Nonelective Contributions, and Discretionary Additional Matching Contributions.",
+      "explanation": "The plan allows for Pre-Tax Deferrals (Section 6(b)), Nonelective Contributions (Section 6(d)), and Discretionary Additional Matching Contributions (Section 30(i)(2)b).",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 6. CONTRIBUTION TYPES",
+          "page": "NA"
+        },
+        {
+          "section_or_election": "Section 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS)",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan allows for Pre-Tax Deferrals, Nonelective Contributions, and Discretionary Additional Matching Contributions. No other contribution types are specified in the provided context."
+}
+
+Cited sections/pages:
+  - 6. CONTRIBUTION TYPES (1.12). The selections made below should correspond with the selections made under Article III of this Adoption Agreement. (If this is a frozen Plan (i.e., all contributions have ceased), choose (a) only.): (Page NA)
+  - 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.): (Page NA)
+  - 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS (3.09). The following additional elections apply to Employee Contributions under Election 6(f). (Choose one or both of (a) and (b) if applicable.): (Page NA)
+==========================================================================================
+
+==========================================================================================
+Plan: Mca Adoption Agreement Knight Train 401K
+------------------------------------------------------------------------------------------
+{
+  "question": "What type of contributions will my employer make to the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Mca Adoption Agreement Knight Train 401K",
+      "value": "The employer will make the following contributions to the plan: Pre-Tax Deferrals, Nonelective Contributions, and Discretionary Additional Matching Contributions.",
+      "explanation": "The plan allows for Pre-Tax Deferrals (Section 6(b)), Nonelective Contributions (Section 6(d)), and Discretionary Additional Matching Contributions (Section 30(i)(2)b).",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 6. CONTRIBUTION TYPES",
+          "page": "002"
+        },
+        {
+          "section_or_election": "Section 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS)",
+          "page": "002"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan allows for Pre-Tax Deferrals, Nonelective Contributions, and Discretionary Additional Matching Contributions. No other contribution types are specified in the provided context."
+}
+
+Cited sections/pages:
+  - 6. CONTRIBUTION TYPES (1.12). The selections made below should correspond with the selections made under Article III of this Adoption Agreement. (If this is a frozen Plan (i.e., all contributions have ceased), choose (a) only.): (Page 002)
+  - 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.): (Page 002)
+  - 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS (3.09). The following additional elections apply to Employee Contributions under Election 6(f). (Choose one or both of (a) and (b) if applicable.): (Page 002)
+==========================================================================================
+
+==========================================================================================
+Plan: Tristate Manufacturing
+------------------------------------------------------------------------------------------
+{
+  "question": "What type of contributions will my employer make to the plan?",
+  "plan_answers": [
+    {
+      "plan_name": "Tristate Manufacturing",
+      "value": "The employer will make the following contributions to the plan:",
+      "explanation": "The plan allows for the employer to make Safe Harbor Contributions and Additional Matching Contributions. The employer can choose to make a Fixed Additional Matching Contribution, a Discretionary Additional Matching Contribution, or a custom Additional Matching Contribution formula.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS)",
+          "page": "NA"
+        }
+      ]
+    },
+    {
+      "plan_name": "Tristate Manufacturing",
+      "value": "The employer may make a Discretionary Additional Matching Contribution, which will not apply to Elective Deferrals exceeding 6% of the Participant's Compensation.",
+      "explanation": "The plan allows the employer to make a Discretionary Additional Matching Contribution, which will be limited to Elective Deferrals up to 6% of the Participant's Compensation.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS)",
+          "page": "NA"
+        }
+      ]
+    },
+    {
+      "plan_name": "Tristate Manufacturing",
+      "value": "The employer may make a Fixed Additional Matching Contribution, which can be a uniform percentage of Elective Deferrals up to a certain percentage of Compensation, or a tiered formula based on the Participant's Elective Deferral percentage.",
+      "explanation": "The plan allows the employer to make a Fixed Additional Matching Contribution, either as a uniform percentage of Elective Deferrals up to a certain percentage of Compensation, or as a tiered formula based on the Participant's Elective Deferral percentage.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS)",
+          "page": "NA"
+        }
+      ]
+    },
+    {
+      "plan_name": "Tristate Manufacturing",
+      "value": "The employer may also make a custom Additional Matching Contribution formula, as long as it satisfies the definitely determinable requirement and, if the employer elects to satisfy the ACP safe harbor, the formula must comply with certain requirements.",
+      "explanation": "The plan allows the employer to make a custom Additional Matching Contribution formula, as long as it meets the definitely determinable requirement and, if the employer elects to satisfy the ACP safe harbor, the formula must comply with certain requirements.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS)",
+          "page": "NA"
+        }
+      ]
+    },
+    {
+      "plan_name": "Tristate Manufacturing",
+      "value": "The plan also allows for Employee Contributions, which the employer may choose to match. The Matching Contribution formula must be the same for all Participants and must be definitely determinable.",
+      "explanation": "The plan allows for Employee Contributions, and the employer may choose to make a Matching Contribution on those contributions. The Matching Contribution formula must be the same for all Participants and must be definitely determinable.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The Tristate Manufacturing plan allows the employer to make Safe Harbor Contributions and Additional Matching Contributions, including a Fixed Additional Matching Contribution, a Discretionary Additional Matching Contribution, or a custom Additional Matching Contribution formula. The plan also allows for Employee Contributions, which the employer may choose to match."
+}
+
+Cited sections/pages:
+  - 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.): (Page NA)
+  - 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS (3.09). The following additional elections apply to Employee Contributions under Election 6(f). (Choose one or both of (a) and (b) if applicable.): (Page NA)
+  - 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.): (Page NA)
+==========================================================================================
+
+
+### Question 7: How much are participants matched on their contributions?
+
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+==========================================================================================
+Plan: Joe Frazier
+------------------------------------------------------------------------------------------
+{
+  "question": "How much are participants matched on their contributions?",
+  "plan_answers": [
+    {
+      "plan_name": "Joe Frazier",
+      "value": "100% of the first 3% of participant contributions, plus 50% of the next 2% of participant contributions",
+      "explanation": "The plan provides a Basic Matching Contribution equal to 100% of each participant's elective deferrals not exceeding 3% of the participant's compensation, plus 50% of each participant's elective deferrals in excess of 3% but not in excess of 5% of the participant's compensation.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "30(c)",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan provides a Basic Matching Contribution formula, which is a common matching structure in 401(k) plans."
+}
+
+Cited sections/pages:
+  - 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS (3.09). The following additional elections apply to Employee Contributions under Election 6(f). (Choose one or both of (a) and (b) if applicable.): (Page NA)
+  - 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.): (Page NA)
+  - 24. MATCHING CONTRIBUTIONS (EXCLUDING SAFE HARBOR MATCH AND ADDITIONAL MATCH UNDER SECTION 3.05) (3.03(A)). The Employer Matching Contributions under Election 6(c) are subject to the following additional elections regarding type (discretionary/fixed), rate/amount, limitations and time period (collectively, such elections are "the matching formula") and the allocation of Matching Contributions is subject to Section 3.06 except as otherwise provided (Choose one or more of (a), (b), and (c) as applicable; then, for the elected match, complete (1), (2), and/or (3) as applicable. If the Employer completes (2) or (3), also complete one of (4), (5), or (6).): (Page NA)
+==========================================================================================
+
+==========================================================================================
+Plan: Mca Adoption Agreement Knight Train 401K
+------------------------------------------------------------------------------------------
+{
+  "question": "How much are participants matched on their contributions?",
+  "plan_answers": [
+    {
+      "plan_name": "Mca Adoption Agreement Knight Train 401K",
+      "value": "100% of Elective Deferrals up to 3% of Compensation, plus 50% of Elective Deferrals between 3% and 5% of Compensation",
+      "explanation": "The plan has a Basic Matching Contribution formula where the employer will match 100% of the participant's Elective Deferrals up to 3% of Compensation, and 50% of the participant's Elective Deferrals between 3% and 5% of Compensation.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "30(c)",
+          "page": "002"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The Mca Adoption Agreement Knight Train 401K plan has a specific Basic Matching Contribution formula, which is the only plan information provided in the context."
+}
+
+Cited sections/pages:
+  - 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS (3.09). The following additional elections apply to Employee Contributions under Election 6(f). (Choose one or both of (a) and (b) if applicable.): (Page 002)
+  - 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.): (Page 002)
+  - 24. MATCHING CONTRIBUTIONS (EXCLUDING SAFE HARBOR MATCH AND ADDITIONAL MATCH UNDER SECTION 3.05) (3.03(A)). The Employer Matching Contributions under Election 6(c) are subject to the following additional elections regarding type (discretionary/fixed), rate/amount, limitations and time period (collectively, such elections are "the matching formula") and the allocation of Matching Contributions is subject to Section 3.06 except as otherwise provided (Choose one or more of (a), (b), and (c) as applicable; then, for the elected match, complete (1), (2), and/or (3) as applicable. If the Employer completes (2) or (3), also complete one of (4), (5), or (6).): (Page 002)
+==========================================================================================
+
+==========================================================================================
+Plan: Tristate Manufacturing
+------------------------------------------------------------------------------------------
+{
+  "question": "How much are participants matched on their contributions?",
+  "plan_answers": [
+    {
+      "plan_name": "Tristate Manufacturing",
+      "value": "The plan provides for a Basic Matching Contribution equal to 100% of each participant's Elective Deferrals not exceeding 3% of the participant's Compensation, plus 50% of each participant's Elective Deferrals in excess of 3% but not in excess of 5% of the participant's Compensation.",
+      "explanation": "The plan document specifies the Basic Matching Contribution formula under Section 30(c).",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS)",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The Tristate Manufacturing plan provides a specific Basic Matching Contribution formula, which is the only plan information provided in the given context."
+}
+
+Cited sections/pages:
+  - 36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS (3.09). The following additional elections apply to Employee Contributions under Election 6(f). (Choose one or both of (a) and (b) if applicable.): (Page NA)
+  - 30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.): (Page NA)
+  - 24. MATCHING CONTRIBUTIONS (EXCLUDING SAFE HARBOR MATCH AND ADDITIONAL MATCH UNDER SECTION 3.05) (3.03(A)). The Employer Matching Contributions under Election 6(c) are subject to the following additional elections regarding type (discretionary/fixed), rate/amount, limitations and time period (collectively, such elections are "the matching formula") and the allocation of Matching Contributions is subject to Section 3.06 except as otherwise provided (Choose one or more of (a), (b), and (c) as applicable; then, for the elected match, complete (1), (2), and/or (3) as applicable. If the Employer completes (2) or (3), also complete one of (4), (5), or (6).): (Page NA)
+==========================================================================================
+
+
+### Question 8: Does the plan have automatic deferrals?
+
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+==========================================================================================
+Plan: Joe Frazier
+------------------------------------------------------------------------------------------
+{
+  "question": "Does the plan have automatic deferrals?",
+  "plan_answers": [
+    {
+      "plan_name": "Joe Frazier",
+      "value": "Yes",
+      "explanation": "The plan has automatic deferrals, specifically an Automatic Contribution Arrangement (ACA) under Section 3.02(B)(1). The automatic deferral percentage is set at 2% of the participant's compensation, with no scheduled increases.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B))",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan has automatic deferrals in the form of an ACA with a fixed 2% deferral rate."
+}
+
+Cited sections/pages:
+  - 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B)). The Automatic Deferral provisions of Section 3.02(B) (Choose one of (a) or (b). Also see Election 34 regarding Automatic Escalation of Salary Reduction Agreements.): (Page NA)
+  - 34. AUTOMATIC ESCALATION (3.02(G)). The Automatic Escalation provisions of Section 3.02(G) (Choose one of (a) or (b). See Election 21 regarding Automatic Deferrals. Automatic Escalation applies to Participants who have a Salary Reduction Agreement in effect.): (Page NA)
+  - 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B)). The Automatic Deferral provisions of Section 3.02(B) (Choose one of (a) or (b). Also see Election 34 regarding Automatic Escalation of Salary Reduction Agreements.): (Page NA)
+==========================================================================================
+
+==========================================================================================
+Plan: Mca Adoption Agreement Knight Train 401K
+------------------------------------------------------------------------------------------
+{
+  "question": "Does the plan have automatic deferrals?",
+  "plan_answers": [
+    {
+      "plan_name": "Mca Adoption Agreement Knight Train 401K",
+      "value": "Yes",
+      "explanation": "The plan has automatic deferrals, specifically an Automatic Contribution Arrangement (ACA) under Section 3.02(B)(1). The automatic deferral percentage is 3% and will increase by 1% per year up to a maximum of 10% of compensation.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B))",
+          "page": "002"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan has automatic deferrals, with the plan specifying the details of the automatic deferral arrangement."
+}
+
+Cited sections/pages:
+  - 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B)). The Automatic Deferral provisions of Section 3.02(B) (Choose one of (a) or (b). Also see Election 34 regarding Automatic Escalation of Salary Reduction Agreements.): (Page 002)
+  - 34. AUTOMATIC ESCALATION (3.02(G)). The Automatic Escalation provisions of Section 3.02(G) (Choose one of (a) or (b). See Election 21 regarding Automatic Deferrals. Automatic Escalation applies to Participants who have a Salary Reduction Agreement in effect.): (Page 002)
+  - 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B)). The Automatic Deferral provisions of Section 3.02(B) (Choose one of (a) or (b). Also see Election 34 regarding Automatic Escalation of Salary Reduction Agreements.): (Page 002)
+==========================================================================================
+
+==========================================================================================
+Plan: Tristate Manufacturing
+------------------------------------------------------------------------------------------
+{
+  "question": "Does the plan have automatic deferrals?",
+  "plan_answers": [
+    {
+      "plan_name": "Tristate Manufacturing",
+      "value": "Yes",
+      "explanation": "The plan has automatic deferrals, specifically an Eligible Automatic Contribution Arrangement (EACA) or a combination EACA and Qualified Automatic Contribution Arrangement (QACA).",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B))",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan has automatic deferrals, as evidenced by the selection of option (b) in Section 21, which indicates that the Automatic Deferral provisions apply to the plan."
+}
+
+Cited sections/pages:
+  - 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B)). The Automatic Deferral provisions of Section 3.02(B) (Choose one of (a) or (b). Also see Election 34 regarding Automatic Escalation of Salary Reduction Agreements.): (Page NA)
+  - 34. AUTOMATIC ESCALATION (3.02(G)). The Automatic Escalation provisions of Section 3.02(G) (Choose one of (a) or (b). See Election 21 regarding Automatic Deferrals. Automatic Escalation applies to Participants who have a Salary Reduction Agreement in effect.): (Page NA)
+  - 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B)). The Automatic Deferral provisions of Section 3.02(B) (Choose one of (a) or (b). Also see Election 34 regarding Automatic Escalation of Salary Reduction Agreements.): (Page NA)
+==========================================================================================
+
+
+### Question 9: What is the automatic deferral rate?
+
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+/home/shreyo/miniconda3/envs/insurance-rag-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+==========================================================================================
+Plan: Joe Frazier
+------------------------------------------------------------------------------------------
+{
+  "question": "What is the automatic deferral rate?",
+  "plan_answers": [
+    {
+      "plan_name": "Joe Frazier",
+      "value": "2%",
+      "explanation": "The plan has a fixed automatic deferral percentage of 2% of the participant's compensation, as specified in Section 21(b)(3)a.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B))",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan has a fixed automatic deferral rate of 2% of the participant's compensation."
+}
+
+Cited sections/pages:
+  - 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B)). The Automatic Deferral provisions of Section 3.02(B) (Choose one of (a) or (b). Also see Election 34 regarding Automatic Escalation of Salary Reduction Agreements.): (Page NA)
+  - 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B)). The Automatic Deferral provisions of Section 3.02(B) (Choose one of (a) or (b). Also see Election 34 regarding Automatic Escalation of Salary Reduction Agreements.): (Page NA)
+  - 34. AUTOMATIC ESCALATION (3.02(G)). The Automatic Escalation provisions of Section 3.02(G) (Choose one of (a) or (b). See Election 21 regarding Automatic Deferrals. Automatic Escalation applies to Participants who have a Salary Reduction Agreement in effect.): (Page NA)
+==========================================================================================
+
+==========================================================================================
+Plan: Mca Adoption Agreement Knight Train 401K
+------------------------------------------------------------------------------------------
+{
+  "question": "What is the automatic deferral rate?",
+  "plan_answers": [
+    {
+      "plan_name": "Mca Adoption Agreement Knight Train 401K",
+      "value": "The automatic deferral rate starts at 3% in the first plan year and increases by 1% per year up to a maximum of 10% of compensation.",
+      "explanation": "The plan document specifies an automatic deferral schedule where the rate starts at 3% in the first plan year, increases to 4% in the third plan year, 5% in the fourth plan year, and 6% in the fifth plan year and thereafter. The plan also allows for an automatic increase of 1% per year up to a maximum of 10% of compensation.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B))",
+          "page": "002"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "The plan has a specified automatic deferral schedule with increases over time up to a maximum of 10% of compensation."
+}
+
+Cited sections/pages:
+  - 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B)). The Automatic Deferral provisions of Section 3.02(B) (Choose one of (a) or (b). Also see Election 34 regarding Automatic Escalation of Salary Reduction Agreements.): (Page 002)
+  - 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B)). The Automatic Deferral provisions of Section 3.02(B) (Choose one of (a) or (b). Also see Election 34 regarding Automatic Escalation of Salary Reduction Agreements.): (Page 002)
+  - 34. AUTOMATIC ESCALATION (3.02(G)). The Automatic Escalation provisions of Section 3.02(G) (Choose one of (a) or (b). See Election 21 regarding Automatic Deferrals. Automatic Escalation applies to Participants who have a Salary Reduction Agreement in effect.): (Page 002)
+==========================================================================================
+
+==========================================================================================
+Plan: Tristate Manufacturing
+------------------------------------------------------------------------------------------
+{
+  "question": "What is the automatic deferral rate?",
+  "plan_answers": [
+    {
+      "plan_name": "Tristate Manufacturing",
+      "value": "The automatic deferral rate starts at 3% in the first plan year and increases by 1% each year up to a maximum of 6% in the 5th and subsequent plan years.",
+      "explanation": "The plan document specifies an automatic deferral schedule where the rate starts at 3% in the first plan year, increases to 4% in the third plan year, 5% in the fourth plan year, and 6% in the fifth and subsequent plan years.",
+      "status": "found",
+      "citations": [
+        {
+          "section_or_election": "Section 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B))",
+          "page": "NA"
+        }
+      ]
+    }
+  ],
+  "comparison_summary": "Only one plan was provided, so there is no comparison to make across plans."
+}
+
+Cited sections/pages:
+  - 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B)). The Automatic Deferral provisions of Section 3.02(B) (Choose one of (a) or (b). Also see Election 34 regarding Automatic Escalation of Salary Reduction Agreements.): (Page NA)
+  - 21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B)). The Automatic Deferral provisions of Section 3.02(B) (Choose one of (a) or (b). Also see Election 34 regarding Automatic Escalation of Salary Reduction Agreements.): (Page NA)
+  - 34. AUTOMATIC ESCALATION (3.02(G)). The Automatic Escalation provisions of Section 3.02(G) (Choose one of (a) or (b). See Election 21 regarding Automatic Deferrals. Automatic Escalation applies to Participants who have a Salary Reduction Agreement in effect.): (Page NA)
+==========================================================================================

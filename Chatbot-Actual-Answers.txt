@@ -1,0 +1,147 @@
+Here is a **clearly organized comparison** of the **three 401(k) plan test cases**, with each **question answered side-by-side** for easy understanding. The structure highlights how each plan differs or aligns on key features.
+
+---
+
+### ✅ **Summary of Plan Features by Test Case**
+
+| **Question** | **Knight Train 401(k) Plan** | **Joe Frazier Retirement Plan** | **Tri-State Manufacturing, Inc. 401(k) Savings Plan** |
+|--------------|-------------------------------|----------------------------------|--------------------------------------------------------|
+
+---
+
+#### **1. At what age is an employee eligible to participate in the plan?**
+
+- **Knight Train:** Age **21**
+- **Joe Frazier:** Age **18**
+- **Tri-State:** Age **21**
+
+> 🔍 *All plans comply with IRS rules (max age 21). Joe Frazier allows earlier participation.*
+
+---
+
+#### **2. How long must an employee work to be eligible to participate in the plan?**
+
+- **Knight Train:** **3 months** of service (passage of time, not hours-based)
+- **Joe Frazier:** **1,000 Hours of Service** in an eligibility computation period (one year of service)
+- **Tri-State:** **1,000 Hours of Service** in an eligibility computation period (one year of service)
+
+> ⚖️ *Knight Train uses a simpler "months of employment" rule; the other two use IRS-defined "Year of Service" based on hours.*
+
+---
+
+#### **3. When can an employee begin contributing to the plan?**
+
+- **All Three Plans:** On the **first day of the month following eligibility**
+
+> ✅ *Uniform entry date across all plans — first day of each month after meeting age/service requirements.*
+
+---
+
+#### **3.a. Are there limits on the contributions/deferrals employee participants can make to the plan?**
+
+- **Knight Train:**  
+  - Minimum: **1%** of compensation  
+  - Maximum: **50%** of compensation  
+  *(Plan-imposed limits beyond IRS rules)*
+
+- **Joe Frazier:**  
+  - Minimum: **1%** of compensation  
+  - Maximum: **100%** of compensation  
+  *(Very flexible; only minimum restriction)*
+
+- **Tri-State:**  
+  - **No plan-imposed limits**  
+  *(Only subject to IRS annual deferral limits — e.g., $23,000 in 2024)*
+
+> 📊 *Tri-State offers most flexibility; Knight Train most restrictive; Joe Frazier allows full salary deferral.*
+
+---
+
+#### **4. What type of contributions may an employee make to the plan?**
+
+- **Knight Train:** **Pre-Tax Deferrals only**
+- **Joe Frazier:** **Pre-Tax Deferrals only**
+- **Tri-State:** **Pre-Tax and Roth (after-tax) Deferrals**
+
+> 💡 *Only Tri-State allows Roth contributions — valuable for tax diversification in retirement.*
+
+---
+
+#### **5. What type of contributions will my employer make to the plan?**
+
+- **Knight Train:**  
+  - **Discretionary Nonelective Contributions** (amount decided yearly by employer)  
+  - **Safe Harbor Basic Matching Contributions** (mandatory match under safe harbor rules)
+
+- **Joe Frazier:**  
+  - **Discretionary Nonelective Contributions**  
+  - **Safe Harbor Basic Matching Contributions**  
+  - **Discretionary Additional Matching Contributions** (optional extra match up to 6%)
+
+- **Tri-State:**  
+  - **Discretionary Nonelective Contributions only**  
+  *(No matching contributions offered)*
+
+> 🔄 *Joe Frazier has richest employer contributions; Knight Train offers safe harbor match; Tri-State offers no match.*
+
+---
+
+#### **5.b. How much are participants matched on their contributions? (Matching Formula)**
+
+- **Knight Train:**  
+  > **100% of first 3% + 50% of next 2%** (i.e., dollar-for-dollar up to 3%, then 50 cents on the dollar from 3–5%)  
+  > Applied **per payroll period**
+
+- **Joe Frazier:**  
+  > Same formula: **100% of first 3% + 50% of next 2%**  
+  > Plus: **Optional Discretionary Match** on deferrals up to **6%**, if declared  
+  > Safe Harbor match measured **per plan year**
+
+- **Tri-State:**  
+  > ❌ **No matching contributions**
+
+> 💰 *Joe Frazier provides potential for higher total match; Knight Train has standard safe harbor match; Tri-State has none.*
+
+---
+
+#### **6. Does the plan have automatic deferrals?**
+
+- **Knight Train:** ✅ Yes — **ACA (Automatic Contribution Arrangement)**
+- **Joe Frazier:** ✅ Yes — **ACA**
+- **Tri-State:** ❌ No — Automatic deferrals **do not apply**
+
+> 🤖 *Knight and Joe Frazier use auto-enrollment; Tri-State does not.*
+
+---
+
+#### **7. What is the automatic deferral rate?**
+
+- **Knight Train:**  
+  - Starts at **3%** of compensation  
+  - Increases by **1% per year** up to **10%** (automatic escalation)
+
+- **Joe Frazier:**  
+  - Fixed at **2%** of compensation  
+  - **No increase** over time
+
+- **Tri-State:**  
+  - ❌ Not applicable (no auto-enrollment)
+
+> 📈 *Knight Train encourages increasing savings over time; Joe Frazier starts lower with no growth; Tri-State requires active enrollment.*
+
+---
+
+### 🧾 **Summary Table: Side-by-Side Comparison**
+
+| Feature | **Knight Train** | **Joe Frazier** | **Tri-State** |
+|-------|------------------|------------------|---------------|
+| **Eligibility Age** | 21 | 18 | 21 |
+| **Service Requirement** | 3 months | 1,000 hours | 1,000 hours |
+| **Entry Date** | 1st of month after eligibility | 1st of month after eligibility | 1st of month after eligibility |
+| **Employee Deferral Limits** | Min 1%, Max 50% | Min 1%, Max 100% | No plan limits |
+| **Employee Contribution Types** | Pre-Tax only | Pre-Tax only | Pre-Tax + **Roth** |
+| **Employer Contributions** | Safe Harbor Match + Discretionary Nonelective | Safe Harbor Match + Discretionary Match + Nonelective | Discretionary Nonelective only |
+| **Matching Formula** | 100% of 3% + 50% of 2% | Same + optional up to 6% | None |
+| **Auto-Enrollment?** | Yes (ACA) | Yes (ACA) | No |
+| **Auto-Deferral Rate** | 3%, increases 1%/yr to 10% | 2%, no increase | N/A |
+
