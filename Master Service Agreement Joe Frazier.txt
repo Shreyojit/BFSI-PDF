@@ -1,0 +1,939 @@
+
+
+**Master Service Agreement**  
+**Plan Administration Services**
+
+THIS AGREEMENT is entered into and effective this **18th day of February, 2018**, by and between **Joe Frazier Corrugated Box, Inc.**, sponsoring employer of the **Joe Frazier Retirement Plan** (“Plan”), and <<Service Provider>>.
+
+---
+
+### 1. Introduction
+
+<<Service Provider>> offers a full range of qualified retirement plan administration support services to our clients under the terms and conditions set forth in this Master Agreement and the other documents described below. Throughout this Master agreement, <<Service Provider>> is referred to as “we” or “us,” or “agent” for the plan administrator; the retirement plan administration services we offer are referred to as the “services;” this Master agreement (hereinafter “Master Agreement”) and the other documents described below are together referred to as the “Agreement;” and the person or entity using the services is referred to as “you,” “Plan Sponsor,” or “Plan Administrator.”
+
+When you sign an authorization regarding the services, you are agreeing to be bound by the terms and conditions of the Agreement. In addition, if you use or attempt to use any service, you are agreeing to be bound by the terms and conditions of the Agreement relating to that service, even if you have not signed an authorization or service schedule for that service. In either event, the Agreement is a legally binding contract that can only be changed as provided in this Master Agreement.
+
+---
+
+### 2. Organization of Agreement
+
+As indicated above, the Agreement is made up of several documents, each of which serves a special purpose. The relevant documents and their purposes are as follows:
+
+- **Service Schedules.** There is a service schedule for certain services describing the nature and scope of the specific service, as well as the specific terms and conditions relating to that service. Certain Service Schedules may also contain required implementation/set-up information needed by us for operational purposes for the services you have elected to use or have supplemental addendums for specific services.
+
+- **Master Agreement.** This Master Agreement sets forth the rights and responsibilities that you and we have agreed to with respect to the services that we offer and addresses issues that are common to all services. All Service Schedules elected by you are part of and incorporated in the Master Agreement by reference.
+
+- **Authorization.** The authorization is completed when you initially agree to use one or more of the services that we offer and provides you the opportunity to take advantage of the convenience of delegating authority concerning the services within your company. In addition, you must furnish as part of this Agreement a Certification of Authorized Signers (Schedule A) in order for this Agreement to become valid.
+
+If there is any inconsistency on a particular issue among the documents that make up this Agreement, the documents that will control that particular issue are listed above in the order set forth from top to bottom.
+
+---
+
+### 3. Services Elected by Employer/Plan Sponsor
+
+By checking the applicable box below, you elect to have <<Provider Reference>> provide the indicated service(s) for your qualified retirement program, and agree to pay for such service(s) in accordance with Section 14:
+
+☐ Retirement Solutions Defined Contribution service (separate Defined Contribution Service Schedule required) (Form 318481)
+
+*(Note: The checkbox is marked as selected.)*
+
+---
+
+### 4. Amendments
+
+We may change or add to the terms and conditions of this Master Agreement by giving you 30 calendar days’ prior written notice, and we may change or add to the terms and conditions of any service schedule (including changing any of your service option selections) by giving you 10 business days’ prior written notice. We may change the information on the implementation/set-up forms without giving you notice. If you continue to use a service after the change becomes effective, you are bound by the changed or new terms and conditions. If the change or addition to any terms and conditions is required by applicable law, or if we believe that the change is necessary for the security or integrity of the systems used in performing services for you, we may change or add to the terms and conditions in this Master Agreement or any service schedule by giving you notice promptly after we make the change. In that case, you are bound by the changed or new terms and conditions unless you terminate your use of the relevant services immediately after you receive our notice of the change.
+
+---
+
+### 5. Term of Agreement
+
+The term of this Agreement shall commence on the effective date written above or, if later, the date we receive the Plan assets and corresponding participant records and shall continue until terminated by either party upon sixty (60) days’ advance written notice. Any disclosures contained in this Master Services Agreement made in satisfaction of the requirements of regulations promulgated pursuant to ERISA § 408(b)(2) shall remain valid until the earlier of the date such disclosure is amended by us or the effective date of termination of this Agreement. Upon the termination of this Agreement, Agent shall have no further responsibility or liability whatsoever as Agent for Plan Administrator. For purposes of performing Plan administrative activities required by this Agreement, the annual measurement period shall be the last day of sponsor’s Plan Year.
+
+---
+
+### 6. Services
+
+You may use any of the services that we have agreed to perform for you. If you attempt to use a service we have not agreed to perform for you, we may refuse to perform that service. We may also delay and/or refuse to process any item, transaction or instruction with respect to a service which:
+
+(a) does not comply with the terms and conditions of the Agreement relating to that particular service,  
+(b) is not complete, correct and current,  
+(c) is greater in frequency or number than is permitted for the relevant service,  
+(d) is for an amount that is less than the minimum amount permitted for the relevant account or service,  
+(e) relates to an account that has been closed or exceeds the amount of available funds in the relevant account,  
+(f) we suspect results from a breach in the confidentiality of a security procedure or authorization code or relates to an account or service that is being used for, or is the target of, fraudulent or illegal activity, or  
+(g) might cause us to violate applicable law or otherwise expose us to liability.
+
+---
+
+**Initials:** _______________
+
+---
+
+**Master Service Agreement**  
+Page 1 of 6
+
+---
+
+
+
+
+
+**7. Information Provided to Us.**  
+You, as Plan Administrator and Plan Sponsor, agree to provide us with such documents, instructions, information, and advice at such times and in such form and manner as we may request, including, but not limited to, the identity of “key employees,” “former key employees” and “highly compensated employees” as defined under the Internal Revenue Code (“Code”). You acknowledge and agree that any delay in providing such documents, instructions, information or advice to us may result in a delay in the service we provide and may result in additional fees or expense and possible penalties under applicable federal law. You further acknowledge that all determinations, summaries, statements, and reports made or prepared by us in accordance with this Agreement will be made or prepared solely from the documents, instructions, information and advice provided to us by you, or your advisors or agents. You agree that we may rely completely upon such documents, instructions, information, or advice and are under no obligation whatsoever to verify the accuracy or completeness thereof. You also agree to comply with all of the rules and procedure schedules attached to this Master Agreement as they may be amended from time to time. You grant us permission to list your Plan as a reference when we respond to requests for proposals. To the extent applicable, you authorize us to share with third parties the information regarding the Plan and participants necessary for those third parties to perform the optional services which have been selected in Section 3 above.
+
+---
+
+**8. No Other Plans.**  
+You understand and acknowledge that any determinations we make or services we provide hereunder may be erroneous or invalid under the Code or other law if you or any organization that is or was considered to be a single employer with you under Code Sections 414(b), 414(c), 414(m) or 414(o) (“Controlled Group”) maintains or ever maintained some other plan that was qualified under Code Section 401(a). You further understand and agree that in performing services under this Agreement, we will assume that the Plan is the only plan described under Code Section 401(a) that is or has at any time been maintained by you or any organization that is a member of such a Controlled Group unless you have notified us of the existence of other qualified plans you maintain and have given us the opportunity to determine the effect of such other plan(s) on the administration and recordkeeping of any other plan we service for you. If you identify any other such plans that should be considered with this Plan, we will take those plans into consideration provided those plans are subject to a <<Provider Reference>> Total Retirement Solutions Master Agreement. We have no responsibility hereunder whatsoever for performing any service under this Agreement if the performance of that service would require us to (a) consider another plan that is not subject to a <<Provider Reference>> Total Retirement Solutions Master Agreement or (b) consider the benefits provided under a defined benefit plan (whether or not frozen or terminated) currently maintained or ever maintained by you or any member of a Controlled Group that includes you unless you have elected the defined benefit service schedule provided for in Section 3.
+
+---
+
+**9. We Serve As Your Agent.**  
+You acknowledge and agree that (a) we are performing all services under this Agreement solely as your agent; (b) we are not the “Plan Administrator” or “named fiduciary” for the Plan as provided for under the Employee Retirement Income Security Act of 1974, as amended (“ERISA”), or the Code; (c) the duties and responsibilities assigned to us herein are not intended to and do not convey any apparent, express or implied discretionary authority or discretionary control respecting the management of the Plan or the management, investment or disposition of Plan assets or any responsibility for your Plan’s legal claim for delinquent contributions; and (d) while serving you under this Agreement, neither we nor you intend that we shall be a fiduciary of the Plan, as defined under Section 3(21) of ERISA unless we agree in writing to accept such designation. In addition to serving as your agent under this Agreement, we may agree to also serve as your directed trustee, or in another capacity for which you appoint us. Our serving in any capacity other than as your agent under this agreement requires separate written agreements which are in addition to this Agreement.
+
+---
+
+**10. Duties Not Delegated to Us.**  
+You acknowledge and agree that agent’s sole duties and responsibilities with respect to your Plan under this Agreement shall be limited to those ministerial, nondiscretionary services described in the separate service schedules you have elected for your Plan. Further, you acknowledge and agree that any other duties or responsibilities regarding the management or administration of the Plan including, but not limited to:
+
+a. Developing a funding policy;  
+b. Interpreting and administering the Plan;  
+c. Determining eligibility for benefits (when, to whom, and in what form Plan distributions should be made) or eligibility to participate in elective deferrals under the Plan (provided, however, that determining eligibility for employer contributions as provided in Section 5E of the MSA for 401(k) may be contracted to us);  
+d. Resolving disputed participant claims and appeals;  
+e. Complying with applicable reporting and disclosure requirements (other than compiling information and preparing drafts as set forth in this Agreement or under an applicable Services Schedule);  
+f. Being responsible for or performing any calculation of an actuarial nature or any benefit calculation or function normally and customarily performed by an actuary;  
+g. Providing sample notices regarding any optional forms of payment available under the Plan and waiver of rights with respect to any annuity forms of payment (both pre-retirement survivor annuities and post-retirement joint and survivor annuities) under the Plan, as may be required under Code Sections 401(a)(11), 411 and 417 (Plan Sponsor should consult with its legal counsel regarding suitability of form and legal notices; <<Provider Reference>> does not provide tax or legal advice);  
+h. Retaining information, files and documents required to administer the Plan or perform any service provided for in this Agreement, and to satisfy applicable law, including, but not limited to participant beneficiary designation forms, benefit election forms, etc. File retention shall be the responsibility of the Plan Sponsor;  
+i. Monitoring receipt of Plan contributions, determining the delinquency of Plan contributions, and having responsibility for your Plan’s legal claim for delinquent contributions; and  
+j. Obtaining validly authorized corporate resolutions pertaining to any amendments to the Plan that do not modify the trustee provisions of the Plan.
+
+---
+
+**Initials:** _______________________
+
+Master Service Agreement  
+Page 2 of 6
+
+
+
+
+
+**shall be the responsibility of and performed by you in your capacity as a fiduciary with discretionary authority over the Plan assets or some person other than us.**
+
+---
+
+**11. Liability and Indemnification.**  
+<<Provider Reference>> may rely upon and act upon any writing from any person authorized by the Plan Sponsor to give instructions concerning the Plan and may conclusively rely upon and be protected in acting upon any written order from the Plan Sponsor or upon any other notice, consent, request, certificate, or other instructions or paper reasonably believed by it to have been executed by a duly authorized person, so long as it acts in good faith in taking or omitting to take any such action. <<Provider Reference>> need not inquire as to the basis in fact of any statement in writing received from the Plan Sponsor or any other party authorized by the Plan Sponsor to act with respect to the Plan. <<Provider Reference>> shall be entitled to rely upon the information provided by the Plan Sponsor in performance of its duties hereunder.
+
+<<Provider Reference>> and the Plan Sponsor shall each solely (the “indemnifying party”) indemnify and hold the other (the “indemnified party”) harmless against any and all liabilities, losses, costs, damages, or expenses (including reasonable legal fees and expenses) of whatsoever kind and nature which may be imposed on, incurred by or asserted against the indemnified party at any time to the extent such liability, loss or expense results from the indemnifying party’s negligence, breach of the terms hereof, or willful misconduct under this Agreement. Except as specifically provided in the preceding sentence, the Plan Sponsor shall indemnify and hold <<Provider Reference>> harmless against any and all liabilities, losses, costs, damages, or expenses (including reasonable legal fees and expenses) of whatsoever kind and nature which may be imposed on, incurred by or asserted against <<Provider Reference>> at any time in connection with (i) services performed by <<Provider Reference>> in accordance with the terms of this Agreement; (ii) <<Provider Reference>>’s having entered into this Agreement; (iii) <<Provider Reference>>’s having acted upon the directions of the Plan Sponsor hereunder; or (iv) <<Provider Reference>>’s having failed to act as a result of either the Plan Sponsor’s directions not to act or the absence of Plan Sponsor directions. For purposes of this Section 11, any reference to <<Provider Reference>> or the Plan Sponsor as an indemnified party shall be deemed to include their respective directors, officers, employees, affiliates, agents, and subsidiaries.
+
+In addition to the foregoing, in the event the Plan Sponsor directs <<Provider Reference>> to make distributions upon the termination of a Plan qualified under IRC § 401(a) without the Plan Sponsor having obtained a current letter of favorable determination upon termination from the Internal Revenue Service, the Plan Sponsor is deemed under this Agreement to represent to <<Provider Reference>> that the Plan is in compliance with all applicable requirements of the Code and ERISA, and the Plan Sponsor shall indemnify and hold <<Provider Reference>> and its officer, directors, employees, agents and successors, or assigns harmless from and against any and all liabilities, losses, claims, damages, costs or expenses arising out of or in any way related, directly or indirectly, to making such distributions without a favorable determination letter upon termination, to the adequacy of any Plan documents provided to <<Provider Reference>>, or to the Plan’s compliance or noncompliance with the provisions of ERISA or the Code. This further indemnification shall be binding upon the Plan Sponsor and its successors or assigns, and shall cover all expenses incurred by the <<Provider Reference>>, including but not limited to, court costs, attorney’s fees and any other expenses related to any investigation, inquiry, action or determination by a court or governmental agency regarding the Plan’s compliance or noncompliance with the provisions of ERISA or any other applicable law.
+
+**This paragraph 11 shall survive the termination of this Agreement.**
+
+---
+
+**12. Arbitration.**  
+Either you or we have the right to require that any dispute, controversy or claim arising out of or relating to the Agreement or any breach, termination or invalidity thereof, including any dispute concerning the scope of this arbitration clause, be settled by binding arbitration in accordance with Title 9 of the United States Code and the Commercial Arbitration Rules of the American Arbitration Association. Any arbitration proceeding will be conducted before a panel of three neutral arbitrators, or one neutral arbitrator if the amount in dispute does not exceed $500,000, all of whom must be attorneys engaged in the practice of ERISA law for ten years or more. You and we will each select one arbitrator, or if the arbitration is conducted by only one arbitrator you and we will jointly select the arbitrator. The arbitrator that you select and the arbitrator that we select will, within ten days of their appointment, select a third, neutral arbitrator. In the event that they are unable to do so, you, we or either of our attorneys may request the American Arbitration Association to appoint the third neutral arbitrator. Prior to the commencement of hearings, each of the arbitrators appointed must take an oath of impartiality. Judgment upon any award rendered by the arbitrators may be entered and enforced by any court of competent jurisdiction. The place of the arbitration will be in the city where our principal office is located. In rendering any award, the arbitrators will determine the rights and obligations of the parties in accordance with the laws of the state governing this Agreement except to the extent that they may be preempted by the laws of the United States. The arbitrators are not empowered to award damages in excess of the amounts expressly provided for by this Master Agreement. All statutes of limitation that would otherwise apply to a judicial action will apply to any arbitration or reference proceeding under the Agreement. The arbitrators must award to the prevailing party, if any, as determined by the arbitrators, all of its costs and fees. “Costs and fees” means all reasonable pre-award expenses of the arbitration, including the arbitrator’s fee, travel expenses, out-of-pocket expenses such as copying and telephone, court costs, witness fees and attorneys’ fees. Neither you nor we may disclose the existence, content or result of any arbitration under the Agreement without the prior written consent of the other.
+
+---
+
+**13. Jury Trial Waiver.**  
+You and we both knowingly, voluntarily, intentionally and irrevocably waive any right to a trial by jury with respect to any litigation based on, arising out of or relating to the Agreement, the services, or any other document, instrument, transaction, course of conduct, course of dealing, statements (whether verbal or written) or your or our actions. This provision is a material inducement for us to enter into the Agreement. You also acknowledge that none of our representatives or agents has represented that we would not seek to enforce this jury trial waiver in the event of any litigation.
+
+---
+
+**Initials:** _______________________
+
+Master Service Agreement  
+Page 3 of 6
+
+
+
+
+
+**14. Fees and Expenses.**  
+You acknowledge and agree that we will receive compensation for services we provide to you under this Agreement in accordance with our standard fee schedule for retirement plan administration services as amended from time to time with thirty (30) days’ prior written notice to you, a copy of which you acknowledge has been provided to you (collectively referred to as “Fees”). The standard fee schedule is an integral component of disclosures required to be made to you pursuant to regulations issued under ERISA § 408(b)(2). You agree and acknowledge that it is your obligation to evaluate and determine the reasonableness of all fees you pay to Plan service providers, and you specifically confirm and acknowledge and agree that the fees imposed for the services provided pursuant to this agreement are fair and reasonable. You further agree to pay (or, if acceptable to us, to reimburse us) for any costs, expenses, penalties or taxes, including, but not limited to, the cost of any supplies, postage, copying or printing charges (collectively referred to as “Expenses”), incurred by us in connection with this Agreement which are attributable to incorrect or untimely information, documents, instructions or advice provided to us by you or your advisors or agents. All statements for Fees and Expenses shall be directed to you at the address you provide to us. You hereby consent to the payment of such Fees and Expenses from the assets of the Plan and hereby authorize and direct the trustee of the Plan to pay such amounts upon written demand by us, provided that the terms of the Plan permit the payment of such items. Notwithstanding the foregoing, you may pay Fees and Expenses on or before the due date indicated on the statement. Unless you object in writing to the Fees and Expenses shown on the statement within thirty (30) days of the invoice date, you will be deemed to have assented to such Fees and Expenses and we will be forever discharged and released from any liability or accountability with respect to such Fees and Expenses. You further acknowledge and agree that Fees for services provided to Plan participants by third parties for optional services contracted outside this agreement (including but not limited to Participant Advisory Services and Self-Directed Brokerage Accounts (SDBA)) shall be paid from the accounts of participants using those services to the third party to the extent consistent with agreements between those participants and the third party. No statement for Fees and Expenses will include Fees or costs for actuarial services; no actuarial services are included or provided for in this Agreement.
+
+---
+
+**15. Your Representations and Warranties.**  
+You represent and warrant to us that:  
+(a) you are duly organized, validly existing and in good standing under the laws of your state of organization,  
+(b) you have the full power and authority to carry on your business, serve as Plan Sponsor or Plan Administrator and to enter into and perform your obligations under the Agreement,  
+(c) you have taken all actions necessary to enter into and perform your obligations under the Agreement,  
+(d) all resolutions or other authorizations you have given to us are true, accurate and complete in all material respects,  
+(e) all assumed or fictitious names that you use have been duly registered or filed with the applicable governmental authorities,  
+(f) you have obtained all necessary consents or authorizations for you to enter into the Agreement,  
+(g) this Agreement is legally binding on you in your stated capacity,  
+(h) each person whose name is written or printed on the authorization, or any resolution or other separate written authorization concerning the Agreement or any service has complete authority to bind you in all transactions relating to the Agreement or any service,  
+(i) neither you or the Plan is bankrupt nor insolvent nor have you or the Plan made an assignment for the benefit of creditors or sought the protection of any bankruptcy, insolvency or liquidation proceeding, nor do you or the Plan have the present intention to do so,  
+(j) the Plan has not commenced any termination proceedings and no governmental authority having jurisdiction over the Plan has served a notice of its intent to suspend or revoke the operations qualified or the tax exempt status,  
+(k) the Plan or Plans which are the subject of this Agreement are, and since their inception, are qualified plans within the meaning of Code Section 401(a), and all trusts relating to the Plans are exempt from current income tax pursuant to Section 501 of the Code, and  
+(l) the Agreement does not violate any law, regulation or agreement to which you or the Plan are a party.  
+
+You also make the representations and warranties that are separately set forth in the service schedule for any service that you use. You agree to immediately notify us if any representation or warranty you make to us is no longer true.
+
+---
+
+**16. Miscellaneous.**
+
+a. **Notices.** Any notices under this Agreement may be given by mail, personal delivery, fax, or other electronic notification. We may use the most recent address (including e-mail or other electronic addresses) for you shown in our records. Any notice we send you will be effective when sent. You must send any notices to us to your assigned <<Provider Reference>> representative. Any notice you send us is effective when we actually receive it.
+
+b. **Severability.** Any provision of the Agreement that is invalid or unenforceable in any jurisdiction will, as to such jurisdiction and to the extent of such invalidity or unenforceability, be deemed replaced with a valid and enforceable provision as similar as possible to the one replaced and all of the remaining provisions of the Agreement will remain in full force and effect.
+
+c. **Binding Agreement/Benefit.** The Agreement binds and benefits you and us and our respective successors, assigns, and legal representatives. The Agreement is not for the benefit of any third party, and no third party has any right against either you or us under the Agreement.
+
+d. **Entire Agreement.** The Agreement, together with any Appendices or Schedules attached hereto, is the complete and exclusive statement of the Agreement between you and us with respect to the services. The Agreement supersedes any prior written or oral agreements.
+
+e. **Headings.** The headings used in the Agreement are for reference purposes only and should not be considered when interpreting the Agreement.
+
+f. **Assignment.** You may not assign the Agreement or any of your rights or duties under it to any third party without our prior written consent. We may assign the Agreement to any of our affiliates without obtaining your consent. In addition, we may delegate our duties under the Agreement to third party vendors without giving you notice of, or obtaining your consent to such delegation.
+
+g. **Applicable Law and Jurisdiction.** The Agreement is governed by and should be interpreted and enforced in accordance with laws of the State of Georgia except to the extent that they may be pre-empted by the laws of the United States. You consent to the exclusive jurisdiction and venue of any court located in Georgia.
+
+h. **Attorneys Fees.** The prevailing party in any proceeding arising out of or relating to the Agreement is entitled to recover its attorney’s fees and costs, in addition to any other remedy it may be entitled to under applicable law.
+
+---
+
+**Initials:** _______________________
+
+Master Service Agreement  
+Page 4 of 6
+
+
+
+
+
+Here is the **fully extracted text** from **Page 5 of 6** of the document, formatted for clarity and completeness:
+
+---
+
+**i. Telephonic Communications.** You consent to the recording of telephone conversations of your personnel in connection with the Agreement and assume responsibility for obtaining the consent of, and giving notice to, such personnel. The decisions to record or not to record any telephone conversation is solely at our discretion and we will not have any liability for failing to do so in any circumstance.
+
+**j. Remedies.** The rights, powers, remedies and privileges provided for you in the Agreement are your sole and exclusive rights, powers, remedies and privileges with respect to the services and any failure by us to perform the services in accordance with the terms of the Agreement. The rights, powers, remedies and privileges provided for us in the Agreement are in addition to any rights, powers, remedies and privileges with respect to the services or any failure by you to comply with the terms of the Agreement that we have under applicable law or otherwise, and we may exercise any or all of those rights, powers, remedies and privileges in any order.
+
+**k. No Waiver of Rights.** A failure or delay by us in exercising any right, power, or privilege in respect of the Agreement will not be presumed to operate as a waiver of that or any other right, power or privilege, and a single or partial exercise by us of any right, power or privilege will not be presumed to preclude any subsequent or further exercise by us of that or any other right, power or privilege.
+
+**l. No Strict Construction.** In the event an ambiguity or question of intent or interpretation of the Agreement arises, the Agreement should be construed as if you and we both drafted the Agreement, and no presumption or burden of proof favoring or disfavoring any party by virtue of the authorship of any provisions of the Agreement will apply.
+
+**m. Our Records.** You agree that our records regarding the features and accounts that you have asked us to include in our implementation of your setup for any service (including the implementation/setup forms for that service) will be deemed correct and will control in the event of any dispute regarding your setup for that service. This provision applies even if we have not given you a copy of those records or you have not signed any documents included in those records.
+
+---
+
+**IN WITNESS WHEREOF,** the parties have executed this Agreement on behalf of the **Joe Frazier Retirement Plan** on the date first set forth above.
+
+---
+
+**Plan Administrator:** _______  
+By _____________________________  
+
+**Joe Frazier Jr., Vice President**  
+Name and Title  
+**4015 North Tryon Street**  
+Address  
+**Charlotte NC 21525**  
+City, State, ZIP Code
+
+---
+
+**Agent: <<Service Provider>>**  
+By _____________________________  
+
+**Betty A Banker, Vice President**  
+Name and Title  
+**123 First Street**  
+Address  
+**Atlanta, GA 30301**  
+City, State, ZIP Code
+
+---
+
+**Plan Sponsor:** _______  
+By _____________________________  
+
+**Joe Frazier, President and CEO**  
+Name and Title  
+**4015 North Tryon Street**  
+Address  
+**Charlotte NC 21525**  
+City, State, ZIP Code
+
+---
+
+**Initials:** _______________
+
+---
+
+**Master Service Agreement**  
+Page 5 of 6
+
+---
+
+
+
+
+
+
+Here is the **fully extracted text** from **Page 6 of 6**, formatted clearly and accurately:
+
+---
+
+**Schedule A**  
+**Certification of Authorized Signers**
+
+**Plan Name:** Joe Frazier Retirement Plan
+
+**Original Authorization**
+
+| Administrative Committee | Sample of Authorized Signature |
+|--------------------------|-------------------------------|
+| Joe Frazier, Jr          |                               |
+| Joe Frazier              |                               |
+|                          |                               |
+|                          |                               |
+|                          |                               |
+
+| Other Authorized Signers | Sample of Authorized Signature |
+|-------------------------|-------------------------------|
+|                         |                               |
+|                         |                               |
+|                         |                               |
+|                         |                               |
+|                         |                               |
+
+I **Cindy J Sawyer**, as **Secretary** of **Joe Frazier Corrugated Box, Inc.**, do hereby certify that the persons named above have been appointed by the Company to act on its behalf and to instruct <<Service Provider>> with regard to any and all administrative functions necessary for the proper operation of the **Joe Frazier Retirement Plan** and Trust. Further, I do hereby certify that the signatures set opposite the name of the above persons are those of the individuals named.
+
+This is the **18th day of February, 2018**.
+
+_________________________  
+**Title:** _________________________
+
+---
+
+**Initials:** _______________
+
+---
+
+**318480 (3/20) Schedule A Certification of Authorized Signers**  
+Page 6 of 6
+
+---
+
+### Summary of Key Information:
+- **Plan Name:** Joe Frazier Retirement Plan  
+- **Company:** Joe Frazier Corrugated Box, Inc.  
+- **Certifying Officer:** Cindy J Sawyer, Secretary  
+- **Date:** February 18, 2018  
+- **Authorized Signers Listed:**
+  - Joe Frazier, Jr
+  - Joe Frazier
+- **Signature Lines:** Blank (no actual signatures visible in this version)
+- **Other Authorized Signers:** No names filled in
+
+
+
+
+
+**Master Service Agreement**  
+**Defined Contribution Plan**  
+**Recordkeeping Service Schedule**
+
+---
+
+**1. Introduction.**  
+This service schedule (“Service Schedule”) to the <<Provider Reference>> Master Service Agreement Retirement Plan Solutions (Form 318480) (“MSA”) describes the <<Provider Reference>> Retirement Plan Solutions Defined Contribution Plan Service. Throughout this Service Schedule, <<Service Provider>> is referred to as “we”, “us”, or “agent,” the defined contribution plan services we offer are referred to as the “services,” and the Plan Sponsor, Plan Administrator, Employer, person or entity utilizing the services is referred to as “you.”
+
+---
+
+**2. Description of the Defined Contribution Plan Service.**  
+The Defined Contribution Plan Service is designed to provide a single point of contact solution for managing 401(k) and other defined contribution plans. Included with the service is an integrated platform for defined contribution recordkeeping with consolidated participant statements, communication and participant education solutions, access to a broad array of investment solutions supported by assigned investment professionals, and both directed trustee and custodial services.
+
+---
+
+**3. Request for Defined Contribution Plan Service.**  
+By electing to have this service schedule apply to your Plan, you are requesting that we allow you to use the Defined Contribution Plan Service for Participants of plans you sponsor that are covered by the MSA. Your use of the Defined Contribution Plan Service is subject to the terms and conditions set forth in the MSA, this Service Schedule and the other documents described in the MSA or this Service Schedule. By electing to have this Service Schedule apply to your Plan, you acknowledge that you have received a copy of, and agree to be bound by, all of those terms and conditions.
+
+---
+
+**4. Standard Services.**  
+Unless otherwise provided in this Service Schedule, we will render the following services on your behalf in your capacity as the Plan Administrator:
+
+a. Maintain accounting records reflecting participants’ accounts in the Plan, adjusting participants’ accounts as directed by Plan Administrator or the Plan to reflect distributions, investments, loans and other transactions that, under the terms of the Plan as interpreted by Plan Administrator, affect participants’ accounts. We also process participant loans based on information provided by the Plan Sponsor, including providing loan documentation, disbursing loan checks, and adjusting account balances for repayments of principal and interest;
+
+b. Apply vesting schedules to calculate participants’ vested account balances;
+
+c. Adjust the accounts of participants on each day that Plan investments can be traded to reflect changes in the value of those accounts and to reflect participant loan activity as may be necessary;
+
+d. Provide a summary of participants’ accounts and individual participant statements on a quarterly basis or less frequently as may be agreed upon;
+
+e. Provide remote access to Plan-level and participant-level information via the Internet, and remote payroll data transmission capability, to persons authorized by the Plan Administrator, through the Payroll Provider Interface (“PPI”) or Plan Service Center (PSC);
+
+f. Provide sample administrative forms, materials and procedures with respect to participant enrollment, investment elections, loans and distributions, if any, required for Agent to carry out its duties hereunder, including payment of distributions;
+
+g. Maintain a toll-free call center and an internet website accessible by Plan participants to obtain account information and loan information (if applicable), to initiate investment allocation changes and transfers, and to enable participants to change their elections for deferrals;
+
+h. Provide communications services, including employee enrollment materials, periodic participant communications, Plan Sponsor quarterly newsletters and access to electronic versions of prospectuses and fund fact sheets;
+
+i. Maintain demographic data for non-participating employees;
+
+j. Provide general participant retirement calculators and tools from a third party and based upon models developed by a provider who is not a party-in-interest to participants;
+
+k. Accept orders for transactions in participant accounts from the participants.
+
+l. Unless otherwise indicated in this Service Schedule, a service not described or listed is not provided by the agent. This Service Schedule specifically does not obligate agent to any responsibility with respect to the Plan’s legal claim for delinquent contributions.
+
+m. To Do List Processing for Disbursements service provides online disbursement completion and approval via the To Do List. Require completion of PSC Login Request Form and current Authorized Signer Form.
+
+n. Provide participant statements by 15th business day after the end of a quarter (expedited service is available by 10th business day; however, mutual fund returns cannot be reported on statements furnished by 10th day).
+
+o. Provide Plan Summary online.
+
+p. Provide disclosures required pursuant to ERISA § 408(b)(2).
+
+---
+
+
+
+### **5. Standard Services—Opt Out. [Initials Required]**
+
+Agent shall render the following services **unless declined** by Plan Administrator as indicated by the initials of its authorized agent to the left of the indicated service:
+
+- ☒ a. Compile the necessary information to prepare the annual return/report (currently Form 5500 Series) and prepare a draft of such annual return/report for review, approval, execution, and electronic filing by Plan Administrator with the Department of Labor.
+
+- ☒ b. Compile the necessary information to prepare the Summary Annual Report and prepare a draft of the Summary Annual Report for approval and distribution by Plan Sponsor.
+
+- ☒ c. Calculate annual additions to participants’ accounts and test for excess annual additions under Section 415 of the Internal Revenue Code of 1986, as amended, (hereinafter “Code”) on an annual basis.
+
+- ☒ d. On an annual basis, review service records for all employees (whether or not participants) of Plan Sponsor and other participating employers and apply the criteria established under the Plan, as interpreted by Plan Administrator, to determine whether employees are eligible to receive an employer contribution or forfeiture as of an allocation date and the portion of the employer contribution or forfeiture to which employees are entitled based on data provided by the Plan Administrator.
+
+- ☒ e. Perform mathematical calculations required under Code Section 416 to determine if the Plan is “top-heavy” within the meaning of Code Section 416 on an annual basis.
+
+- ☒ f. Annually perform mathematical calculations required under the nondiscrimination test under Code Section 401(k) (the average deferral percentage test) and identification of Code Section 402(g) excess deferrals or on a semi-annual basis if requested by the Plan Administrator.
+
+- ☒ g. Perform mathematical calculations required under the nondiscrimination test under Code Section 401(m) (the average contribution percentage test) annually (or on a semiannual basis if requested by the Plan Administrator).
+
+- ☒ h. Provide compensation ratio testing under Code Section 414(s).
+
+- ☒ i. Provide discrimination testing with respect to non-elective employer contributions under Code Section 401(a)(4).
+
+- ☐ j. Calculate allocation of contributions and forfeitures annually.
+
+- ☒ k. Perform mathematical calculations required to determine whether the Plan satisfies the ratio percentage test under Code Section 410(b) on an annual basis.
+
+- ☐ l. Provide participant loan program as selected below [Requires Schedule A; separate documentation may apply] (Form 318483):
+
+#### **Options [Initials Required]:**
+- ☐ Paper Application  
+  _Prepare and mail to the loan applicant a promissory note, truth-in-lending disclosure statement with the loan check attached._
+
+- ☐ Sponsorless Loans* [Select one of the following]:
+
+##### **Options [Initials Required]:**
+- ☐ Prepare and mail to the loan applicant a promissory note and truth-in-lending disclosure statement with the loan check for the net amount of loan proceeds attached.  
+  *[Requires execution of <<Provider Reference>> standard loan policy]*
+
+  > **Please note:** If spousal consent or proof of purchase for a primary residence loan is required, then you must first verify such documentation has been received by acknowledging receipt on the Plan Service Center To Do List.
+
+- ☐ Prepare and mail to the loan applicant a promissory note and truth-in-lending disclosure statement with the loan check for the net amount of the loan proceeds attached, only after final approval has been provided via the Plan Service Center TDL processing.  
+  *(Requires execution of <<Provider Reference>> standard loan policy)*
+
+  > **Please note:** If spousal consent or proof of purchase for a primary residence loan is required, you must first verify such documentation has been received by acknowledging receipt on the Plan Service Center To Do List (TDL).
+
+> ***Sponsorless loans require the use of an electronic file for loan deduction information and change information to Plan Sponsors via Plan Service Center.***
+
+---
+
+**Form Number:** 318481  
+**Title:** MSA - Defined Contribution Plan Service Schedule  
+**Page:** 2 of 4
+
+---
+
+
+Here is the **fully extracted and formatted text** from **Page 9** of the document, which appears to be **Page 3 of 4** of the *MSA - Defined Contribution Plan Service Schedule* (Form 318481):
+
+---
+
+### **Option [Initials Required]:**
+
+- ☒ m. Provide Prototype Plan document for review and use by Plan Sponsor and update document for **regulatory changes as required**.
+
+- ☒ n. Provide Online Enrollment, including Deferral Recordkeeping (requires use of separate Online Enrollment/Deferral/Auto-Enrollment Set-Up Document).
+
+#### **Options [Initials Required]:**
+- ☐ Deferral Change Only  
+- ☐ Enrollment & Deferral Change  
+- ☒ Automatic Enrollment with Enrollment & Deferral Change
+
+- ☐ o. Provide disclosures required pursuant to ERISA § 404(a)(5).
+
+---
+
+### **6. Optional Services—Opt In. [Initials Required]**
+
+Agent shall not render the following optional services **unless elected** by Plan Administrator as indicated by the initials of its authorized agent to the left of the indicated service:
+
+- ☒ a. Make “Online Investment Advice” and “Management of Participants’ Accounts” available to participants based upon the Plan Sponsor’s executed contract with an approved third-party provider for the recordkeeping platform ________.
+
+- ☐ b. Provide Safe Harbor Notice mailing services; Additional fee service; see Fee Schedule.
+
+- ☒ c. Provide Qualified Default Investment Alternative services (requires use of separate Default Fund and Allocation Default Process Election Form); Additional fee service; see Fee Schedule.
+
+#### **Options [Initials Required]:**
+- ☐ Initial QDIA Notice  
+- ☐ Annual QDIA Notice  
+- ☒ Both Initial and Annual QDIA Notices
+
+- ☒ e. Qualified Domestic Relations Order (“QDRO”) Processing. Agent determines if a proposed QDRO conforming to an approved model QDRO form meets the requirements of I.R.C. § 414(p) and handles all communications related to QDRO processing. (Additional fee service; see Fee Schedule) **[Requires Schedule C]** (Form 318485)
+
+- ☒ f. Hardship Distribution Approval service providing for agent approval of hardship withdrawal requests without Plan Administrator’s signature. (Additional fee service; see Fee Schedule) **[Requires Schedule D]** (Form 318486)
+
+- ☐ g. Hardship Loan Approval service providing for agent approval of hardship loan requests without Plan Administrator’s signature. (Additional fee service; see Fee Schedule) **[Requires Schedule E]** (Form 318487)
+
+- ☐ h. Provide participant Self-Directed Brokerage Accounts (SDBA), a third-party service that enables Plan participants the option to establish a self-directed brokerage account for a fee through the Plan. Plan Sponsor must execute a service contract with an approved provider. (Additional fee service; see Fee Schedule)
+
+- ☒ i. Pre-schedule payroll contributions, a service which allows Plan Service Center (“PSC”) users to set up payroll remittances in the PSC in advance of the cash transfer effective date.
+
+- ☒ j. Provide beneficiary recordkeeping service.
+
+- ☐ k. Provide Distribution Support Services **[Requires Schedule F and Optional Service Documents]**
+
+---
+
+### **7. Other Services**
+
+We will perform such other ministerial, nondiscretionary services with respect to the Plan at such times and for such additional fees you and we agree upon in writing from time to time. Any separate written agreements under this Section 7 will be subject to all of the terms and conditions of this Agreement. Unless we specifically agree with you in writing, the services described in this Agreement are applicable only to that portion of the Plan for which we provide recordkeeping on a daily platform:
+
+Agent agrees to perform the following "Other Services" for Plan Administrator, and Plan Sponsor and Plan Administrator direct the Agent to perform the following services:
+
+Remove Plan Sponsor signature block from forms pertaining to the procedures indicated by boxes checked below:
+
+- ☐ Account Reduction Loan Application Form  
+- ☐ Incoming Direct Rollovers Form  
+- ☐ Loan Payment Change Form  
+- ☐ Beneficiary Form  
+
+---
+
+**Form Number:** 318481  
+**Title:** MSA - Defined Contribution Plan Service Schedule  
+**Page:** 3 of 4
+
+---
+
+
+
+
+**☒ Automated Minimum Distribution Form**
+
+Plan Sponsor and Plan Administrator understand and acknowledge that in processing the forms designated above without signature, Agent is acting solely in a ministerial, non-discretionary capacity and Plan Sponsor and Plan Administrator retain all fiduciary responsibility for directions provided to Agent and results thereof in processing forms without Plan Sponsor signature. Plan Sponsor specifically indemnifies Agent for any and all losses it may incur as a result of processing the forms indicated above without Plan Sponsor or Plan Administrator signature.
+
+---
+
+**Special procedure(s):**  
+**None**
+
+---
+
+**Processing Standards and Requirements**
+
+You agree that:
+
+1. Use of Plan Service Center or Payroll Provider Interface for payroll data and participant data transmission is required. If the client has multiple, separate payroll sites, each site must use PSC for data transmission.
+
+2. Use of the <<Provider Reference>>-designated Automated Clearing House (“ACH”) for cash transmission is required. If the client has multiple, separate payroll sites, each site must use ACH for cash transmission. If the client prefers, they may establish a separate <<Provider Reference>> Demand Deposit Account (“DDA”) account to be used exclusively for deposits and ACH transactions.
+
+3. All initial participant enrollments and allocation elections must be transmitted via PSC.
+
+4. Use of our standard administrative forms (provided in the online application and guide at <<www.xyz.com>>) are required.
+
+5. Loan payments must be made through payroll deduction and transmitted via PSC.
+
+6. Loans must be available only to actively employed participants, except in the case of an inactive party in interest.
+
+7. Participant allocation election changes and fund transfers must be unlimited.
+
+8. Forfeiture of non-vested amounts must occur at time of participant distribution.
+
+9. All distributions must be drawn on <<Provider Reference>> DDA accounts.
+
+10. Participant Statements will be issued in our standard format only, with or without transaction detail. Statements will be delivered to participants electronically or if specifically elected by the participant mailed directly to the participant’s home address. Company logo and an employer message can be added to the Participant Statement at no cost, with an appropriate notice.
+
+11. Employee Communication materials must be ordered 3 weeks in advance of your required delivery date.
+
+12. You must adopt the appropriate options in our standard Loan Policy in order to allow participants to utilize loan prepayments and principal reduction features.
+
+13. You must execute the appropriate Contributions-Allocation Default Election form to utilize the Contribution Allocation Default process for new participants.
+
+14. All participant-directed money sources must have the same allocation election.
+
+15. Forfeiture suspense accounts will be invested in a fund that is not subject to market fluctuations if you wish to have access to 100% of the forfeiture suspense account.
+
+16. Joint & Survivor annuity is a Plan-level distribution provision and must be applied uniformly across all sources and divisions for distribution and loan processing.
+
+Data files that you provide to us must contain all required fields as outlined in our Standard File Format. No other format is permitted. In particular, date fields must contain four digits for the year.
+
+The undersigned accepts and agrees to the terms and conditions of this Service Schedule.
+
+**Plan:** Joe Frazier Plan  
+**Employer/Plan Sponsor:** Knight Train Railroad Company  
+
+By: ___________________________  
+**Boone Knight, CEO**  
+Name and Title
+
+---
+
+318481  
+MSA - Defined Contribution Plan Service Schedule  
+Page 4 of 4
+
+
+
+
+
+Here is the **fully extracted and formatted text** from **Page 11**, which appears to be **Page 1 of a fee schedule** for the *Joe Frazier Retirement Plan*:
+
+---
+
+# **Joe Frazier Retirement Plan**  
+**Daily Valuation Services**  
+**Annual Schedule of Fees**
+
+**Effective Date:** 2/1/2018
+
+---
+
+### **Conversion of Existing Plan**
+- One-time conversion fee: **$2,500**  
+- Loan set-up, per loan converted: **$75**
+
+---
+
+### **Full-Service Recordkeeping, Testing, Employee Education, and Administration**
+
+**Annual recordkeeping fee:**  
+**$25,000 base, plus $100/participant**
+
+#### **Participant Recordkeeping Services Include:**
+- Annual compliance services*  
+- Daily valuations and processing  
+- Internet access  
+- Multiple contribution sources  
+- Operator assisted voice response  
+- Periodic plan review  
+- Plan Service Center (PSC)  
+- Single or multiple payroll processing  
+- Quarterly participant statements  
+- Unlimited investment transfers  
+
+> *Please refer to the Annual Compliance Services section of this fee schedule for more details.*
+
+---
+
+### **Additional Plan Services**
+
+| Service | Fee |
+|--------|-----|
+| Beneficiary maintenance | Included |
+| Beneficiary annual notice | Included |
+| Convert beneficiary records | $5.00/beneficiary form |
+| Hardship loan approval | $100/request |
+| Hardship withdrawal approval | $100/request |
+| QDIA notice delivery | $2.00/notice/participant |
+| QDRO approval | $450/request |
+| Sponsor logo on PlanLink | $1,500 set-up |
+
+| Service | Fee |
+|--------|-----|
+| Retirement Readiness Assessment Report | $50 minimum, per participant fee: |
+| | 1–999 participants: $0.30 |
+| | 1,000–1,999 participants: $0.25 |
+| | 2,000–4,999 participants: $0.20 |
+| | 5,000–9,999 participants: $0.15 |
+| | 10,000+ participants: $0.10 |
+
+---
+
+### **Financial Planning Tools**
+
+| Service | Status |
+|--------|--------|
+| Calculator and tools | Included |
+| Guidance | Included |
+| Advice | Included |
+| Managed accounts | Participant asset-based fees |
+
+---
+
+### **Plan Document Design & Implementation**
+
+- Our prototype plan document: **Included***  
+
+> *Amendment/Restatement fee applies for prototype document of $500 per amendment/restatement. Additional charges apply for required restatements due to legislative/regulatory changes.*
+
+---
+
+**Disclaimer:**  
+Federally registered service marks of Financial service provider, its affiliates, officers, agents, and employees are not authorized to give legal, tax, or accounting advice. Only an attorney can draft legal documents, provide legal services, and give legal advice. Clients should retain their own legal counsel, tax advisor, or accountant regarding such legal, tax, or accounting matters and before entering into any transaction. In addition, employees and agents of Financial service provider and its affiliates are not authorized to practice law, and therefore, cannot prepare wills, trust agreements, or other estate planning or legal documents. ERISA § 408(b)(2) requires separate disclosure of fees applicable to ERISA accounts; if applicable, please see the separate ERISA 408(b)(2) disclosure for your account.
+
+---
+
+**Page 1**  
+(Schedule D Rev. 2016.12.20)
+
+---
+
+### Key Notes:
+- This is a **fee schedule** for administrative and recordkeeping services.
+- The **annual base fee** is **$25,000**, with **$100 per participant** added.
+- **Hardship approvals**, **QDRO processing**, and **beneficiary updates** are charged per request.
+- **Retirement Readiness Reports** are priced per participant based on plan size.
+- **Managed accounts** use **participant asset-based fees** (not included in base).
+- **Prototype plan document** is included, but amendments cost **$500 each**.
+- The effective date is **February 1, 2018**, aligning with the Master Agreement date.
+
+Let me know if you'd like this converted into a table, summarized, or compared with other fee schedules.
+
+
+
+**Initialed by:** _________________________ (Employer)
+
+Page 2  
+(Schedule D Rev. 2016.12.20)
+
+
+
+
+Here is the **fully extracted and formatted text** from **Page 13**, which appears to be **Page 3 of the fee schedule** (Schedule D Rev. 2016.12.20):
+
+---
+
+### **Fees for Extraordinary Services:**
+
+Financial service provider will charge separately for extraordinary services not described in the governing document or this fee schedule. Those charges may be based on hourly rates or upon the size, importance, difficulty, and novelty of the service. The current hourly rates are:
+
+- **Professionals:** $250 per hour  
+- **Para-professionals:** $125 per hour  
+- **Plan audit assistance (in excess of 2 hours):** $200 per hour  
+
+Extraordinary services include, but are not limited to, charges for litigation, closely held business interests, tax services, and other services not described in the governing document or this fee schedule and will be charged in accordance with the financial service provider’s published schedule of fees for such services applied at rates in effect at the time the services are rendered. Proxy charges are based on actual costs and will be quoted separately. Out-of-pocket expenses incurred by the financial service provider on behalf of an account to facilitate its effective administration may also be charged against the account.
+
+---
+
+### **Employee Communication Services Include:**
+- Explanation of plan features  
+- Complete enrollment package  
+- Investment literature  
+- On-site enrollment meetings  
+- On-site individual meetings  
+- On-site ongoing education meetings  
+- Pre-retirement seminars  
+- Quarterly newsletters  
+- Videos  
+- Webinars  
+
+---
+
+### **Additional Employee Communication Services**
+
+| Service | Fee |
+|--------|-----|
+| Standard employee enrollment materials | Included |
+| Standard ongoing quarterly newsletters and education | Included |
+| 5 day(s) of enrollment meetings | Included |
+| Additional day(s) of employee meetings | $350/day |
+| Travel and expenses for employee education | As incurred for additional meeting day(s) |
+| Customized materials (including video production) | Quoted upon request |
+| Gap Analysis Letter | $300 minimum, per participant fee:<br>• 1–999: $1.50<br>• 1,000–1,999: $1.20<br>• 2,000–4,999: $1.00<br>• $150 for company logo |
+
+---
+
+### **Distributions**
+
+| Service | Fee |
+|--------|-----|
+| Periodic payments, per payee, per annum | $36 |
+| Lump-sum payments / non-periodic payments | $40 with distribution services |
+| Miscellaneous payments or checks | $25 |
+
+---
+
+### **Participant Loans***
+
+- $50 set-up fee  
+- $35 annual maintenance fee  
+
+> *Set-up fee deducted from loan proceeds; maintenance fee deducted from participant account quarterly for the life of the loan.*
+
+---
+
+**Initialed by:** ___________________________ (Employer)
+
+---
+
+**Page 3**  
+(Schedule D Rev. 2016.12.20)
+
+---
+
+
+
+
+Here is the **fully extracted and formatted text** from **Page 14**, which appears to be **Page 4 of the fee schedule** (Schedule D Rev. 2016.12.20):
+
+---
+
+### **Administrative Fees for Investment Options**
+
+- Use of exception funds and alternate share classes may result in an asset-based fee not to exceed **0.50%**.  
+  See current Addendum to this schedule.
+
+---
+
+### **Personal Portfolio Account**  
+*(participant self-directed brokerage account option)*
+
+- **Plan-level:** $1,500 base annual administration fee  
+- **Participant-level:** $200 annual fee  
+
+Participants also will be charged trading fees and commissions for each transaction in their PPA in accordance with the then-applicable Fees and Commissions schedule for TD AMERITRADE. All plans with PPA balances are reviewed annually. In the event that more than **50% of the investable assets** of a plan are directed to the PPA, the participant fee will change from a flat fee of **$200** to **50 basis points** on the market value of the assets in the PPA.
+
+---
+
+### **Annual Compliance Services Include:**
+
+- ADP & ACP testing  
+- Annual additions testing (415)  
+- Employer contribution allocations (2x per year)  
+- Excess deferrals (402(g))  
+- Forfeiture allocations (2x per year)  
+- Minimum coverage testing (410(b))  
+- Non-Discrimination testing (401(a)(4) and 414(s))  
+- Signature Ready Form 5500 preparation and summary annual report  
+- Top-Heavy testing  
+
+---
+
+### **Compliance Services Subject to Additional Fee***
+
+- ADP & ACP failed test corrections using methods other than participant refunds (i.e., QNEC)  
+- Auditor requested changes to Form 5500  
+- Average benefits and benefits rights & features testing  
+- Combining multiple control group plans for testing  
+- Employer contribution allocations in excess of two/year  
+- Employer contribution cost projections  
+- Enhanced allocation and testing services (contributions by class, rate group testing & cross-testing)  
+- Forfeiture allocations in excess of two/year  
+- Manual data entry and/or manipulation  
+- Multiple employer plan testing  
+- Rerun of compliance tests due to data errors/changes  
+
+> *$125 per hour / 3-hour minimum. Compliance services not described in this fee schedule will be charged at the hourly rate.*
+
+---
+
+**Initialed by:** ___________________________ (Employer)
+
+---
+
+**Page 4**  
+(Schedule D Rev. 2016.12.20)
+
+---
+
+
+
+
+**MINIMUM ANNUAL FEE:** $15,000  
+*(Implicit funds revenue included to meet minimum)*  
+
+Fees will be calculated quarterly and charged to your account if not paid by the invoice date.
+
+---
+
+**Service Termination Fees**  
+A reasonable charge will be assessed for deconversion within the first three years of service, not to exceed $3,000.
+
+Unless services are terminated, the fees listed herein will be charged or billed to your account as of the effective date noted above. [Provider] will treat continued use of the services described on this schedule as your agreement to and acceptance of the fee schedule. This fee schedule may be changed from time to time after advance notice.
+
+---
+
+**ACKNOWLEDGEMENT:** I acknowledge receipt of a copy of this fee schedule by which I shall be charged for the Financial service provider’s services, and hereby accept and agree to pay the fees and expenses as specified in this annual schedule of fees.
+
+---
+
+**NOTES:**  
+(Press F1 For Help)
+
+---
+
+By: _______________________________  
+Dated: ___________________________
+
+---
+
+Federally registered service marks of Financial service provider, its affiliates, officers, agents, and employees are not authorized to give legal, tax, or accounting advice. Only an attorney can draft legal documents, provide legal services and give legal advice. Clients should retain their own legal counsel, tax advisor, or accountant regarding such legal, tax, or accounting matters and before entering into any transaction. In addition, employees and agents of Financial service provider and its affiliates are not authorized to practice law, and therefore, cannot prepare wills, trust agreements, or other estate planning or legal documents. ERISA § 408(b)(2) requires separate disclosure of fees applicable to ERISA accounts; if applicable, please see the separate ERISA 408(b)(2) disclosure for your account.
+
+Page 5  
+(Schedule D Rev. 2016.12.20)
+
+
+
+
+
+
+
+**Discretionary Trustee Service Addendum to**  
+**Daily Valuation Services Annual Schedule of Fees**
+
+**Effective Date: 2/1/2018**
+
+---
+
+**Discretionary Trustee Fee**
+
+The following annual fees include: serving as discretionary trustee, assisting with investment policy development, investment due diligence, 401(k) plan investment menu selection, fund performance evaluation, benchmarking and reporting.
+
+Based on market value of all assets in account, excluding employer stock, stable value funds, and FDIC NOW Deposit option. This schedule is in addition to fees outlined on the Daily Valuation Services Annual Schedule of Fees:
+
+| Asset Tier | Amount | Fee Rate |
+|-----------|--------|---------|
+| First | $5,000,000 | 0.25% per year |
+| Next | $5,000,000 | 0.20% per year |
+| Next | $10,000,000 | 0.15% per year |
+| Next | $30,000,000 | 0.125% per year |
+| Next | $50,000,000 | 0.10% per year |
+| Over | $100,000,000 | 0.05% per year |
+
+**Minimum Annual Fee: $10,000**
+
+---
+
+**Mutual Fund Fees Received by :**  
+Payments received by from fund companies as Rule 12b-1 fees and/or shareholder servicing fees, as outlined in the Disclosure and Consent to Compensation Form, will be credited against applicable fees on the quarterly fee invoice.
+
+---
+
+Unless services are terminated, the fees listed herein will be billed as of the effective date noted above. [Provider] will treat continued use of the services described on this schedule as your agreement to and acceptance of this fee schedule. This fee schedule may be changed from time to time after advance notice.
+
+---
+
+**ACKNOWLEDGEMENT:** I acknowledge receipt of a copy of this fee schedule by which I shall be charged for the Financial service provider’s services as discretionary trustee, and hereby accept and agree to pay the fees as specified in this annual schedule of fees.
+
+By: _______________________________  
+Dated: ___________________________
+
+---
+
+[Provider], PlanLine and PlanLink are federally registered service marks of Financial service provider, its affiliates, officers, agents, and employees are not authorized to give legal, tax, or accounting advice. Only an attorney can draft legal documents, provide legal services and give legal advice. Clients should retain their own legal counsel, tax advisor, or accountant regarding such legal, tax, or accounting matters and before entering into any transaction. In addition, employees and agents of Financial service provider and its affiliates are not authorized to practice law, and therefore, cannot prepare wills, trust agreements, or other estate planning or legal documents. ERISA § 408(b)(2) requires separate disclosure of fees applicable to ERISA accounts; if applicable, please see the separate ERISA 408(b)(2) disclosure for your account.
+
+Page 1  
+(Schedule G Rev. 2016.12.20)
+
+
+
+
+
+

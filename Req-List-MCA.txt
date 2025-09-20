@@ -1,0 +1,519 @@
+
+# 0) Goal (What we’re building)
+
+
+
+
+# What you need
+
+## Inputs (S3)
+
+* Bucket: `exavalu-textract-outputs-722563556550`
+* Prefixes:
+
+  * `MCA/plan/` (Adoption Agreements)
+
+    * `Joe Frazier Retirement Plan.txt`
+    * `Knight Train 401(k) Plan.txt`
+    * `Tri-State Manufacturing, Inc. 401(k) Savings Plan.txt`
+  * `MCA/services/` (Master Service Agreements)
+
+    * `Master Service Agreement Joe Frazier.txt`
+    * `Master Service Agreement Knight Train.txt`
+    * `Master Service Agreement Tri State.txt`
+
+## Models (AWS Bedrock)
+
+* Embeddings: `amazon.titan-embed-text-v2:0`
+* LLM: `anthropic.claude-3-sonnet-20240229-v1:0`
+
+## Dependencies
+
+* `langchain`
+* `langchain-community`
+* `langchain-aws`
+* `boto3`
+
+## Environment variables
+
+```
+AWS_REGION=us-east-1
+S3_BUCKET=exavalu-textract-outputs-722563556550
+S3_BASE_PREFIX=MCA
+INDEX_DIR=./faiss_index
+EMBEDDING_MODEL_ID=amazon.titan-embed-text-v2:0
+LLM_MODEL_ID=anthropic.claude-3-sonnet-20240229-v1:0
+CHUNK_SIZE=1200
+CHUNK_OVERLAP=150
+PARTY_TOKENS=2
+```
+
+## Canonical party key (normalization rules)
+
+* Lowercase, remove punctuation.
+* Remove: `401(k)`, `401k`, `401 k`, `plan`, `savings`, `retirement`, `msa`, `master`, `service`, `agreement`.
+* Remove corp suffixes: `inc`, `llc`, `co`, `company`, `corp`, `ltd`, etc.
+* Collapse spaces; keep first **2** tokens.
+* Expected keys: `joe frazier`, `knight train`, `tri state`.
+
+## Chunking (for embedding)
+
+* `chunk_size = 1200`
+* `chunk_overlap = 150`
+
+## Metadata per chunk
+
+```
+party_key: "joe frazier" | "knight train" | "tri state"
+doc_type: "plan" | "service"
+s3_key: "<full S3 key>"
+title: "<file title>"
+chunk_id: "<s3_key>::#<idx>"
+```
+
+## Prompt selection rule (routing)
+
+* After retrieving top-k chunks for the active party:
+
+  * Count per `doc_type`.
+  * Compute service keyword score from query + chunks:
+
+    * `["optional services","opt in","additional plan services","service","fee","fee schedule","msa"]`
+  * Use **Service** prompt if `service_hits ≥ plan_hits` **or** keyword score ≥ 2; otherwise use **Plan** prompt.
+* Optional manual override: `@service` / `@plan`.
+
+## Prompts to use (exact)
+
+* Use your provided `create_service_prompt(query, context_chunks)` and `create_plan_prompt(query, context_chunks)` verbatim.
+* Context is built by concatenating selected chunks with their source labels.
+
+## Run order (high level)
+
+1. Build FAISS indices (one per party) from the S3 inputs above using the chunking + metadata + canonical rules.
+2. Start chat session.
+3. User sets context by typing a party name (e.g., “joe fraizer”).
+4. Retrieve top-k chunks **for that party**; apply the routing rule; call the LLM with the corresponding prompt.
+5. Return plain-text answer per the prompt’s output format.
+
+## Acceptance checks
+
+* Exactly three parties: `joe frazier`, `knight train`, `tri state`.
+* “What optional services were elected that have fees?” → Service prompt used.
+* “Are there plan-imposed limits on employee contributions?” → Plan prompt used.
+* Answers scoped only to the active party’s documents.
+* Output is plain text exactly as the prompts specify.
+
+
+A party-scoped RAG chatbot that:
+
+1. Ingests **Adoption Agreements** (doc\_type=`plan`) and **Master Service Agreements** (doc\_type=`service`) from S3.
+2. Groups documents by customer/party (e.g., *Joe Frazier*, *Knight Train*, *Tri State*) using a **canonical `party_key`**.
+3. Builds **one FAISS index per party** (each shard contains both plan + service chunks).
+4. At runtime:
+
+   * User types a party name to set context.
+   * Queries retrieve only from that party’s chunks.
+   * Router picks the correct prompt (Service vs Plan) based on retrieved chunks.
+   * LLM answers strictly using the provided prompts.
+
+Models (AWS Bedrock):
+
+* **Embeddings:** `amazon.titan-embed-text-v2:0`
+* **LLM:** `anthropic.claude-3-sonnet-20240229-v1:0`
+
+---
+
+# 1) Inputs (Your S3 data)
+
+Bucket: `exavalu-textract-outputs-722563556550`
+Base prefix: `MCA`
+
+```
+s3://exavalu-textract-outputs-722563556550/MCA/plan/
+  Joe Frazier Retirement Plan.txt
+  Knight Train 401(k) Plan.txt
+  Tri-State Manufacturing, Inc. 401(k) Savings Plan.txt
+
+s3://exavalu-textract-outputs-722563556550/MCA/services/
+  Master Service Agreement Joe Frazier.txt
+  Master Service Agreement Knight Train.txt
+  Master Service Agreement Tri State.txt
+```
+
+All files are **plain text**.
+
+---
+
+
+```
+
+> Place these files under `~/svc-agreement/mca_chatbot/` (or your preferred folder).
+
+---
+
+# 3) Environment & configuration
+
+## Python environment
+
+```
+pip install -U langchain langchain-community langchain-aws boto3
+```
+
+> We use `langchain-aws` for Bedrock integrations (`ChatBedrock`, `BedrockEmbeddings`).
+
+## Env vars
+
+```
+export AWS_REGION=us-east-1
+export S3_BUCKET=exavalu-textract-outputs-722563556550
+export S3_BASE_PREFIX=MCA
+export INDEX_DIR=./faiss_index
+
+export EMBEDDING_MODEL_ID=amazon.titan-embed-text-v2:0
+export LLM_MODEL_ID=anthropic.claude-3-sonnet-20240229-v1:0
+
+# optional tuning
+export CHUNK_SIZE=1200
+export CHUNK_OVERLAP=150
+
+```
+
+IAM must allow Bedrock + S3 read:
+
+* `bedrock:InvokeModel`, `bedrock:InvokeModelWithResponseStream`
+* `s3:GetObject`, `s3:ListBucket`
+
+---
+
+# 4) Canonical party grouping (critical)
+
+We normalize titles like:
+
+* “Joe Frazier Retirement Plan” → `joe frazier`
+* “Master Service Agreement Joe Frazier” → `joe frazier`
+* “Tri-State Manufacturing, Inc. 401(k) Savings Plan” → `tri state`
+* “Master Service Agreement Knight Train” → `knight train`
+
+Rules:
+
+* Lowercase
+* Remove punctuation
+* Remove plan/MSA words: `401(k)`, `401k`, `401 k`, `plan`, `savings`, `retirement`, `msa`, `master`, `service`, `agreement`
+* Remove corp suffixes: `inc`, `llc`, `co`, `company`, `corp`, `ltd`, …
+* Collapse whitespace
+* Keep first N tokens (default 2 via `PARTY_TOKENS`)
+
+This ensures your FAISS shards end up as:
+
+```
+faiss_index/party/joe_frazier
+faiss_index/party/knight_train
+faiss_index/party/tri_state
+```
+
+---
+
+# 5) Chunking & metadata
+
+Chunker: `RecursiveCharacterTextSplitter`
+
+* `chunk_size=1200`
+* `chunk_overlap=150`
+
+Each chunk metadata:
+
+```json
+{
+  "party_key": "joe frazier",
+  "doc_type": "plan" | "service",
+  "s3_key": "MCA/plan/Joe Frazier Retirement Plan.txt",
+  "title": "Joe Frazier Retirement Plan",
+  "chunk_id": "<s3_key>::#<idx>"
+}
+```
+
+---
+
+# 6) Vector store (FAISS)
+
+**Design choice:** one FAISS index per party (fast pre-filtering).
+Shards written to: `./faiss_index/party/<party_key>/`
+
+---
+
+# 7) Prompt routing
+
+After party-scoped retrieval (k=12), choose prompt:
+
+* Count `doc_type` among retrieved chunks: `service_hits` vs `plan_hits`
+* Compute a service keyword score from query + chunks:
+
+  * `["optional services","opt in","additional plan services","service","fee","fee schedule","msa"]`
+* Rule:
+
+  * If `service_hits ≥ plan_hits` **or** `keyword_score ≥ 2` → **Service prompt**
+  * Else → **Plan prompt**
+* Allow manual override with `@service` / `@plan` at query start.
+
+---
+
+# 8) Prompts (exact text)
+
+We use the exact `create_service_prompt()` and `create_plan_prompt()` you provided (enforced plain-text outputs and deterministic logic). These live in `prompts.py` alongside a small `Chunk` dataclass and `build_context_for_prompt()`.
+
+---
+
+
+
+# 10) Build & run
+
+## Build indices
+
+```bash
+cd ~/svc-agreement/mca_chatbot
+python build_party_indices.py
+```
+
+Expected log (after canonicalizer fix):
+
+```
+✅ Built party index for 'joe frazier' .../faiss_index/party/joe_frazier
+✅ Built party index for 'knight train' .../faiss_index/party/knight_train
+✅ Built party index for 'tri state' .../faiss_index/party/tri_state
+```
+
+## Start chatbot
+
+```bash
+python chat_app.py
+```
+
+### Example session
+
+```
+RAG session started. Type a party name to set context (e.g., 'Joe Frazier').
+> joe fraizer
+Context set to: joe frazier.
+> What optional services were elected that have fees?
+Result
+The following elected optional services have associated fees:
+- ...
+> Are there plan-imposed limits on employee contributions?
+Result
+None. No additional Plan imposed limits (statutory limits only).
+```
+
+Manual override if needed:
+
+```
+> @service List elected options with fees
+> @plan Are there plan-imposed limits on employee deferrals?
+```
+
+Switch parties:
+
+```
+> knight train
+Context set to: knight train.
+```
+
+---
+
+# 11) Acceptance criteria (ready to demo)
+
+1. **Index build:**
+
+   * Exactly 3 FAISS shards under `faiss_index/party/` (Joe, Knight Train, Tri State).
+   * Each shard contains both plan + service chunks for that party.
+
+2. **Context setting:**
+
+   * Typing a party name (typos OK: “fraizer”) sets `active_party_key` correctly (fuzzy match).
+   * If context not set, bot asks to specify a party and lists known parties.
+
+3. **Routing:**
+
+   * “What optional services were elected that have fees?” → **Service** prompt.
+   * “Are there plan-imposed limits on employee contributions?” → **Plan** prompt.
+   * `@service` / `@plan` override works.
+
+4. **Scoping:**
+
+   * When Joe is active, no Knight or Tri State chunks are used.
+   * Switching context swaps shard and answers accordingly.
+
+5. **Output format:**
+
+   * Plain text exactly as prompts specify (no Markdown, no JSON).
+
+
+
+
+
+
+
+Prompts->
+
+
+
+def create_service_prompt(query: str, context_chunks: List[Chunk]) -> str:
+    context = build_context_for_prompt(context_chunks)
+    return f"""
+You are a meticulous contract assistant for a Master Service Agreement (MSA) that supports a Defined Contribution Plan.
+Answer ONLY from the provided Context. Do not use external knowledge or make assumptions. Treat the Context as authoritative.
+
+OUTPUT FORMAT (REQUIRED) — PLAIN TEXT ONLY (NO MARKDOWN, NO JSON)
+Write a short, polished, human-readable answer. Use this structure:
+Result
+<one-to-three line answer. If listing items, use simple hyphen lines like "- Service — fee: $100". No other Markdown.>
+
+STRICT CONTENT RULES
+- Consider ONLY information present in the Context.
+- POSITIVE (selected) marks: ☒, ☑, ✓, [x], [X], (X), [✓].
+- NEGATIVE (not selected) marks: ☐, [ ], or any line with underscores + ☐ (e.g., "______ ☐"), or any line without a POSITIVE mark token.
+- Each optional service (a–k) must be positively marked on its OWN line to be considered “elected”.
+- If both marked and unmarked variants appear, ONLY the positively marked line counts.
+
+- If a fee field is present but blank → treat that fee as "not specified".
+
+SECTION SCOPES YOU MAY USE
+1) "Optional Services — Opt In" block (letters a–k) — this is the ONLY source of truth for whether a service is elected.
+2) A table explicitly titled "Additional Plan Services" with columns like "Service" and "Fee" — this is the primary place to retrieve dollar fees or fee phrases for elected items.
+
+GENERAL OPTIONAL SERVICES LISTING (when the QUESTION asks “What optional services were elected?”)
+- Scan ONLY the "Optional Services — Opt In" block a–k.
+- Include an option in Result ONLY if its exact line is positively marked.
+- For option c (QDIA), also use the immediate "Options [Initials Required]" sub-options to enrich the label (Initial / Annual / Both); include the sub-option only if positively marked.
+- Do NOT show fees for this general listing question.
+
+SPECIAL HANDLING — QUESTION: “What optional services were elected that have fees associated with them?”
+Follow these steps deterministically:
+
+1) Identify elected optional services:
+   • Look ONLY in "Optional Services — Opt In" a–k.
+   • Collect each option that is positively marked (POSITIVE set above). Ignore any option without a positive mark.
+
+2) Find associated fees from the "Additional Plan Services" table:
+   • Locate a table explicitly titled "Additional Plan Services" that lists "Service" and "Fee".
+   • For each elected service from step 1, attempt to match it to a row in the table.
+     Matching rules (apply in this order):
+       (a) Exact, case-insensitive match of a normalized service name.
+       (b) If (a) fails, case-insensitive containment match (either direction) after:
+           - removing quotes and punctuation,
+           - collapsing whitespace,
+           - normalizing common synonyms (see Label Normalization below).
+       (c) If multiple rows match, choose the one with the closest normalized name (prefer exact token match over substring).
+   • Consider a fee “associated” if the Fee cell is non-empty (e.g., "$100", "$50/request", "see Fee Schedule"). If the Fee cell is empty/blank, treat it as not associated and EXCLUDE the item from Result for this specific question.
+
+3) Output for this question:
+   • If you find at least one elected optional service with a non-empty fee from the "Additional Plan Services" table, write:
+     Result
+     The following elected optional services have associated fees:
+     - <Normalized Service Label> — fee: <Fee cell verbatim>
+     - <...>
+   • If NO elected items have a non-empty fee cell in the table, write:
+     Result
+     No elected optional services with fees were found.
+   • Do NOT invent or fetch fees from other schedules for this question. Only use the "Additional Plan Services" table here.
+
+HARDSHIP APPROVAL (Item 6(f)) — consistency reminder
+- Only treat 6(f) as elected if its OWN line is positively marked.
+- If it is not positively marked, do not include it anywhere in the Result for this question regardless of fees seen elsewhere.
+
+If you cannot find any relevant content:
+  Result: No positively elected items were found in the provided context.
+
+CONTEXT:
+{context}
+
+QUESTION:
+{query}
+
+Return ONLY the final answer in the required plain-text format (no Markdown, no JSON).
+""".strip()
+
+def create_plan_prompt(query: str, context_chunks: List[Chunk]) -> str:
+    context = build_context_for_prompt(context_chunks)
+    return f"""
+You are a compliance-grade 401(k) Adoption Agreement analyst. Answer ONLY from the provided Context.
+- No external knowledge. No assumptions. Never infer beyond positively marked items.
+
+KEY RULE (CHECKBOX LOGIC)
+- Selected = [X] (and equivalents ☒/✓/[x]/[■]). Not selected = [ ] (and ☐).
+- A parent being selected NEVER implies its sub-items are selected.
+- A sub-item MAY NOT be used unless each ancestor in its hierarchy is positively selected.
+
+KEY RULE (CHECKBOX LOGIC)
+- Selected = [X] (and equivalents ☒/✓/[x]/[■]). Not selected = [ ] (and ☐).
+- A parent being selected NEVER implies its sub-items are selected.
+- A sub-item MAY NOT be used unless each ancestor in its hierarchy is positively selected.
+- If a parent line is [ ] (not selected), IGNORE all descendant/sub-item marks (treat them as OCR artifacts).
+- If a parent line is [X] and a direct child is [ ] then the child is NOT selected even if its text shows values — respect the empty child.
+
+SPECIAL CASE — ROTH (STRICT GATING)
+- Roth Deferrals (§6(b)(1)) may be used ONLY if BOTH 6(b) [X] AND 6(b)(1) [X].
+- If 6(b) is [X] and 6(b)(1) is [ ] → Result MUST list only "Pre-Tax Deferrals".
+- If 6(b) is [ ] (not selected) → IGNORE 6(b)(1) entirely, even if 6(b)(1) appears [X].
+
+EXAMPLE (apply exactly)
+- (b) [X] Pre-Tax Deferrals; (1) [ ] Roth → Output: Pre-Tax Deferrals only.
+- (b) [X] Pre-Tax Deferrals; (1) [X] Roth → Output: Pre-Tax Deferrals and Roth Deferrals.
+- (b) [ ] Pre-Tax Deferrals; (1) [X] Roth → Output: Do NOT include Roth (ignore 6(b)(1)).
+
+for a query/question. like "Are there limits on the contributions/deferrals employee participants can make to the plan?"
+First see if 20 (a) is selected  like 
+
+"20. ELECTIVE DEFERRAL LIMITATIONS (3.02(A)). The following limitations apply to Elective Deferrals under Election 6(b), which are in addition to those limitations imposed under the basic plan document (Choose (a) or choose (b) and (c) as applicable.): 
+
+(a) [X] None. No additional Plan imposed limits (skip to Election 21)."
+
+Then answer will be "There are no plan-imposed limits on employee contributions/deferrals."
+- If a parent is selected, ignore all its sub-items even if they appear selected.
+
+Otherwise if 
+
+(a) [] None. No additional Plan imposed limits (skip to Election 21)."
+
+Then goto 20 (b) and see if it is selected. and find the answer
+
+For query:how much are participants matched on their contributions?
+MATCHING FORMULA — “How much are participants matched on their contributions?” (STRICT)
+
+If Election 6(e) is **not selected** (i.e.,(e) [ ] Safe Harbor/Additional Matching.  checkbox is empty"):
+
+- **Result:** Matching is not elected under Election 6(e); no matching formula applies.  
+
+- **Stop here** — do not evaluate Election 30.
+
+Else, if Election 6(e) **is selected** (i.e., checkbox is marked: "[X] Safe Harbor/Additional Matching"):
+
+- **Result:** The Basic Matching Contribution is equal to:  
+  - 100% of each Participant's Elective Deferrals up to 3% of Compensation, plus  
+  - 50% of Elective Deferrals exceeding 3% but not exceeding 5% of Compensation for each payroll period.  
+
+Proceed only if 6(e) is checked; otherwise, matching does not apply.
+
+HIERARCHY & GATING (APPLIES AT ALL DEPTHS)
+- Depth = Section → Option → Sub-option → Row → Column.
+- To rely on a mark at any depth, EVERY ancestor above it must be [X].
+- If a row label shows “[ ]” but a column cell shows “[X]”, IGNORE the column.
+
+MUTUAL EXCLUSIVITY & EARLY EXIT
+- Follow the section instruction text exactly (“Choose (a) or choose (b) and (c)…”).
+- If a “None / Do not apply / (skip …)” option is [X], immediately ignore siblings/descendants.
+
+OUTPUT FORMAT — PLAIN TEXT ONLY (NO MARKDOWN, NO JSON)
+Write a short, polished, human-readable answer:
+Result
+<one sentence answer.>
+
+CONTEXT
+{context}
+
+QUESTION
+{query}
+
+Return ONLY the final answer in the required plain-text format (no Markdown, no JSON).
+""".strip()
+
+
