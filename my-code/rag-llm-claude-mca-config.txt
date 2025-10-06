@@ -1,0 +1,57 @@
+# rag_config.py
+import os
+from dataclasses import dataclass
+from pathlib import Path
+
+@dataclass(frozen=True)
+class Settings:
+    # ---- AWS / Regions ----
+    AWS_REGION: str = os.getenv("AWS_REGION", "us-east-1")
+
+    # ---- S3 locations (for plan display titles / docs) ----
+    S3_BUCKET: str = os.getenv("S3_BUCKET", "exavalu-textract-outputs-722563556550")
+    S3_BASE_PREFIX: str = os.getenv("S3_BASE_PREFIX", "MCA")
+
+    # ---- Local FAISS index root ----
+    INDEX_DIR: Path = Path(os.getenv("INDEX_DIR", "./faiss_index")).resolve()
+
+    # ---- Embeddings (Bedrock) ----
+    EMBEDDING_MODEL_ID: str = os.environ.get(
+        "EMBEDDING_MODEL_ID",
+        "amazon.titan-embed-text-v2:0",
+    )
+
+    # ---- LLMs ----
+    # Router / classifier / plan resolver (Claude 3 Sonnet as requested)
+    LLM_MODEL_ID: str = os.environ.get(
+        "LLM_MODEL_ID",
+        "anthropic.claude-3-sonnet-20240229-v1:0",
+    )
+    # If you previously set an inference profile for general LLM calls, keep it blank
+    # so we don't accidentally route router calls to Claude 4.
+    INFERENCE_PROFILE_ARN: str = os.environ.get(
+        "INFERENCE_PROFILE_ARN",
+        "",  # leave empty for router; routes.py prefers ANSWER_* for final Q&A
+    )
+
+    # Final plan/service Q&A (Claude 4 Sonnet)
+    ANSWER_MODEL_ID: str = os.environ.get(
+        "ANSWER_MODEL_ID",
+        "global.anthropic.claude-sonnet-4-20250514-v1:0",
+    )
+    ANSWER_INFERENCE_PROFILE_ARN: str = os.environ.get(
+        "ANSWER_INFERENCE_PROFILE_ARN",
+        "arn:aws:bedrock:us-east-1:722563556550:inference-profile/global.anthropic.claude-sonnet-4-20250514-v1:0",
+    )
+
+    # ---- Chunking / audit output ----
+    CHUNK_SIZE: int = int(os.getenv("CHUNK_SIZE", "4200"))
+    CHUNK_OVERLAP: int = int(os.getenv("CHUNK_OVERLAP", "200"))
+    CHUNKS_FOR_ANS_DIR: Path = Path(os.getenv("CHUNKS_FOR_ANS_DIR", "./chunk-for-ans")).resolve()
+
+    # ---- Sessions (DynamoDB) ----
+    USE_DDB: bool = os.environ.get("USE_DDB", "true").lower() == "true"
+    DDB_TABLE_NAME: str = os.environ.get("DDB_TABLE_NAME", "rag_sessions")
+
+# Singleton settings
+settings = Settings()

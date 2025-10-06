@@ -1,0 +1,766 @@
+# mca_chatbot/routes.py
+from __future__ import annotations
+
+import json
+import os
+import logging
+import threading
+import uuid
+import re
+import hashlib
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import List, Optional, Literal, Dict, Any
+
+import boto3
+from fastapi import APIRouter, HTTPException
+from pydantic import BaseModel, Field
+
+from .rag_config import settings
+from .prompts import create_plan_prompt, create_service_prompt, Chunk as PromptChunk
+from .party_normalize import canonical_party_key
+from langchain_community.vectorstores import FAISS
+from langchain_community.embeddings import BedrockEmbeddings
+
+from .build_party_indices import build as build_party_indices
+
+# ------------------------------------------------------------------------------
+# Logging
+# ------------------------------------------------------------------------------
+log = logging.getLogger(__name__)
+if not log.handlers:
+    logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO"))
+
+router = APIRouter()
+
+# ------------------------------------------------------------------------------
+# LLM Model Routing
+# ------------------------------------------------------------------------------
+# Router (classification, plan resolution) -> Claude 3 Sonnet (from rag_config.py)
+ROUTER_MODEL_ID = settings.LLM_MODEL_ID or "anthropic.claude-3-sonnet-20240229-v1:0"
+ROUTER_PROFILE_ARN = (settings.INFERENCE_PROFILE_ARN or "").strip()  # keep blank to avoid routing to C3
+
+# Final plan/service Q&A -> Claude 4 Sonnet (from rag_config.py)
+ANSWER_MODEL_ID = settings.ANSWER_MODEL_ID
+ANSWER_PROFILE_ARN = (settings.ANSWER_INFERENCE_PROFILE_ARN or "").strip()
+
+AWS_REGION = settings.AWS_REGION
+
+# ------------------------------------------------------------------------------
+# Optional DynamoDB-backed session store (fallback to in-memory)
+# ------------------------------------------------------------------------------
+DDB_TABLE_NAME = settings.DDB_TABLE_NAME
+USE_DDB = settings.USE_DDB
+
+_ddb = None
+_ddb_table = None
+if USE_DDB:
+    try:
+        _ddb = boto3.resource("dynamodb", region_name=AWS_REGION)
+        _ddb_table = _ddb.Table(DDB_TABLE_NAME)
+        log.info("DynamoDB client ready (table=%s)", DDB_TABLE_NAME)
+    except Exception as e:
+        _ddb = None
+        _ddb_table = None
+        log.warning("Couldn't init DynamoDB (%s). Using in-memory session store.", e)
+
+# ------------------------------------------------------------------------------
+# API Schemas
+# ------------------------------------------------------------------------------
+class SessionCreateOut(BaseModel):
+    session_id: str
+
+class ChatMsgIn(BaseModel):
+    session_id: str = Field(..., description="UUID from POST /chatbot/session")
+    message: str = Field(..., description="User free-text")
+
+class ChatMsgOut(BaseModel):
+    session_id: str
+    response: str
+    current_plan: str  # 'default' if none set
+    show_plan_picker: bool = False
+    plan_options: List[str] = Field(default_factory=list)
+    recent_plans: List[str] = Field(default_factory=list)
+
+class PlanListOut(BaseModel):
+    plans: List[str]
+
+# ------------------------------------------------------------------------------
+# String helpers
+# ------------------------------------------------------------------------------
+_PUNCT_RE = re.compile(r"[^a-z0-9\s]")
+_WS_RE = re.compile(r"\s+")
+
+def _normalize(s: str) -> str:
+    s = (s or "").lower()
+    s = _PUNCT_RE.sub(" ", s)
+    s = _WS_RE.sub(" ", s).strip()
+    return s
+
+def _tokens(s: str) -> List[str]:
+    return _normalize(s).split()
+
+_GREETING_TOKENS = {"hi", "hello", "hey", "yo", "hiya", "howdy", "sup"}
+def _is_greeting_message(msgn: str) -> bool:
+    toks = _tokens(msgn)
+    if not toks:
+        return False
+    if len(toks) <= 3 and all(t in _GREETING_TOKENS for t in toks):
+        return True
+    if len(toks) == 1 and toks[0] in _GREETING_TOKENS:
+        return True
+    return False
+
+# ------------------------------------------------------------------------------
+# Plans discovery (indices and S3 display names)
+# ------------------------------------------------------------------------------
+_s3 = boto3.client("s3", region_name=AWS_REGION)
+
+def _party_index_root() -> Path:
+    return (settings.INDEX_DIR / "party").resolve()
+
+def _available_plan_keys() -> List[str]:
+    """
+    Returns normalized party folder names that have a FAISS index.
+    e.g., ["joe frazier", "tri state", "knight train"]
+    """
+    root = _party_index_root()
+    if not root.exists():
+        return []
+    out: List[str] = []
+    for p in sorted(root.iterdir()):
+        if p.is_dir() and (p / "index.faiss").exists():
+            out.append(p.name.replace("_", " "))
+    return out
+
+_PLAN_DISPLAY_CACHE: Dict[str, str] = {}
+
+def _title_from_key(key: str) -> str:
+    base = key.rsplit("/", 1)[-1]
+    if "." in base:
+        base = ".".join(base.split(".")[:-1])
+    return base
+
+def _load_plan_display_cache() -> None:
+    """
+    Loads plan display titles from s3://{bucket}/{S3_BASE_PREFIX}/plan/*.txt
+    Maps canonical_party_key(title) -> title (display).
+    """
+    global _PLAN_DISPLAY_CACHE
+    if _PLAN_DISPLAY_CACHE:
+        return
+    base = settings.S3_BASE_PREFIX.strip().strip("/")
+    plan_prefix = f"{base}/plan/"
+    token = None
+    out: Dict[str, str] = {}
+    while True:
+        kwargs = {"Bucket": settings.S3_BUCKET, "Prefix": plan_prefix}
+        if token:
+            kwargs["ContinuationToken"] = token
+        resp = _s3.list_objects_v2(**kwargs)
+        for o in resp.get("Contents", []):
+            k = o["Key"]
+            if not k.lower().endswith(".txt"):
+                continue
+            title = _title_from_key(k)  # display title as stored in S3
+            ckey = _normalize(canonical_party_key(title))
+            if ckey and ckey not in out:
+                out[ckey] = title
+        token = resp.get("NextContinuationToken")
+        if not token:
+            break
+    _PLAN_DISPLAY_CACHE = out
+
+def _display_name_for_plan_key(plan_key: str) -> str:
+    """
+    Converts an internal plan key (folder name-ish) to a display name using S3 titles,
+    falling back to prettified title-case of the key.
+    """
+    _load_plan_display_cache()
+    ckey = _normalize(canonical_party_key(plan_key))
+    disp = _PLAN_DISPLAY_CACHE.get(ckey)
+    if disp:
+        return disp
+    return " ".join(w.capitalize() for w in _normalize(plan_key).split())
+
+def _list_plan_display_titles() -> List[str]:
+    return [_display_name_for_plan_key(k) for k in _available_plan_keys()]
+
+def _current_plan_or_default(plan_key: Optional[str]) -> str:
+    return "default" if not plan_key else _display_name_for_plan_key(plan_key)
+
+# ------------------------------------------------------------------------------
+# Session data model (with chat history & last 3 plans)
+# ------------------------------------------------------------------------------
+class _SessionData(BaseModel):
+    session_id: str
+    current_plan_key: Optional[str] = None
+    recent_plan_keys: List[str] = Field(default_factory=list)
+    history: List[Dict[str, Any]] = Field(default_factory=list)
+
+    # NEW: whether the next user message is expected to be a plan selection
+    pending_plan_selection: bool = False
+
+    created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    updated_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+
+    def touch(self) -> None:
+        self.updated_at = datetime.now(timezone.utc).isoformat()
+
+    def add_history(self, role: str, text: str, plan_display: str) -> None:
+        self.history.append({
+            "ts": datetime.now(timezone.utc).isoformat(),
+            "role": role,
+            "text": (text or "")[:4000],
+            "plan": plan_display
+        })
+        if len(self.history) > 200:
+            self.history = self.history[-200:]
+        self.touch()
+
+    def push_recent_plan(self, plan_key: Optional[str]) -> None:
+        if not plan_key:
+            return
+        r = [k for k in self.recent_plan_keys if k != plan_key]
+        self.recent_plan_keys = [plan_key] + r
+        self.recent_plan_keys = self.recent_plan_keys[:3]
+        self.touch()
+
+class _ISessionStore:
+    def create(self) -> _SessionData: ...
+    def get(self, session_id: str) -> _SessionData: ...
+    def set_current_plan(self, session_id: str, plan_key: Optional[str]) -> _SessionData: ...
+    def set_pending_selection(self, session_id: str, value: bool) -> None: ...
+    def recent_plans(self, session_id: str) -> List[str]: ...
+    def add_history(self, session_id: str, role: str, text: str, plan_display: str) -> None: ...
+
+class _MemorySessionStore(_ISessionStore):
+    def __init__(self) -> None:
+        self._d: Dict[str, _SessionData] = {}
+        self._lock = threading.Lock()
+
+    def create(self) -> _SessionData:
+        with self._lock:
+            sid = str(uuid.uuid4())
+            sd = _SessionData(session_id=sid)
+            self._d[sid] = sd
+            return sd
+
+    def get(self, session_id: str) -> _SessionData:
+        with self._lock:
+            if session_id not in self._d:
+                self._d[session_id] = _SessionData(session_id=session_id)
+            return self._d[session_id]
+
+    def set_current_plan(self, session_id: str, plan_key: Optional[str]) -> _SessionData:
+        with self._lock:
+            sd = self.get(session_id)
+            sd.current_plan_key = plan_key
+            sd.push_recent_plan(plan_key)
+            sd.pending_plan_selection = False
+            return sd
+
+    def set_pending_selection(self, session_id: str, value: bool) -> None:
+        with self._lock:
+            sd = self.get(session_id)
+            sd.pending_plan_selection = value
+            sd.touch()
+
+    def recent_plans(self, session_id: str) -> List[str]:
+        with self._lock:
+            return list(self.get(session_id).recent_plan_keys)
+
+    def add_history(self, session_id: str, role: str, text: str, plan_display: str) -> None:
+        with self._lock:
+            self.get(session_id).add_history(role, text, plan_display)
+
+class _DynamoSessionStore(_ISessionStore):
+    def __init__(self, table) -> None:
+        self._table = table
+
+    def _load(self, session_id: str) -> Optional[_SessionData]:
+        try:
+            resp = self._table.get_item(Key={"session_id": session_id})
+            item = resp.get("Item")
+            return _SessionData(**item) if item else None
+        except Exception as e:
+            log.warning("DDB get_item failed: %s", e)
+            return None
+
+    def _save(self, sd: _SessionData) -> None:
+        try:
+            self._table.put_item(Item=json.loads(sd.model_dump_json()))
+        except Exception as e:
+            log.warning("DDB put_item failed: %s", e)
+
+    def create(self) -> _SessionData:
+        sd = _SessionData(session_id=str(uuid.uuid4()))
+        self._save(sd)
+        return sd
+
+    def get(self, session_id: str) -> _SessionData:
+        sd = self._load(session_id)
+        if sd is None:
+            sd = _SessionData(session_id=session_id)
+            self._save(sd)
+        return sd
+
+    def set_current_plan(self, session_id: str, plan_key: Optional[str]) -> _SessionData:
+        sd = self.get(session_id)
+        sd.current_plan_key = plan_key
+        sd.push_recent_plan(plan_key)
+        sd.pending_plan_selection = False
+        self._save(sd)
+        return sd
+
+    def set_pending_selection(self, session_id: str, value: bool) -> None:
+        sd = self.get(session_id)
+        sd.pending_plan_selection = value
+        self._save(sd)
+
+    def recent_plans(self, session_id: str) -> List[str]:
+        return list(self.get(session_id).recent_plan_keys)
+
+    def add_history(self, session_id: str, role: str, text: str, plan_display: str) -> None:
+        sd = self.get(session_id)
+        sd.add_history(role, text, plan_display)
+        self._save(sd)
+
+_STORE: _ISessionStore = _DynamoSessionStore(_ddb_table) if _ddb_table else _MemorySessionStore()
+
+def _recent_display_titles(session_id: str) -> List[str]:
+    keys = _STORE.recent_plans(session_id)
+    if keys:
+        return [_display_name_for_plan_key(k) for k in keys]
+    titles = _list_plan_display_titles()
+    return sorted(titles)[:3]
+
+# ------------------------------------------------------------------------------
+# Bedrock helpers
+# ------------------------------------------------------------------------------
+def _bedrock_infer(
+    messages: List[Dict],
+    max_tokens: int,
+    model_id: str,
+    profile_arn: Optional[str] = None,
+) -> str:
+    client = boto3.client("bedrock-runtime", region_name=AWS_REGION)
+    model_or_profile = (profile_arn or model_id).strip()
+
+    body = {
+        "anthropic_version": "bedrock-2023-05-31",
+        "max_tokens": max_tokens,
+        "messages": messages,
+    }
+    try:
+        resp = client.invoke_model(
+            modelId=model_or_profile,
+            body=json.dumps(body).encode("utf-8"),
+            accept="application/json",
+            contentType="application/json",
+        )
+        payload = resp["body"].read().decode("utf-8")
+        data = json.loads(payload)
+        out = []
+        for block in (data.get("content") or []):
+            if block.get("type") == "text" and "text" in block:
+                out.append(block["text"])
+        return "".join(out).strip()
+    except Exception as e:
+        log.warning("Bedrock invoke_model error (%s): %s", model_or_profile, e)
+        return ""
+
+def _router_infer(messages: List[Dict], max_tokens: int = 64) -> str:
+    profile = ROUTER_PROFILE_ARN if ROUTER_PROFILE_ARN else None
+    return _bedrock_infer(messages, max_tokens=max_tokens, model_id=ROUTER_MODEL_ID, profile_arn=profile)
+
+def _answer_infer(prompt: str, max_tokens: int = 800) -> str:
+    return _bedrock_infer(
+        messages=[{"role": "user", "content": [{"type": "text", "text": prompt}]}],
+        max_tokens=max_tokens,
+        model_id=ANSWER_MODEL_ID,
+        profile_arn=(ANSWER_PROFILE_ARN or None),
+    )
+
+# ------------------------------------------------------------------------------
+# LLM-based intent & plan resolution (router = Claude 3)
+# ------------------------------------------------------------------------------
+_SWITCH_OBVIOUS_PATTERNS = [
+    "change my plan",
+    "switch my plan",
+    "change plan",
+    "switch plan",
+    "use a different plan",
+    "another plan",
+    "different plan",
+    "i want to change my plan",
+    "i want to change plan",
+    "i have questions on another plan",
+    "select a plan",
+    "pick a plan",
+    "set plan to",
+    "set the plan to",
+    "set plan as",
+    "switch to",
+    "change to",
+    "change plan to",
+    "switch plan to",
+    "update plan to",
+    "change the plan to",
+    "context set to",
+    "use plan",
+]
+
+def _intent_is_switch_plan(message: str) -> bool:
+    msg = (message or "").strip()
+    if not msg:
+        return False
+    low = msg.lower()
+    if any(x in low for x in _SWITCH_OBVIOUS_PATTERNS):
+        return True
+    prompt = (
+        "You are a strict router. Determine if the user wants to SWITCH the active 'plan' context.\n"
+        "Consider phrases like: change/switch my plan, use a different plan, pick/select a plan, set plan to X.\n"
+        "Output exactly one token: SWITCH or NONE.\n"
+        f"User: {msg}\n"
+        "Answer:"
+    )
+    verdict = _router_infer(
+        messages=[{"role": "user", "content": [{"type": "text", "text": prompt}]}],
+        max_tokens=8,
+    ).lower()
+    return "switch" in verdict
+
+def _llm_resolve_plan(user_text: str, all_display_titles: List[str]) -> Optional[str]:
+    if not user_text or not all_display_titles:
+        return None
+
+    # If the text exactly equals a display title, accept immediately.
+    low = user_text.strip().lower()
+    for t in all_display_titles:
+        if low == t.lower():
+            return t
+
+    MAX_CANDIDATES = int(os.environ.get("PLAN_PICKER_MAX", "150"))
+    titles = all_display_titles[:MAX_CANDIDATES]
+
+    indexed = "\n".join([f"{i+1}. {t}" for i, t in enumerate(titles)])
+    guide = (
+        "You are a strict selector. Choose the SINGLE best matching plan from the list using the user's text.\n"
+        "If there is no confident match, output exactly: NONE\n"
+        "Rules:\n"
+        " - Respond ONLY with the index number (e.g., 7) or NONE.\n"
+        " - Prefer exact/near-exact name matches; user may give partials like 'jo fr' for 'Joe Frazier ...'.\n"
+        " - Do not invent names; choose from the list only.\n"
+    )
+    question = (
+        f"{guide}\n\n"
+        f"User text: {user_text}\n\n"
+        f"Plans:\n{indexed}\n\n"
+        "Answer:"
+    )
+    out = _router_infer(
+        messages=[{"role": "user", "content": [{"type": "text", "text": question}]}],
+        max_tokens=8,
+    ).strip()
+
+    if not out or "none" in out.lower():
+        return None
+
+    m = re.search(r"\d+", out)
+    if not m:
+        return None
+    idx = int(m.group(0))
+    if 1 <= idx <= len(titles):
+        return titles[idx - 1]
+    return None
+
+# ------------------------------------------------------------------------------
+# Retrieval helpers
+# ------------------------------------------------------------------------------
+def _index_path_for_plan(plan_key: str) -> Path:
+    folder = _normalize(plan_key).replace(" ", "_")
+    return (_party_index_root() / folder).resolve()
+
+def _load_vectorstore(plan_key: str) -> FAISS:
+    idx = _index_path_for_plan(plan_key)
+    if not idx.exists():
+        raise HTTPException(status_code=404, detail=f"Index not found for plan '{plan_key}'")
+    emb = BedrockEmbeddings(region_name=AWS_REGION, model_id=settings.EMBEDDING_MODEL_ID)
+    return FAISS.load_local(str(idx), embeddings=emb, allow_dangerous_deserialization=True)
+
+def _retrieve_chunks(plan_key: str, query: str, k: int = 20) -> List[PromptChunk]:
+    vs = _load_vectorstore(plan_key)
+    docs = vs.similarity_search(query, k=k)
+    return [PromptChunk(text=d.page_content, metadata=d.metadata or {}) for d in docs]
+
+def _classify_query_type(q: str) -> Literal["plan", "service"]:
+    t = (q or "").lower()
+    service_triggers = [
+        "fee", "recordkeeping", "hardship", "optional service", "qdia",
+        "additional plan services", "effective date", "schedule", "pricing", "service"
+    ]
+    return "service" if any(w in t for w in service_triggers) else "plan"
+
+# ------------------------------------------------------------------------------
+# Persist retrieved chunks (for audit)
+# ------------------------------------------------------------------------------
+def _format_chunk_block(idx: int, ch: PromptChunk) -> str:
+    md = ch.metadata or {}
+    md_lines = []
+    for k in ["party_key", "doc_type", "s3_key", "title", "chunk_id"]:
+        if k in md:
+            md_lines.append(f"{k}: {md[k]}")
+    for k in sorted(set(md.keys()) - {"party_key", "doc_type", "s3_key", "title", "chunk_id"}):
+        md_lines.append(f"{k}: {md[k]}")
+    meta_block = "\n".join(md_lines) if md_lines else "(no metadata)"
+    text = ch.text.strip()
+    return f"---- Chunk {idx+1} ----\n{meta_block}\n\n{text}\n"
+
+def _save_chunks_for_answer(
+    session_id: str,
+    plan_key: str,
+    qtype: Literal["plan", "service"],
+    query: str,
+    chunks: List[PromptChunk],
+) -> str:
+    plan_folder = _normalize(plan_key).replace(" ", "_")
+    out_dir = (settings.CHUNKS_FOR_ANS_DIR / plan_folder)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    ts_utc = datetime.now(timezone.utc).isoformat()
+    short_ts = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
+    qhash = hashlib.sha1(query.encode("utf-8")).hexdigest()[:8]
+    txt_fname = f"{short_ts}_{qtype}_{qhash}.txt"
+    txt_fpath = out_dir / txt_fname
+
+    header = (
+        "=== Retrieved Chunks Used For Answer ===\n"
+        f"timestamp_utc: {ts_utc}\n"
+        f"session_id: {session_id}\n"
+        f"plan_key: {plan_key}\n"
+        f"plan_display: {_display_name_for_plan_key(plan_key)}\n"
+        f"query_type: {qtype}\n"
+        f"query: {query}\n"
+        "========================================\n\n"
+    )
+    body = "".join(_format_chunk_block(i, ch) for i, ch in enumerate(chunks))
+    txt_fpath.write_text(header + body, encoding="utf-8")
+    return str(txt_fpath)
+
+# ------------------------------------------------------------------------------
+# Routes
+# ------------------------------------------------------------------------------
+@router.get("/health")
+def health():
+    return {"status": "ok", "service": "chatbot"}
+
+@router.get("/build-indices")
+def build_indices():
+    build_party_indices()
+    return {"status": "built", "plans": _available_plan_keys()}
+
+@router.get("/plans", response_model=PlanListOut)
+def list_plans():
+    return PlanListOut(plans=_list_plan_display_titles())
+
+@router.post("/session", response_model=SessionCreateOut)
+def create_session():
+    """
+    Starts a session. Frontend should call POST /chat next with a greeting or empty message
+    to get the initial plan suggestions (recent_plans will show 3 alpha-sorted names
+    on a brand-new session; plan_options always returns the full list).
+    """
+    sd = _STORE.create()
+    return SessionCreateOut(session_id=sd.session_id)
+
+@router.post("/chat", response_model=ChatMsgOut)
+def chat(body: ChatMsgIn):
+    """
+    Updated behavior:
+    - We set `pending_plan_selection=True` whenever we show the plan picker.
+    - If `pending_plan_selection` is True, the next message is treated as a plan selection
+      (accepts exact radio/pill title OR fuzzy partial via LLM) and context is switched immediately.
+    - Outside of pending selection, mid-chat partials never switch the plan unless explicit switch intent.
+    """
+    plan_keys = _available_plan_keys()
+    if not plan_keys:
+        raise HTTPException(status_code=404, detail="No plan indices available. Build indices first.")
+
+    msg = (body.message or "").strip()
+    sd = _STORE.get(body.session_id)
+    active_key = sd.current_plan_key
+
+    # Helper to set picker mode
+    def _show_picker_response(text: str, current_key: Optional[str]) -> ChatMsgOut:
+        _STORE.set_pending_selection(body.session_id, True)
+        resp = ChatMsgOut(
+            session_id=body.session_id,
+            response=text,
+            current_plan=_current_plan_or_default(current_key),
+            show_plan_picker=True,
+            plan_options=_list_plan_display_titles(),
+            recent_plans=_recent_display_titles(body.session_id),
+        )
+        _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+        return resp
+
+    if not msg:
+        # Initial nudge: show picker with full options + recent_plans tray.
+        return _show_picker_response(
+            "Please tell me your Plan Name (type a few letters like 'jo fr') or pick below.",
+            active_key
+        )
+
+    # Log user message w/ current plan display
+    _STORE.add_history(body.session_id, "user", msg, _current_plan_or_default(active_key))
+
+    # Greeting path with no active plan — prompt to pick (with initial 3 alpha suggestions)
+    if _is_greeting_message(msg) and not active_key:
+        return _show_picker_response(
+            "Alright! Please start by telling me your Plan Name. "
+            "You can type a few letters (e.g., 'jo fr') or pick from the suggestions below.",
+            None
+        )
+
+    # If we are expecting a plan selection (radio/pill or partial), resolve immediately.
+    if sd.pending_plan_selection:
+        display_titles = _list_plan_display_titles()
+        chosen_display = _llm_resolve_plan(msg, display_titles)
+        if chosen_display:
+            # map chosen display back to its underlying key
+            chosen_key = None
+            low_chosen = chosen_display.lower()
+            for k in plan_keys:
+                if low_chosen == _display_name_for_plan_key(k).lower():
+                    chosen_key = k
+                    break
+            if chosen_key:
+                sd = _STORE.set_current_plan(body.session_id, chosen_key)  # clears pending flag
+                resp = ChatMsgOut(
+                    session_id=body.session_id,
+                    response=f"Great! Context set to {chosen_display}. All queries hereafter will use this plan.",
+                    current_plan=_current_plan_or_default(sd.current_plan_key),
+                    show_plan_picker=False,
+                    plan_options=[],
+                    recent_plans=_recent_display_titles(body.session_id),
+                )
+                _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+                return resp
+
+        # Could not resolve selection; keep the picker open.
+        return _show_picker_response(
+            "I couldn't match that to a plan. Please type more letters (e.g., 'joe fraz') or pick below.",
+            active_key
+        )
+
+    # Explicit switch intent mid-chat -> resolve + set context immediately
+    if _intent_is_switch_plan(msg):
+        display_titles = _list_plan_display_titles()
+        chosen_display = _llm_resolve_plan(msg, display_titles)
+        if chosen_display:
+            chosen_key = None
+            low_chosen = chosen_display.lower()
+            for k in plan_keys:
+                if low_chosen == _display_name_for_plan_key(k).lower():
+                    chosen_key = k
+                    break
+            if chosen_key:
+                sd = _STORE.set_current_plan(body.session_id, chosen_key)
+                resp = ChatMsgOut(
+                    session_id=body.session_id,
+                    response=f"Great! Context set to {chosen_display}. All queries hereafter will use this plan.",
+                    current_plan=_current_plan_or_default(sd.current_plan_key),
+                    show_plan_picker=False,
+                    plan_options=[],
+                    recent_plans=_recent_display_titles(body.session_id),
+                )
+                _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+                return resp
+
+        # Couldn't resolve; show picker and set pending flag
+        return _show_picker_response(
+            "Got it. Tell me the Plan Name (you can type partial like 'jo fr'), or pick from the options below.",
+            active_key
+        )
+
+    # No active plan yet (first-time context): allow direct resolution from free text
+    if not active_key:
+        display_titles = _list_plan_display_titles()
+        chosen_display = _llm_resolve_plan(msg, display_titles)
+        if chosen_display:
+            chosen_key = None
+            low_chosen = chosen_display.lower()
+            for k in plan_keys:
+                if low_chosen == _display_name_for_plan_key(k).lower():
+                    chosen_key = k
+                    break
+            if chosen_key:
+                sd = _STORE.set_current_plan(body.session_id, chosen_key)
+                resp = ChatMsgOut(
+                    session_id=body.session_id,
+                    response=f"Great! Context set to {chosen_display}. All queries hereafter will use this plan.",
+                    current_plan=_current_plan_or_default(sd.current_plan_key),
+                    show_plan_picker=False,
+                    plan_options=[],
+                    recent_plans=_recent_display_titles(body.session_id),
+                )
+                _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+                return resp
+
+        # Still no resolution — show picker and set pending
+        return _show_picker_response(
+            "Alright! Please start by telling me your Plan Name. "
+            "You can type a few words of the Plan Name, or select from the suggestions below.",
+            None
+        )
+
+    # Normal Q&A within the active plan (no switching on partials)
+    qtype: Literal["plan", "service"] = _classify_query_type(msg)
+    chunks: List[PromptChunk] = _retrieve_chunks(active_key, msg, k=10)
+    if not chunks:
+        resp = ChatMsgOut(
+            session_id=body.session_id,
+            response="Result\nNo relevant context found.",
+            current_plan=_current_plan_or_default(active_key),
+            show_plan_picker=False,
+            plan_options=[],
+            recent_plans=_recent_display_titles(body.session_id),
+        )
+        _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+        return resp
+
+    _save_chunks_for_answer(
+        session_id=body.session_id,
+        plan_key=active_key,
+        qtype=qtype,
+        query=msg,
+        chunks=chunks,
+    )
+
+    # Optional demo snippet (by display name)
+    plan_display_name = _display_name_for_plan_key(active_key)
+    plan_display_norm = _normalize(plan_display_name)
+    demo_chunk_text = None
+    if plan_display_norm == "tri state":
+        demo_chunk_text = "The effective date of the active Annual Schedule of Fees is 1/1/2018."
+    elif plan_display_norm == "joe frazier":
+        demo_chunk_text = "The effective date of the fees for Joe Frazier is 2/1/2018."
+    elif plan_display_norm == "knight train":
+        demo_chunk_text = "The effective date of the fees for Knight Train is 1/1/2023."
+
+    pre_prompt = create_service_prompt(msg, chunks) if qtype == "service" else create_plan_prompt(msg, chunks)
+    prompt = (demo_chunk_text + "\n\n" + pre_prompt) if demo_chunk_text else pre_prompt
+    log.debug("FINAL PROMPT TO CLAUDE 4 (answer): %s", prompt)
+
+    answer = (_answer_infer(prompt).strip() or "Result\nNo answer could be generated from the provided context.")
+    resp = ChatMsgOut(
+        session_id=body.session_id,
+        response=answer,
+        current_plan=_current_plan_or_default(active_key),
+        show_plan_picker=False,
+        plan_options=[],
+        recent_plans=_recent_display_titles(body.session_id),
+    )
+    _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+    return resp
