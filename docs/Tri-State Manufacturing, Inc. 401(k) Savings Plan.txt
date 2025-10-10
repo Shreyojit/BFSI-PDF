@@ -1,0 +1,1660 @@
+page_002
+
+
+Standardized 401(k) Plan
+
+ADOPTION AGREEMENT #006
+STANDARDIZED 401(k) PLAN
+
+The undersigned Employer, by executing this Adoption Agreement, establishes a retirement plan and trust (collectively "Plan") under the Defined Contribution Prototypes Plan and Trust, basic plan document #11. The Employer, subject to the Employer's Adoption Agreement elections, adopts fully the Prototype Plan and Trust provisions. This Adoption Agreement, the basic plan document and any attached Appendices or agreements permitted or referenced herein, constitute the Employer's entire plan and trust document. All "Election" references within this Adoption Agreement are Adoption Agreement Elections. All "Article" or "Section" references are basic plan document references. Numbers in parentheses which follow election numbers are basic plan document references. Where an Adoption Agreement election calls on the Employer to supply text, the Employer (without altering the content of any existing printed text) may lengthen any space or line, or create additional lines. When Employer-supplied text uses terms substantially similar to existing printed options, all clarifications and caveats applicable to the printed options apply to the Employer-supplied text unless the context requires otherwise. The Employer makes the following elections granted under the corresponding provisions of the basic plan document. The Employer should complete this Adoption Agreement in a manner which is consistent with the restrictions contained in Rev. Proc. 2011-49 as applicable to Standardized Plans. For example, all benefits, rights and features must be currently available to all Participants; allocation computation must be nondiscriminatory; the eligibility requirements for HCEs may not be more favorable than for NHCEs and certain other conditions and limitations apply. Failure to observe these restrictions may result in loss of reliance on the Plan's Opinion Letter.
+
+ARTICLE I – DEFINITIONS
+1. EMPLOYER (1.24)
+Name: Test Case 3 - Tri-State Manufacturing, Inc.
+Address: 1882 South Boulevard, Atlanta, GA 30341
+Phone number: (404) 555-7622
+Taxpayer Identification Number (TIN): 38-987654
+E-mail (optional): TCI@TCI.com
+Employer’s Taxable Year (optional): December 31
+2. PLAN (1.42)
+Name: Tri-State Manufacturing, Inc. 401(k) Savings Plan
+Plan number: 224
+Trust EIN (optional): 39-123456
+3. PLAN LIMITATION YEAR (1.44/1.34)
+Plan Year and Limitation Year mean the 12 consecutive month period (except for a short Plan Year). Complete any applicable blanks under Election 3 with a specific date, e.g., June 30 OR the last day of February OR the first Tuesday in January, in the case of a Short Plan Year or a Short Limitation Year, include the date, e.g., May 1, 2014.
+
+Plan Year (Choose one of (a) or (b). Choose (c) if applicable):
+
+(a) [x] December 31
+(b) [ ] Fiscal Plan Year: ending _______________
+(c) [ ] Short Plan Year: commencing ___________ and ending ___________
+Limitation Year (Choose one of (d) or (e). Choose (f) if applicable):
+
+(d) [x] Generally same as Plan Year. The Limitation Year is the same as the Plan Year except where the Plan Year is a short year in which event the Limitation Year is always a 12 month period, unless the short Plan Year (and short Limitation Year) result from a Plan amendment.
+(e) [ ] Short Limitation Year: ending _______________
+(f) [ ] Short Limitation Year: commencing ___________ and ending ___________
+© 2014 _________ or its suppliers
+
+
+
+
+
+page_003
+
+
+
+Standardized 401(k) Plan
+
+4. EFFECTIVE DATE (1.20). The Employer's adoption of the Plan is a (Choose one of (a) or (b). Complete (c) if new plan OR complete (c) and (d) if an amendment and restatement. Choose (e) and (f) if applicable.):  
+(a) [] New Plan.  
+(b) [X] Restated Plan.  
+
+PPA RESTATEMENT (leave blank if not applicable)  
+(1) [ ] This is an amendment and restatement to bring a plan into compliance with the Pension Protection Act of 2006 ("PPA") and other legislative and regulatory changes.  
+
+Initial Effective Date of Plan (enter date)  
+(c) [X] 1/1/1988 (hereinafter called the "Effective Date" unless 4(d) is entered below)  
+
+Restatement Effective Date (If this is an amendment and restatement, enter effective date of the restatement.)  
+(d) [X] ____________1/1/2018____________ (enter month day, year; may enter a restatement date that is the first day of the current Plan Year. The Plan contains appropriate retroactive effective dates with respect to provisions for the appropriate laws if the Plan is a PPA Restatement.) (hereinafter called the "Effective Date")  
+
+[Note: See Section 1.54 for the definition of Restated Plan. If this Plan is a PPA Restatement, the PPA restatement Effective Date may be a current date (as the basic plan document supplies the Effective Dates of various PPA and other provisions) or may be a retroactive date. If specific Plan provisions, as reflected in this Adoption Agreement and the basic plan documents, do not have the Effective Date stated in this Election 4, indicate as such in the election where called for or in Appendix A.]  
+
+(e) [ ] Restatement of surviving and merging plans. The Plan restates two (or more) plans (Complete 4(c) and (d) above for this (surviving) Plan. Complete (1) below for the merging plan. Choose (2) if applicable. Unless otherwise noted, the restated Effective Date with regard to a merging plan is the later of the date of the merger or the restated Effective Date of this Plan.):  
+(1) Merging plan. The ___________________________ Plan was or will be merged into this surviving Plan as of: ________________________. The merging plan's restated Effective Date is: ________________________. The merging plan's original Effective Date was: ________________________.  
+
+[See the Note under Election 4(d) if this document is the merging plan's PPA restatement.]  
+
+(2) [ ] Additional merging plans. The following additional plans were or will be merged into this surviving Plan (Complete a. and b. as applicable.):  
+
+| Name of merging plan | Merger date | Restated Effective Date | Original Effective Date |
+|----------------------|-------------|--------------------------|---------------------------|
+| a.                   |             |                          |                           |
+| b.                   |             |                          |                           |
+
+(f) [ ] Special Effective Date for Elective Deferral provisions: ________________________  
+
+[Note: If Elective Deferral provision is not effective as of the Initial Effective Date or the Restatement Effective Date, enter the date as of which the Elective Deferral provision is effective. The Special Effective Date may not precede the date on which the Employer adopted the Plan.]  
+
+5. TRUSTEE (1.67). The Trustee executing this Adoption Agreement is (Choose one or more of (a), (b), or (c). Choose (d) if applicable.):  
+(a) [ ] A discretionary Trustee. See Section 8.02(A).  
+(b) [x] A nondiscretionary (directed) Trustee or Custodian. See Section 8.02(B).  
+(c) [ ] A Trustee under the: ___________________________ (specify name of trust), a separate trust agreement the Trustee has executed and that the IRS has approved for use with this Plan. Under this Election 5(c) the Trustee is not executing the Adoption Agreement and Article VIII of the basic plan document does not apply, except as indicated otherwise in the separate trust agreement. See Section 8.11(C).  
+(d) [ ] Use of non-approved trust. A Trustee under the: ___________________________ (specify name of trust), a separate trust agreement the Trustee has executed for use with this Plan. Under this Election 5(d) the Trustee is not executing the Adoption Agreement and Article VIII of the basic plan document does not apply, except as indicated otherwise in the separate trust agreement. See Section 8.11(C). [Caution: Election 5(d) will result in the Plan losing reliance on its Opinion Letter and the Plan will be an individually designed plan.]  
+
+6. CONTRIBUTION TYPES (1.12). The selections made below should correspond with the selections made under Article III of this Adoption Agreement. (If this is a frozen Plan (i.e., all contributions have ceased), choose (a) only.):  
+
+© 2014 or its suppliers  
+2
+
+
+
+
+
+page_004
+
+
+Standardized 401(k) Plan
+
+Frozen Plan. See Sections 3.01(J) and 11.04.  
+(a) [ ] Contributions cease. All Contributions have ceased or will cease (Plan is frozen).  
+(1) [ ] Effective date of freeze: ________________________ [Note: Effective date is optional unless this is the amendment or restatement to freeze the Plan.]  
+
+[Note: Elections 20 through 30 and Elections 36 through 38 do not apply to any Plan Year in which the Plan is frozen.]  
+
+Contributions. The Employer and/or Participants, in accordance with the Plan terms, make the following Contribution Types to the Plan/Trust (Choose one or more of (b) through (h).):  
+(b) [X] Pre-Tax Deferrals. See Section 3.02 and Elections 20-23, and 34.  
+(1) [X] Roth Deferrals. See Section 3.02(E) and Elections 20, 21, and 23. [Note: The Employer may not limit Elective Deferrals to Roth Deferrals only.]  
+(c) [ ] Matching. See Sections 1.35 and 3.03 and Elections 24-26. [Note: The Employer may make an Operational QMAC without electing 6(c). See Section 3.03(C)(2). Do not elect for a safe harbor plan; use 6(e) instead.]  
+(d) [X] Nonelective. See Sections 1.38 and 3.04 and Elections 27-29. [Note: The Employer may make an Operational QNEC without electing 6(d). See Section 3.04(C)(2).]  
+(e) [ ] Safe Harbor/Additional Matching. The Plan is (or pursuant to a delayed election, may be) a safe harbor 401(k) Plan. The Employer will make (or under a delayed election, may make) Safe Harbor Contributions as it elects in Election 30. The Employer may or may not make Additional Matching Contributions as it elects in Election 30. See Election 26 as to matching Catch-Up Deferrals. See Section 3.05.  
+(f) [ ] Employee (after-tax). See Section 3.09 and Election 36.  
+(g) [ ] SIMPLE 401(k). The Plan is a SIMPLE 401(k) Plan. See Section 3.10. [Note: The Employer electing 6(g) must elect a calendar year under 3(a) and may not elect any other Contribution Types except under Elections 6(b) and 6(h).]  
+(h) [ ] Designated IRA. See Section 3.12 and Election 37.  
+
+7. DISABILITY (1.16). Disability means (Choose one of (a) or (b).):  
+(a) [X] Basic Plan. Disability as defined in Section 1.16(A).  
+(b) [ ] Describe: ________________________________________________________________  
+
+[Note: The Employer may elect an alternative definition of Disability for purposes of Plan distributions. However, the use of an alternative definition may result in loss of favorable tax treatment of the Disability distribution.]  
+
+8. EXCLUDED EMPLOYEES (1.22(D)). The following Employees are not Eligible Employees but are Excluded Employees (Choose one of (a), (b), or (c).):  
+(a) [ ] No Excluded Employees. There are no additional excluded Employees under the Plan as to any Contribution Type (skip to Election 9).  
+(b) [X] Exclusions - same for all Contribution Types. The following Employees are Excluded Employees for all Contribution Types (Choose one or more of (e) through (g). Choose column (1) for each exclusion elected at (e) through (g).):  
+(c) [ ] Exclusions - different exclusions apply. The following Employees are Excluded Employees for the designated Contribution Type (Choose one or more of (d) through (g). Choose Contribution Type as applicable.):  
+
+[Note: For this Election 8, Elective Deferrals includes Pre-Tax Deferrals, Roth Deferrals, Employee Contributions and Safe Harbor Contributions. Matching includes all Matching Contributions except Safe Harbor Matching Contributions. Nonelective includes all Nonelective Contributions except Safe Harbor Nonelective Contributions.]  
+
+Exclusions | (1) All Contributions | (2) Elective Deferrals | (3) Matching | (4) Nonelective  
+---|---|---|---|---  
+(d) [ ] No exclusions. No exclusions as to the designated Contribution Type. | N/A (See Election 8(a)) | [ ] | [ ] | [ ]  
+(e) [X] Collective Bargaining (union) Employees. As described in Code §410(b)(3)(A). See Section 1.22(D)(1). | [X] OR | [ ] | [ ] | [ ]  
+(f) [X] Non-Resident Aliens. As described in Code §410(b)(3)(C). See Section 1.22(D)(2). | [ ] OR | [ ] | [ ] | [ ]  
+(g) [ ] HCEs. See Section 1.22(E). See Election 30(f) | [ ] OR | [ ] | [ ] | [ ]  
+
+© 2014 or its suppliers  
+3
+
+
+
+
+page_005
+
+
+Standardized 401(k) Plan
+
+as to exclusion of some or all HCEs from  
+Safe Harbor Contributions.  
+
+9. COMPENSATION (1.11(B)). The following base Compensation (as adjusted under Elections 10 and 11) applies in allocating Employer Contributions (or the designated Contribution Type) (Choose one or more of (a) through (d) and choose Contribution Type as applicable.):  
+
+[Note: For this Election 9 all definitions include Elective Deferrals unless excluded under Election 11. See Section 1.11(D). Unless described otherwise in Election 9(d), Elective Deferrals includes Pre-Tax Deferrals, Roth Deferrals and Employee Contributions, Matching includes all Matching Contributions and Nonelective includes all Nonelective Contributions. In applying any Plan definition which references Section 1.11 Compensation, where the Employer in this Election 9 elects more than one Compensation definition for allocation purposes, the Plan Administrator will use W-2 Wages for other Plan definitions of Compensation if the Employer has elected W-2 Wages for any Contribution Type under Election 9. If the Employer has not elected W-2 Wages, the Plan Administrator for such other Plan definitions will use 415 Compensation.]  
+
+(1) All Contributions | (2) Elective Deferrals | (3) Matching | (4) Nonelective  
+---|---|---|---|---  
+(a) [x] W-2 Wages (plus Elective Deferrals). See Section 1.11(B)(1). | [x] OR | [ ] | [ ] | [ ]  
+(b) [ ] Code §3401 Federal Income Tax Withholding Wages (plus Elective Deferrals). See Section 1.11(B)(2). | [ ] OR | [ ] | [ ] | [ ]  
+(c) [ ] 415 Compensation (simplified). See Section 1.11(B)(3). [Note: The Employer may elect an alternative "general 415 Compensation" definition by electing 9(c) and by electing the alternative definition in Appendix B. See Section 1.11(B)(4).] | [ ] OR | [ ] | [ ] | [ ]  
+(d) [ ] Describe Compensation by Contribution Type: _____________________________________________________________  
+
+[Note: Under Election 9(d), the Employer may define the Contribution Type column headings in a manner which differs from the "all-inclusive" description in the Note immediately preceding Election 9(a) (e.g., Compensation for Safe Harbor Matching Contributions means W-2 Wages and for Additional Matching Contributions means 415 Compensation). Any Compensation elected must be nondiscriminatory under Treas. §1.414(s).]  
+
+10. PRE-ENTRY/POST-SEVERANCE COMPENSATION (1.11(H)/(I)). Compensation under Election 9:  
+
+[Note: For this Election 10, unless described otherwise in Elections 10(c) or (n), Elective Deferrals includes Pre-Tax Deferrals, Roth Deferrals and Employee Contributions, Matching includes all Matching Contributions and Nonelective includes all Nonelective Contributions.]  
+
+Pre-Entry Compensation (Choose one of (a) or (b). Choose Contribution Type as applicable.):  
+
+(1) All Contributions | (2) Elective Deferrals | (3) Matching | (4) Nonelective  
+---|---|---|---|---  
+(a) [x] Plan Year. Compensation for the entire Plan Year which includes the Participant's Entry Date. | [ ] OR | [ ] | [ ] | [ ]  
+(b) [ ] Participating Compensation. Only Participating Compensation. See Section 1.11(H)(1). | [x] OR | [ ] | [ ] | [ ]  
+
+[Note: Under a Participating Compensation election, in applying any Adoption Agreement elected contribution limit or formula, the Plan Administrator will count only the Participant's Participating Compensation. See Section 1.11(H)(1) as to plan disaggregation.]  
+
+(c) [ ] Describe Pre-Entry Compensation by Contribution Type: _____________________________________________________________  
+
+[Note: Under Election 10(c), the Employer may define the Contribution Type column headings in a manner which differs from the "all-inclusive" description in the Note immediately preceding Pre-Entry Compensation (e.g., Compensation for Nonelective Contributions is Participating Compensation and for Safe Harbor Nonelective Contributions is Plan Year Compensation). Any Compensation elected must be nondiscriminatory under Treas. §1.414(s).]  
+
+© 2014 or its suppliers  
+4
+
+
+page_005
+
+
+Standardized 401(k) Plan
+
+as to exclusion of some or all HCEs from  
+Safe Harbor Contributions.  
+
+9. COMPENSATION (1.11(B)). The following base Compensation (as adjusted under Elections 10 and 11) applies in allocating Employer Contributions (or the designated Contribution Type) (Choose one or more of (a) through (d) and choose Contribution Type as applicable.):  
+
+[Note: For this Election 9 all definitions include Elective Deferrals unless excluded under Election 11. See Section 1.11(D). Unless described otherwise in Election 9(d), Elective Deferrals includes Pre-Tax Deferrals, Roth Deferrals and Employee Contributions, Matching includes all Matching Contributions and Nonelective includes all Nonelective Contributions. In applying any Plan definition which references Section 1.11 Compensation, where the Employer in this Election 9 elects more than one Compensation definition for allocation purposes, the Plan Administrator will use W-2 Wages for other Plan definitions of Compensation if the Employer has elected W-2 Wages for any Contribution Type under Election 9. If the Employer has not elected W-2 Wages, the Plan Administrator for such other Plan definitions will use 415 Compensation.]  
+
+(1) All Contributions | (2) Elective Deferrals | (3) Matching | (4) Nonelective  
+---|---|---|---|---  
+(a) [x] W-2 Wages (plus Elective Deferrals). See Section 1.11(B)(1). | [x] OR | [ ] | [ ] | [ ]  
+(b) [ ] Code §3401 Federal Income Tax Withholding Wages (plus Elective Deferrals). See Section 1.11(B)(2). | [ ] OR | [ ] | [ ] | [ ]  
+(c) [ ] 415 Compensation (simplified). See Section 1.11(B)(3). [Note: The Employer may elect an alternative "general 415 Compensation" definition by electing 9(c) and by electing the alternative definition in Appendix B. See Section 1.11(B)(4).] | [ ] OR | [ ] | [ ] | [ ]  
+(d) [ ] Describe Compensation by Contribution Type: _____________________________________________________________  
+
+[Note: Under Election 9(d), the Employer may define the Contribution Type column headings in a manner which differs from the "all-inclusive" description in the Note immediately preceding Election 9(a) (e.g., Compensation for Safe Harbor Matching Contributions means W-2 Wages and for Additional Matching Contributions means 415 Compensation). Any Compensation elected must be nondiscriminatory under Treas. §1.414(s).]  
+
+10. PRE-ENTRY/POST-SEVERANCE COMPENSATION (1.11(H)/(I)). Compensation under Election 9:  
+
+[Note: For this Election 10, unless described otherwise in Elections 10(c) or (n), Elective Deferrals includes Pre-Tax Deferrals, Roth Deferrals and Employee Contributions, Matching includes all Matching Contributions and Nonelective includes all Nonelective Contributions.]  
+
+Pre-Entry Compensation (Choose one of (a) or (b). Choose Contribution Type as applicable.):  
+
+(1) All Contributions | (2) Elective Deferrals | (3) Matching | (4) Nonelective  
+---|---|---|---|---  
+(a) [ ] Plan Year. Compensation for the entire Plan Year which includes the Participant's Entry Date. | [ ] OR | [ ] | [ ] | [ ]  
+(b) [x] Participating Compensation. Only Participating Compensation. See Section 1.11(H)(1). | [x] OR | [ ] | [ ] | [ ]  
+
+[Note: Under a Participating Compensation election, in applying any Adoption Agreement elected contribution limit or formula, the Plan Administrator will count only the Participant's Participating Compensation. See Section 1.11(H)(1) as to plan disaggregation.]  
+
+(c) [ ] Describe Pre-Entry Compensation by Contribution Type: _____________________________________________________________  
+
+[Note: Under Election 10(c), the Employer may define the Contribution Type column headings in a manner which differs from the "all-inclusive" description in the Note immediately preceding Pre-Entry Compensation (e.g., Compensation for Nonelective Contributions is Participating Compensation and for Safe Harbor Nonelective Contributions is Plan Year Compensation). Any Compensation elected must be nondiscriminatory under Treas. §1.414(s).]  
+
+© 2014 or its suppliers  
+4
+
+
+
+page_006
+
+
+
+Standardized 401(k) Plan
+
+Post-Severance Compensation. The following adjustments apply to Post-Severance Compensation paid within any applicable time period as may be required (Choose one of (d), (e), or (f).):  
+
+[Note: Under the basic plan document, if the Employer does not elect any adjustments, post-severance compensation includes regular pay, leave cashouts, and deferred compensation, and excludes military and disability continuation payments.]  
+
+(d) [ ] None. The Plan includes post-severance regular pay, leave cashouts, and deferred compensation, and excludes post-severance military and disability continuation payments as to any Contribution Type except as required under the basic plan document (skip to Election 11).  
+
+(e) [ ] Same for all Contribution Types. The following adjustments to Post-Severance Compensation apply to all Contribution Types (Choose one or more of (h) through (n). Choose column (1) for each option elected at (h) through (m).):  
+
+(f) [ ] Adjustments - different conditions apply. The following adjustments to Post-Severance Compensation apply to the designated Contribution Types (Choose one or more of (g) through (n). Choose Contribution Type as applicable.):  
+
+Post-Severance Compensation:  
+(1) All Contributions | (2) Elective Deferrals | (3) Matching | (4) Nonelective  
+---|---|---|---|---  
+(g) [ ] None. The Plan takes into account Post-Severance Compensation as to the designated Contribution Types as specified under the basic plan document. | N/A (See Election 10(d)) | [ ] | [ ] | [ ]  
+(h) [ ] Exclude All. Exclude all Post-Severance Compensation. [Note: 415 testing Compensation (versus allocation Compensation) must include Post-Severance Compensation comprised of regular pay. See Section 4.05(F).] | [ ] OR | [ ] | [ ] | [ ]  
+(i) [ ] Regular Pay. Exclude Post-Severance Compensation comprised of regular pay. See Section 1.11(I)(1)(a). [Note: 415 testing Compensation (versus allocation Compensation) must include Post-Severance Compensation comprised of regular pay. See Section 4.05(F).] | [ ] OR | [ ] | [ ] | [ ]  
+(j) [ ] Leave cash-out. Exclude Post-Severance Compensation comprised of leave cash-out. See Section 1.11(I)(1)(b). | [x] OR | [ ] | [ ] | [ ]  
+(k) [ ] Deferred Compensation. Exclude Post-Severance Compensation comprised of deferred compensation. See Section 1.11(I)(1)(c). | [x] OR | [ ] | [ ] | [ ]  
+(l) [ ] Salary continuation for military service. Include Post-Severance Compensation comprised of salary continuation for military service. See Section 1.11(I)(2). | [ ] OR | [ ] | [ ] | [ ]  
+(m) [ ] Salary continuation for disabled Participants. Include Post-Severance Compensation comprised of salary continuation for disabled Participants. See Section 1.11(I)(3). (Choose one of (1) or (2).):  
+(1) [ ] For NHCEs only.  
+(2) [ ] For all Participants. The salary continuation will continue for the following fixed or determinable period: ________________________ (specify period).  
+(n) [ ] Describe Post-Severance Compensation by Contribution Type: _____________________________________________________________  
+
+[Note: Under Election 10(n), the Employer may define the Contribution Type column headings in a manner which differs from the "all-inclusive" description in the Note immediately preceding Pre-Entry Compensation (e.g., Compensation for Nonelective Contributions does not include any Post-Severance Compensation and for Safe Harbor Nonelective Contributions includes regular pay Post-Severance Compensation). Any Compensation elected must be nondiscriminatory under Treas. §1.414(s).]  
+
+© 2014 or its suppliers  
+5
+
+
+
+
+
+page_007
+
+
+
+
+Standardized 401(k) Plan
+
+11. EXCLUDED COMPENSATION (1.11(G)). Apply the following Compensation exclusions to Elections 9 and 10 (Choose one of (a), (b), or (c).):  
+(a) [x] No exclusions. Compensation as to all Contribution Types means Compensation as elected in Elections 9 and 10 (skip to Election 12).  
+(b) [ ] Exclusions - same for all Contribution Types. The following exclusions apply to all Contribution Types (Choose one or more of (e), (f), or (g). Choose column (1) for each option elected.):  
+(c) [ ] Exclusions - different conditions apply. The following exclusions apply for the designated Contribution Types (Choose one or more of (d) through (g) below. Choose Contribution Type as applicable.):  
+
+[Note: For this Election 11, Elective Deferrals includes Pre-Tax Deferrals, Roth Deferrals and Employee Contributions, Matching includes all Matching Contributions and Nonelective includes all Nonelective Contributions.]  
+
+Compensation Exclusions | (1) All Contributions | (2) Elective Deferrals | (3) Matching | (4) Nonelective  
+---|---|---|---|---  
+(d) [ ] No exclusions - limited. No exclusion as to the designated Contribution Type(s). | N/A (See Election 11(a)) | [ ] | [ ] | [ ]  
+(e) [ ] Elective Deferrals. See Section 1.21. | N/A | N/A | [ ] | [ ]  
+(f) [ ] Fringe benefits. As described in Treas. Reg. §1.414(s)-1(c)(3). | [ ] OR | [ ] | [ ] | [ ]  
+(g) [ ] HCE Compensation exceeding $_____. | [ ] OR | [ ] | [ ] | [ ]  
+
+12. HOURS OF SERVICE (1.32). The Plan credits Hours of Service for the following purposes (and to the Employees described in Elections 12(d) or (e)) as follows (Choose one or more of (a) through (e) as applicable.):  
+
+(1) All Purposes | (2) Eligibility | (3) Vesting | (4) Allocation Conditions  
+---|---|---|---|---  
+(a) [x] Actual Method. See Section 1.32(A)(1). | [ ] OR | [ ] | [x] | [x]  
+(b) [ ] Equivalency Method: ________________________ (e.g., daily, weekly, etc.). See Section 1.32(A)(2). | [ ] OR | [ ] | [ ] | [ ]  
+(c) [ ] Elapsed Time Method. See Section 1.32(A)(3). | [ ] OR | [x] | [ ] | [ ]  
+(d) [ ] Actual (hourly) and Equivalency (salaried). Actual Method for hourly paid Employees and Equivalency Method: ________________________ (e.g., daily, weekly, etc.) for salaried Employees. | [ ] OR | [ ] | [ ] | [ ]  
+(e) [ ] Describe method: _____________________________________________________________  
+
+[Note: Under Election 12(e), the Employer may describe Hours of Service from the elections available under Elections 12(a) through (d), or a combination thereof as to a Contribution Type.]  
+
+13. ELECTIVE SERVICE CREDITING (1.59(C)). The Plan must credit Related Employer Service under Section 1.24(C) and also must credit certain Predecessor Employer/Predecessor Plan Service under Section 1.59(B). The Plan also elects under Section 1.59(C) to credit as Service the following Predecessor Employer service (Choose one of (a) or (b).):  
+(a) [ ] Not applicable. No elective Predecessor Employer Service crediting applies.  
+(b) [x] Applies. The Plan credits the specified service with the following designated Predecessor Employers as Service for the Employer for the purposes indicated (Choose one or both of (1) and (2) as applicable. Complete (3). Choose (4) if applicable.):  
+
+[Note: Any elective Service crediting under this Election 13 must be nondiscriminatory.]  
+
+(1) [x] All purposes. Credit as Service for all purposes, service with Predecessor Employer(s): Miriam’s Parts and Supply, Inc. (insert as many names as needed).  
+(2) [ ] Designated purposes. Credit as Service, service with the following Predecessor Employer(s) for the designated purpose(s):  
+
+| Employer: | (1) Eligibility | (2) Vesting | (3) Contribution Allocation |
+|-----------|---------------|-------------|-----------------------------|
+| a.        | [ ]           | [ ]         | [ ]                         |
+| b.        | [ ]           | [ ]         | [ ]                         |
+| c.        | [ ]           | [ ]         | [ ]                         |
+
+© 2014 or its suppliers  
+6
+
+
+
+
+
+page_008
+
+
+
+Standardized 401(k) Plan
+
+(3) Time period. Subject to any exceptions noted under Election 13(b)(4), the Plan credits as Service under Elections 13(b)(1) or (2) (Choose one or more of a., b., and c. as applicable.):  
+a. [x] All. All service, regardless of when rendered, but credit is limited to the 5-year period described in Section 1.59(D).  
+b. [ ] Service after. All service, which is or was rendered after: ________________________ (specify date), but credit is limited to the 5-year period described in Section 1.59(D).  
+c. [ ] Service before. All service, which is or was rendered before: ________________________ (specify date), but credit is limited to the 5-year period described in Section 1.59(D).  
+
+(4) [ ] Describe elective Predecessor Employer Service crediting: _____________________________________________________________  
+but credit is limited to the 5-year period described in Section 1.59(D).  
+
+[Note: Under Election 13(b)(4), the Employer may describe service crediting from the elections available under Elections 13(b)(1) through (3), or a combination thereof as to a Contribution Type (e.g., For all purposes credit all service with X, but credit service with Y only on/after 1/1/05 OR Credit all service for all purposes with entities the Employer acquires after 12/31/04 OR Service crediting for X Company applies only for purposes of Nonelective Contributions and not for Matching Contributions).]  
+
+ARTICLE II  
+ELIGIBILITY REQUIREMENTS  
+
+14. ELIGIBILITY (2.01). To become a Participant in the Plan, an Eligible Employee must satisfy (Choose one of (a), (b), or (c).):  
+
+[Note: If the Employer under a safe harbor plan elects "early" eligibility for Elective Deferrals (e.g., less than one Year of Service and age 21), but does not elect early eligibility for any Safe Harbor Contributions, also see Election 30(g).]  
+
+(a) [ ] No conditions. No eligibility conditions as to all Contribution Types. Entry is on the Employment Commencement Date (if that date is also an Entry Date), or if later, upon the next following Plan Entry Date (skip to Election 16).  
+(b) [x] Eligibility - same for all Contribution Types. To become a Participant in the Plan as to all Contribution Types, an Eligible Employee must satisfy the following eligibility conditions (Choose one or more of (e) through (k). Choose column (1) for each option elected at (e) through (j).):  
+(c) [ ] Eligibility - different conditions apply. To become a Participant in the Plan for the designated Contribution Types, an Eligible Employee must satisfy the following eligibility conditions (either as to all Contribution Types or as to the designated Contribution Type) (Choose one or more of (d) through (k). Choose Contribution Type as applicable.):  
+
+[Note: For this Election 14, unless described otherwise in Election 14(k), or the context otherwise requires, Elective Deferrals includes Pre-Tax Deferrals, Roth Elective Deferrals and Employee Contributions, Matching includes all Matching Contributions (except Safe Harbor Matching Contributions under Section 3.05(E)(3) and Operational QMACs under Section 3.03(C)(2)) and Nonelective includes all Nonelective Contributions (except Safe Harbor Nonelective Contributions under Section 3.05(E)(2) and Operational QNECs under Section 3.04(C)(2)). Safe Harbor includes Safe Harbor Nonelective and Safe Harbor Matching Contributions. If the Employer elects more than one Year of Service as to Additional Matching, the Plan will not satisfy the ACP test safe harbor. See Section 3.05(F)(3).]  
+
+Eligibility Conditions | (1) All Contributions | (2) Elective Deferrals | (3) Matching | (4) Nonelective | (5) Safe Harbor  
+---|---|---|---|---|---  
+(d) [ ] None. Entry on the Employment Commencement Date (if that date is also an Entry Date) or if later, upon the next following Plan Entry Date. | N/A (See Election 14(a)) | [ ] | [ ] | [ ] | [ ]  
+(e) [x] Age 21 (not to exceed age 21). | [x] OR | [ ] | [ ] | [ ] | [ ]  
+(f) [x] One Year of Service. See Election 16(a). | [ ] OR | [ ] | [ ] | [ ] | [ ]  
+(g) [ ] Two Years of Service (without an intervening Break in Service). 100% vesting is required. [Note: Two Years of Service does not apply to Elective Deferrals, Safe Harbor Contributions or SIMPLE Contributions.] | N/A | N/A | [ ] | [ ] | N/A  
+
+© 2014 or its suppliers  
+7
+
+
+
+
+page_009
+
+
+
+Standardized 401(k) Plan
+
+(h) [ ] month(s) (not exceeding 12 months for Elective Deferrals, Safe Harbor Contributions and SIMPLE Contributions and not exceeding 24 months for other contributions). If more than 12 months, 100% vesting is required. Service need not be continuous (no minimum Hours of Service required, and is mere passage of time).  
+[Note: While satisfying a months of service condition without an Hours of Service requirement involves the mere passage of time, the Plan need not apply the Elapsed Time Method in Election 12(c) above, and still may elect the Actual Method in 12(a) above.]  
+
+(i) [ ] _____ month(s) with at least _____ Hours of Service in each month (not exceeding 12 months for Elective Deferrals, Safe Harbor Contributions and SIMPLE Contributions and not exceeding 24 months for other contributions). If more than 12 months, 100% vesting is required. If the Employee does not complete the designated Hours of Service each month during the specified monthly time period, the Employee is subject to the one Year of Service (or two Years of Service if elect more than 12 months) requirement as defined in Election 16. The months during which the Employee completes the specified Hours of Service (Choose one of (1) or (2).):  
+(1) [ ] Consecutive. Must be consecutive.  
+(2) [ ] Not consecutive. Need not be consecutive.  
+
+(j) [ ] _____ Hours of Service within the ________________________ time period following the Employee's Employment Commencement Date (not exceeding 12 months for Elective Deferrals, Safe Harbor Contributions and SIMPLE Contributions and not exceeding 24 months for other contributions). If more than 12 months, 100% vesting is required. If the Employee does not complete the designated Hours of Service during the specified time period (if any), the Employee is subject to the one Year of Service (or two Years of Service if elect more than 12 months) requirement as defined in Election 16.  
+
+[Note: The Employer may leave the time period option blank in Election 14(j) if the Employer wishes to impose an Hour of Service requirement without specifying a time period within which an Employee must complete the required Hours of Service.]  
+
+(k) [ ] Describe eligibility conditions: _____________________________________________________________  
+
+[Note: The Employer may use Election 14(k) to elect different ages for different Contribution Types and/or to specify different months or Hours of Service requirements under Elections 14(h), (i), or (j) as to different Contribution Types. Eligibility requirements must satisfy Code §410(a) and must apply uniformly to all Employees.]  
+
+15. SPECIAL ELIGIBILITY EFFECTIVE DATE (DUAL ELIGIBILITY) (2.01(E)). The eligibility conditions of Election 14 and the entry date provisions of Election 17 apply uniformly to all Employees.  
+
+16. YEAR OF SERVICE - ELIGIBILITY (2.02(A)). (Choose (a) and (b) as applicable.):  
+
+[Note: If the Employer under Election 14 elects a one or two Year(s) of Service condition (including any requirement which defaults to such conditions under Elections 14(i), (j), and (k)) or elects to apply a Year of Service for eligibility under any other Adoption Agreement election, the Employer should complete this Election 16. The Employer should not complete Election 16 if it elects the Elapsed Time Method for eligibility.]  
+
+© 2014 or its suppliers  
+8
+
+
+
+page_010
+
+Standardized 401(k) Plan
+
+(a) [x] Year of Service. An Employee must complete 1,000 Hour(s) of Service during the relevant Eligibility Computation Period to receive credit for one Year of Service under Article II. [Note: The number may not exceed 1,000. If left blank, the requirement is 1,000 Hours of Service.]  
+
+(b) [x] Subsequent Eligibility Computation Periods. After the Initial Eligibility Computation Period described in Section 2.02(C)(2), the Plan measures Subsequent Eligibility Computation Periods as (Choose one of (1), (2), or (3).):  
+(1) [x] Plan Year. The Plan Year beginning with the Plan Year which includes the first anniversary of the Employee's Employment Commencement Date.  
+(2) [ ] Anniversary Year. The Anniversary Year, beginning with the Employee's second Anniversary Year.  
+(3) [ ] Split. The Plan Year as described in Election 16(b)(1) as to: ________________________ (describe Contribution Type(s)) and the Anniversary Year as described in Election 16(b)(2) as to: ________________________ (describe Contribution Type(s)).  
+
+[Note: To maximize delayed entry under a two Years of Service condition for Nonelective Contributions or Matching Contributions, the Employer should elect to remain on the Anniversary Year for such contributions.]  
+
+17. ENTRY DATE (2.02(D)). Entry Date means the Effective Date and (Choose one or more of (a) through (g). Choose Contribution Types as applicable.):  
+
+[Note: For this Election 17, unless described otherwise in Election 17(g), Elective Deferrals includes Pre-Tax Deferrals, Roth Elective Deferrals and Employee Contributions, Matching includes all Matching Contributions (except Operational QMACs under Section 3.03(C)(2)) and Nonelective includes all Nonelective Contributions (except Operational QNECs under Section 3.04(C)(2)).]  
+
+(1) All Contributions | (2) Elective Deferrals | (3) Matching | (4) Nonelective  
+---|---|---|---|---  
+(a) [ ] Semi-annual. The first day of the first month and of the seventh month of the Plan Year. | [ ] OR | [ ] | [ ] | [ ]  
+(b) [x] First day of Plan Year. | [ ] OR | [ ] | [ ] | [x]  
+(c) [ ] First day of each Plan Year quarter. | [ ] OR | [ ] | [ ] | [ ]  
+(d) [x] The first day of each month. | [ ] OR | [x] | [ ] | [ ]  
+(e) [ ] Immediate. Upon Employment Commencement Date or if later, upon satisfaction of eligibility conditions. | [ ] OR | [ ] | [ ] | [ ]  
+(f) [ ] First day of each payroll period. | [ ] OR | [ ] | [ ] | [ ]  
+(g) [ ] Describe Entry Date(s): _____________________________________________________________  
+
+[Note: Under Election 17(g), the Employer may describe Entry Dates from the elections available under Elections 17(a) through (f) as to a Contribution Type or may elect additional Entry Dates (e.g., Immediate as to Nonelective Contributions and semi-annual as to Matching Contributions OR The earlier of the Plan's semi-annual Entry Dates or the entry dates under the Employer's medical plan). Eligibility requirements must satisfy Code §410(a) and must apply uniformly to all Employees.]  
+
+18. PROSPECTIVE/RETROACTIVE ENTRY DATE (2.02(D)). An Employee after satisfying the eligibility conditions in Election 14 will become a Participant (unless an Excluded Employee under Election 8) on the Entry Date (if employed on that date) (Choose one or more of (a) through (f). Choose Contribution Type as applicable.):  
+
+[Note: Unless otherwise excluded under Election 8, an Employee who remains employed by the Employer on the relevant date must become a Participant by the earlier of: (i) the first day of the Plan Year beginning after the date the Employee completes the age and service requirements of Code §410(a); or (ii) 6 months after the date the Employee completes those requirements. For this Election 18, unless described otherwise in Election 18(f), Elective Deferrals includes Pre-Tax Deferrals, Roth Deferrals and Employee Contributions, Matching includes all Matching Contributions (except Operational QMACs under Section 3.03(C)(2)) and Nonelective includes all Nonelective Contributions, (except Operational QNECs under Section 3.04(C)(2)).]  
+
+(1) All Contributions | (2) Elective Deferrals | (3) Matching | (4) Nonelective  
+---|---|---|---|---  
+(a) [ ] Immediately following or coincident with the date the Employee completes the eligibility conditions. | [x] OR | [ ] | [ ] | [ ]  
+(b) [x] Immediately following the date the Employee completes the eligibility conditions. | [ ] OR | [ ] | [ ] | [ ]  
+(c) [ ] Immediately preceding or coincident with the date the Employee completes the eligibility conditions. | N/A | N/A | [ ] | [ ]  
+
+© 2014 or its suppliers  
+9
+
+
+
+page_011
+
+
+Standardized 401(k) Plan
+
+(d) [x] Immediately preceding the date the Employee completes the eligibility conditions.  
+N/A | N/A | [ ] | [x]  
+
+(e) [ ] Nearest the date the Employee completes the eligibility conditions.  
+N/A | N/A | [ ] | [ ]  
+
+(f) [ ] Describe retroactive/prospective entry relative to Entry Date: _____________________________________________________________  
+
+[Note: Under Election 18(f), the Employer may describe the timing of entry relative to an Entry Date from the elections available under Elections 18(a) through (e) as to a Contribution Type (e.g., Nearest as to Nonelective Contributions and immediately following as to Matching Contributions). Eligibility requirements must satisfy Code §410(a) and must apply uniformly to all Employees.]  
+
+19. BREAK IN SERVICE - PARTICIPATION (2.03). The one year hold-out rule described in Section 2.03(C) (Choose one of (a), (b), or (c).):  
+(a) [x] Does not apply.  
+(b) [ ] Applies. Applies to the Plan and to all Participants.  
+(c) [ ] Limited application. Applies to the Plan, but only to a Participant who has incurred a Severance from Employment.  
+
+[Note: The Plan does not apply the rule of parity under Code §410(a)(5)(D) unless the Employer in Appendix B specifies otherwise. See Section 2.03(D).]  
+
+ARTICLE III  
+PLAN CONTRIBUTIONS AND FORFEITURES  
+
+20. ELECTIVE DEFERRAL LIMITATIONS (3.02(A)). The following limitations apply to Elective Deferrals under Election 6(b), which are in addition to those limitations imposed under the basic plan document (Choose (a) or choose (b) and (c) as applicable.):  
+(a) [x] None. No additional Plan imposed limits (skip to Election 21).  
+
+[Note: The Employer under Election 20 may not impose a lower deferral limit applicable only to Catch-Up Eligible Participants and the Employer's elections must be nondiscriminatory. The elected limits apply to Pre-Tax Deferrals and to Roth Deferrals unless described otherwise. Under a safe harbor plan: (i) NHCEs must be able to defer enough to receive the maximum Safe Harbor Matching and Additional Matching Contribution under the Plan and must be permitted to defer any lesser amount; and (ii) the Employer may limit Elective Deferrals to a whole percentage of Compensation or to a whole dollar amount. See Section 1.57(C) as to administrative limitations on Elective Deferrals.]  
+
+(b) [ ] Additional Plan limit(s). (Choose (1) and (2) as applicable. Complete (3) if (1) or (2) is chosen.):  
+(1) [ ] Maximum deferral amount. A Participant's Elective Deferrals may not exceed: 50% (specify dollar amount and/or percentage of Compensation).  
+(2) [ ] Minimum deferral amount. A Participant's Elective Deferrals may not be less than: 1% (specify dollar amount and/or percentage of Compensation).  
+
+(3) Application of limitations. The Election 20(b)(1) and (2) limitations apply based on Elective Deferral Compensation described in Elections 9 - 11. If the Employer elects Plan Year/Participating Compensation under column (1) and in Election 10 elects Participating Compensation, in the Plan Years commencing after an Employee becomes a Participant, apply the elected minimum or maximum limitations to the Plan Year. Apply the elected limitation based on such Compensation during the designated time period and only to HCEs as elected below. (Choose a. or choose b. and c. as applicable. Under each of a., b., or c. choose one of (1) or (2). Choose (3) if applicable.):  
+
+(1) Plan Year/Participating Compensation | (2) Payroll period | (3) HCEs only  
+---|---|---|---  
+a. [ ] Both. Both limits under Elections 20(b)(1) and (2). | [ ] | [ ] | [ ]  
+b. [ ] Maximum limit. The maximum amount limit under Election 20(b)(1). | [x] | [ ] | [ ]  
+c. [ ] Minimum limit. The minimum amount limit under Election 20(b)(2). | [ ] | [x] | [ ]  
+
+(c) [ ] Describe Elective Deferral limitation(s): _____________________________________________________________  
+
+[Note: Under Election 20(c), the Employer: (i) may elect a different time period to which the limitations apply and/or (ii) may apply a different limitation to Pre-Tax Deferrals and to Roth Deferrals.]  
+
+© 2014 or its suppliers  
+10
+
+
+page_012
+
+
+
+Standardized 401(k) Plan
+
+21. AUTOMATIC DEFERRAL (ACA/EACA/QACA) (3.02(B)). The Automatic Deferral provisions of Section 3.02(B) (Choose one of (a) or (b). Also see Election 34 regarding Automatic Escalation of Salary Reduction Agreements.):  
+(a) [x] Do not apply. The Plan is not an ACA, EACA, or QACA (skip to Election 22).  
+(b) [ ] Apply. The Automatic Deferral Effective Date is the effective date of automatic deferrals or, as appropriate, any subsequent amendment thereto. (As to an EACA or QACA, this provision may not be effective earlier than Plan Years beginning on or after January 1, 2008). (Complete (1), (2), and (3). Complete (4) and (5) if an EACA or an EACA/QACA. Choose (6) and/or (7) as applicable.):  
+
+(1) Type of Automatic Deferral Arrangement. The Plan is an (Choose one of a., b., or c.):  
+a. [ ] ACA. The Plan is an Automatic Contribution Arrangement (ACA) under Section 3.02(B)(1).  
+b. [ ] EACA. The Plan is an Eligible Automatic Contribution Arrangement (EACA) under Section 3.02(B)(2).  
+c. [ ] EACA/QACA. The Plan is a combination EACA and Qualified Automatic Contribution Arrangement (QACA) under Sections 3.02(B)(3) and 3.05(J).  
+
+[Note: If the Employer chooses Elections 21(b)(1)c, the Employer also must choose election 6(e) and complete Election 30 as to the Safe Harbor Contributions under the QACA.]  
+
+(2) Participants affected. The Automatic Deferral applies to (Choose one of a., b., c., or d. Choose e. if applicable.):  
+a. [ ] All Participants. All Participants, regardless of any prior Salary Reduction Agreement, unless and until they make a Contrary Election after the Automatic Deferral Effective Date.  
+b. [ ] Election of at least Automatic Deferral Percentage. All Participants, except those who have in effect a Salary Reduction Agreement on the Automatic Deferral Effective Date provided that the Elective Deferral amount under the Agreement is at least equal to the Automatic Deferral Percentage.  
+c. [ ] No existing Salary Reduction Agreement. All Participants, except those who have in effect a Salary Reduction Agreement on the Automatic Deferral Effective Date regardless of the Elective Deferral amount under the Agreement.  
+d. [ ] New Participants (not applicable to QACA). Each Employee whose Entry Date is on or following the Automatic Deferral Effective Date.  
+e. [ ] Describe affected Participants (not applicable to QACA): _____________________________________________________________  
+
+[Note: The Employer in Election 21(b)(2)e. may further describe affected Participants, e.g., non-Collective Bargaining Employees OR Division A Employees. However, for Plan Years commencing on or after January 1, 2010, all Employees eligible to defer must be Covered Employees to apply the 6-month correction period without excise tax under Code §4979.]  
+
+(3) Automatic Deferral Percentage/Scheduled increases. (Choose one of a., b., or c.):  
+a. [ ] Fixed percentage. The Employer, as to each Participant affected, will withhold as the Automatic Deferral Percentage, 3% % from the Participant's Compensation each payroll period unless the Participant makes a Contrary Election. The Automatic Deferral Percentage will or will not increase in Plan Years following the Plan Year containing the Automatic Deferral Effective Date (or, if later, the Plan Year or partial Plan Year in which the Automatic Deferral first applies to a Participant) as follows (Choose one of d., e., or f.):  
+
+[Note: In order to satisfy the QACA requirements, enter an amount between 6% and 10% if no scheduled increase.]  
+b. [ ] QACA statutory increasing schedule. The Automatic Deferral Percentage will be:  
+
+| Plan Year of application to a Participant | Automatic Deferral Percentage |
+|------------------------------------------|-------------------------------|
+| 1                                        | 3%                            |
+| 2                                        | 3%                            |
+| 3                                        | 4%                            |
+| 4                                        | 5%                            |
+| 5 and thereafter                         | 6%                            |
+
+c. [ ] Other increasing schedule. The Automatic Deferral Percentage will be:  
+
+| Plan Year of application to a Participant | Automatic Deferral Percentage |
+|------------------------------------------|-------------------------------|
+| ________                                 | ________ %                    |
+| ________                                 | ________ %                    |
+| ________                                 | ________ %                    |
+| ________                                 | ________ %                    |
+| ________                                 | ________ %                    |
+
+d. [ ] No scheduled increase. The Automatic Deferral Percentage applies in all Plan Years.  
+
+© 2014 or its suppliers  
+11
+
+
+
+
+
+page_013
+
+
+Standardized 401(k) Plan
+
+e. [ ] Automatic increase. The Automatic Deferral Percentage will increase by 1 % per year up to a maximum of 10 % of Compensation.  
+f. [ ] Describe increase: _____________________________________________________________  
+
+[Note: To satisfy the QACA requirements, the Automatic Deferral Percentage must be: (i) a fixed percentage which is at least 6% and not more than 10% of Compensation; (ii) an increasing Automatic Deferral Percentage in accordance with the schedule under Election 20(b)(3)b.; or (iii) an alternative schedule which must require, for each Plan Year, an Automatic Deferral Percentage that is at least equal to the Automatic Deferral Percentage under the schedule in Election 21(b)(3)b. and which does not exceed 10%. See Section 3.02(B)(3).]  
+
+(4) EACA permissible withdrawal. The permissible withdrawal provisions of Section 3.02(B)(2)(d) (Choose one of a., b., or c.):  
+a. [ ] Do not apply.  
+b. [ ] 90 day withdrawal. Apply within 90 days of the first Automatic Deferral.  
+c. [ ] 30-90 day withdrawal. Apply, within _____ days of the first Automatic Deferral (may not be less than 30 nor more than 90 days).  
+
+(5) Contrary Election/Covered Employee. For Plan Years beginning on or after January 1, 2010, any Participant who makes a Contrary Election (Choose one of a. or b.; leave blank if an ACA or a QACA not subject to the ACP test.):  
+a. [ ] Covered Employee. Is a Covered Employee and continues to be covered by the EACA provisions. [Note: Under this Election, the Participant's Contrary Election will remain in effect, but the Participant must receive the EACA annual notice.]  
+b. [ ] Not a Covered Employee. Is not a Covered Employee and will not continue to be covered by the EACA provisions. [Note: Under this Election, the Participant no longer must receive the EACA annual notice, but the Plan cannot use the six-month period for relief from the excise tax of Code §4979(f)(1).]  
+
+(6) Change Date. The Elective Deferrals under Election 21(b)(3)b., c., e., or f. will increase on the following day each Plan Year:  
+a. [ ] First day of the Plan Year.  
+b. [ ] Other: ________________________  
+(must be a specified or definitely determinable date that occurs at least annually)  
+
+(7) First Year of Increase. The automatic increase under Election 21(b)(3)e. or f. will apply to a Participant beginning with the first Change Date after the Participant first has automatic deferrals withheld, unless a. is selected below:  
+a. [ ] The increase will apply as of the second Change Date thereafter.  
+
+22. CODA (3.02(C)). The CODA provisions of Section 3.02(C) do not apply.  
+
+23. CATCH-UP DEFERRALS (3.02(D)). The Plan permits Catch-Up Deferrals unless the Employer elects otherwise below. (Choose (a) if applicable.)  
+(a) [ ] Not Permitted. May not make Catch-Up Deferrals to the Plan.  
+
+24. MATCHING CONTRIBUTIONS (EXCLUDING SAFE HARBOR MATCH AND ADDITIONAL MATCH UNDER SECTION 3.05) (3.03(A)). The Employer Matching Contributions under Election 6(c) are subject to the following additional elections regarding type (discretionary/fixed), rate/amount, limitations and time period (collectively, such elections are "the matching formula") and the allocation of Matching Contributions is subject to Section 3.06 except as otherwise provided (Choose one or more of (a), (b), and (c) as applicable; then, for the elected match, complete (1), (2), and/or (3) as applicable. If the Employer completes (2) or (3), also complete one of (4), (5), or (6).):  
+
+[Note: If the Employer wishes to make any Matching Contributions that satisfy the ADP or ACP safe harbor, the Employer should make these Elections under Election 30, and not under this Election 24.]  
+
+| (1) Match Rate/Amt [$/% of Elective Deferrals] | (2) Limit on Deferrals Matched [$/% of Compensation] | (3) Limit on Match Amount [$/% of Compensation] | (4) Apply limit(s) per Plan Year ["true-up"] | (5) Apply limit(s) per payroll period [no "true-up"] | (6) Apply limit(s) per designated time period [no "true-up"] |
+|-----------------------------------------------|----------------------------------------------------|--------------------------------------------------|--------------------------------------------|---------------------------------------------------|---------------------------------------------------------|
+| (a) [ ] Discretionary - see Section 1.35(B) (The Employer may, but is not required to complete (a)(1)-(6). See the "Note" following Election 24.) | ____ | ____ | ____ | [ ] | [ ] | [ ] ____ |
+
+© 2014 or its suppliers  
+12
+
+
+
+
+
+
+page_014
+
+
+
+
+Standardized 401(k) Plan
+
+(b) [ ] Fixed - uniform rate/amount  
+______ | ______ | ______ | [ ] | [ ] | [ ] ____  
+
+(c) [ ] Fixed - tiered  
+| Elective Deferral % | Matching Rate |  
+|---------------------|---------------|  
+| _____ | _____% |  
+| _____ | _____% |  
+| _____ | _____% |  
+| _____ | _____% |  
+
+[Note: See Section 1.35(A) as to Fixed Matching Contributions. A Participant's Elective Deferral percentage is equal to the Participant's Elective Deferrals divided by his/her Compensation. The matching rate/amount is the specified rate/amount of match for the corresponding Elective Deferral amount/percentage. Any Matching Contributions apply to Pre-Tax Deferrals and to Roth Deferrals. Matching Contributions for nondiscrimination testing purposes are subject to the targeting limitations. See Section 4.10(D). The Employer under Election 24(a) in its discretion may determine the amount of a Discretionary Matching Contribution and the matching contribution formula. Alternatively, the Employer in Election 24(a) may specify the Discretionary Matching Contribution formula.]  
+
+25. QMAC (PLAN-DESIGNATED) (3.03(C)(1)). The following provisions apply regarding Plan-Designated QMACs (Choose one of (a) or (b).):  
+
+[Note: Regardless of its elections under this Election 25, the Employer under Section 3.03(C)(2) may elect for any Plan Year where the Plan is using Current Year Testing to make Operational QMACs which the Plan Administrator will allocate only to NHCEs for purposes of correction of an ADP or ACP test failure.]  
+
+(a) [ ] Not applicable. There are no Plan-Designated QMACs.  
+(b) [ ] Applies. There are Plan-Designated QMACs to which the following provisions apply (Complete (1) and (2).):  
+(1) Matching Contributions affected. The following Matching Contributions (as allocated to the designated allocation group under Election 25(b)(2)) are Plan-Designated QMACs (Choose one of a. or b.):  
+a. [ ] All. All Matching Contributions.  
+b. [ ] Designated. Only the following Matching Contributions under Election 24: ___________________________.  
+
+(2) Allocation Group. Subject to Section 3.06, allocate the Plan-Designated QMAC (Choose one of a. or b.):  
+a. [ ] NHCEs only. Only to NHCEs who make Elective Deferrals subject to the Plan-Designated QMAC.  
+b. [ ] All Participants. To all Participants who make Elective Deferrals subject to the Plan-Designated QMAC.  
+
+The Plan Administrator will allocate all other Matching Contributions as Regular Matching Contributions under Section 3.03(B), except as provided in Sections 3.03(C)(2) or 3.05.  
+
+[Note: See Section 4.10(D) as to targeting limitations applicable to QMAC nondiscrimination testing.]  
+
+26. MATCHING CATCH-UP DEFERRALS (3.03(D)). If a Participant makes a Catch-Up Deferral, the Employer (Choose one of (a) or (b); leave blank if Election 23(a) is selected.):  
+(a) [ ] Match. Will apply to the Catch-Up Deferral (Choose one of (1) or (2).):  
+(1) [ ] All. All Matching Contributions.  
+(2) [ ] Designated. The following Matching Contributions in Election 24: ___________________________.  
+(b) [ ] No Match. Will not match any Catch-Up Deferrals.  
+
+[Note: Election 26 does not apply to a safe harbor 401(k) plan unless the Employer will apply the ACP test. See Elections 38(a)(2)b. In this case, Election 26 applies only to Additional Matching, if any. A safe harbor 401(k) Plan will apply the Basic Match, QACA Basic Match or Enhanced Match to Catch-Up Deferrals. If the Employer elects to apply the ACP test safe harbor under Election 38(a)(2)a., Election 26 does not apply and the Plan also will apply any Additional Match to Catch-Up Deferrals.]  
+
+27. NONELECTIVE CONTRIBUTIONS (TYPE/AMOUNT) (3.04(A)). The Employer Nonelective Contributions under Election 6(d) are subject to the following additional elections as to type and amount (Choose one or both of (a) and (b) as applicable.):  
+(a) [x] Discretionary. An amount the Employer in its sole discretion may determine.  
+(b) [ ] Fixed. (Choose one or more of (1) through (3) as applicable.):  
+
+© 2014 or its suppliers  
+13
+
+
+
+
+
+
+
+page_015
+
+
+Standardized 401(k) Plan
+
+(1) [ ] Uniform %. _____% of each Participant's Compensation, per ________________________ (e.g., Plan Year, month).  
+(2) [ ] Fixed dollar amount. $_____, per ________________________ (e.g., Plan Year, month, HOS, per Participant per month).  
+(3) [ ] Describe: _____________________________________________________________  
+(The formula described must satisfy the definitely determinable requirement under Treas. Reg. §1.401-1(b) and must be uniform so that it satisfies the design-based safe harbor for nondiscrimination purposes.)  
+
+[Note: The Employer under Election 27(b)(3) may specify any Fixed Nonelective Contribution formula not described under Elections 27(b)(1) or (2) (e.g., For each Plan Year, 2% of net profits exceeding $50,000).]  
+
+28. NONELECTIVE CONTRIBUTION ALLOCATION (3.04(B)). The Plan Administrator, subject to Section 3.06, will allocate to each Participant any Nonelective Contribution (excluding QNECs) under the following contribution allocation formula (Choose one or more of (a), (b), and (c) as applicable.):  
+(a) [x] Pro rata. As a uniform percentage of Participant Compensation.  
+(b) [ ] Permitted disparity. In accordance with the permitted disparity allocation provisions of Section 3.04(B)(2), under which the following permitted disparity formula and definition of "Excess Compensation" apply (Complete (1) and (2).):  
+(1) Formula (Choose one of a., b., or c.):  
+a. [ ] Two-tiered.  
+b. [ ] Four-tiered.  
+c. [ ] Two-tiered, except that the four-tiered formula will apply in any Plan Year for which the Plan is top-heavy.  
+(2) Excess Compensation. For purposes of Section 3.04(B)(2), "Excess Compensation" means Compensation in excess of the integration level provided below (Choose one of a. or b.):  
+a. [ ] Percentage amount. 100 % (not exceeding 100%) of the Taxable Wage Base in effect on the first day of the Plan Year, rounded to the next highest $1.00 (not exceeding the Taxable Wage Base).  
+b. [ ] Dollar amount. The following amount: $_____ (not exceeding the Taxable Wage Base in effect on the first day of the Plan Year).  
+(c) [ ] Incorporation of contribution formula. The Plan Administrator will allocate any Fixed Nonelective Contribution under Election 27(b), in accordance with the contribution formula the Employer adopts under that Election.  
+
+[Note: Any allocation under Election 28(c) must be a design-based safe harbor allocation under Treas. Reg. §1.401(a)(4)-2(b)(2) and (4) or must result in the same or a lower allocation rate to all HCEs versus any NHCEs.]  
+
+29. QNEC (PLAN-DESIGNATED) (3.04(C)(1)). The following provisions apply regarding Plan-Designated QNECs (Choose one of (a) or (b).):  
+
+[Note: Regardless of its elections under this Election 29, the Employer under Section 3.04(C)(2) may elect for any Plan Year where the Plan is using Current Year Testing to make Operational QNECs which the Plan Administrator will allocate only to NHCEs for purposes of correction of an ADP or ACP test failure.]  
+
+(a) [x] Not applicable. There are no Plan-Designated QNECs.  
+(b) [ ] Applies. There are Plan-Designated QNECs to which the following provisions apply (Complete (1), (2), and (3).):  
+(1) Nonelective Contributions affected. The following Nonelective Contributions (as allocated to the designated allocation group under Election 29(b)(2)) are Plan-Designated QNECs (Choose one of a. or b.):  
+a. [ ] All. All Nonelective Contributions.  
+b. [ ] Designated. Only the following Nonelective Contributions under Election 27: ___________________________.  
+(2) Allocation Group. Subject to Section 3.06, allocate the Plan-Designated QNEC (Choose one of a. or b.):  
+a. [ ] NHCEs only. Only to NHCEs under the method elected in Election 29(b)(3).  
+b. [ ] All Participants. To all Participants under the method elected in Election 29(b)(3).  
+(3) Allocation Method. The Plan Administrator will allocate a Plan-Designated QNEC using the following method (Choose one of a. or b.):  
+a. [ ] Pro rata.  
+b. [ ] Flat dollar.  
+
+[Note: See Section 4.10(D) as to targeting limitations applicable to QNEC nondiscrimination testing.]  
+
+© 2014 or its suppliers  
+14
+
+
+
+
+page_016
+
+
+
+Standardized 401(k) Plan
+
+30. SAFE HARBOR 401(k) PLAN (SAFE HARBOR CONTRIBUTIONS/ADDITIONAL MATCHING CONTRIBUTIONS) (3.05). The Employer under Election 6(e) will (or in the case of the Safe Harbor Nonelective Contribution may) contribute the following Safe Harbor Contributions described in Section 3.05(E) and will or may contribute Additional Matching Contributions described in Section 3.05(F) (Choose one of (a) through (e) when and as applicable. Complete (f) and (i). Choose (g), (h), and (j) as applicable.):  
+
+(a) [ ] Safe Harbor Nonelective Contribution (including QACA). The Safe Harbor Nonelective Contribution equals _____% of a Participant's Compensation [Note: The amount in the blank must be at least 3%. The Safe Harbor Nonelective Contribution applies toward (offsets) most other Employer Nonelective Contributions. See Section 3.05(E)(12).]  
+
+(b) [ ] Safe Harbor Nonelective Contribution (including QACA)/delayed year-by-year election (maybe and supplemental notices). In connection with the Employer's provision of the maybe notice under Section 3.05(I)(1), the Employer elects into safe harbor status by giving the supplemental notice and by making this Election 30(b) to provide for a Safe Harbor Nonelective Contribution equal to _____% (specify amount at least equal to 3%) of a Participant's Compensation. This Election 30(b) and safe harbor status applies for the Plan Year ending: ________________________ (specify Plan Year end), which is the Plan Year to which the Employer's maybe and supplemental notices apply.  
+
+[Note: An Employer distributing the maybe notice can use election 30(b) without completing the year. Doing so requires the Plan to perform Current Year Testing unless the Employer decides to elect safe harbor status. If the Employer wishes to elect safe harbor status for a single year, the Employer must amend the Plan to enter the Plan Year end above.]  
+
+(c) [ ] Basic Matching Contribution. A Matching Contribution equal to 100% of each Participant's Elective Deferrals not exceeding 3% of the Participant's Compensation, plus 50% of each Participant's Elective Deferrals in excess of 3% but not in excess of 5% of the Participant's Compensation. See Sections 1.35(E) and 3.05(E)(4). (Complete (1).):  
+(1) Time period. For purposes of this Election 30(c), "Compensation" and "Elective Deferrals" mean Compensation and Elective Deferrals for: each pay period . [Note: The Employer must complete the blank line with the applicable time period for computing the Basic Match, such as "each payroll period," "each calendar month," "each Plan Year quarter" or "the Plan Year."]  
+
+(d) [ ] QACA Basic Matching Contribution. A Matching Contribution equal to 100% of a Participant's Elective Deferrals not exceeding 1% of the Participant's Compensation, plus 50% of each Participant's Elective Deferrals in excess of 1% but not in excess of 6% of the Participant's Compensation. (Complete (1).): [Note: This election is available only if the Employer has elected the QACA automatic deferrals provisions under Election 21.]  
+(1) Time period. For purposes of this Election 30(d), "Compensation" and "Elective Deferrals" mean Compensation and Elective Deferrals for: ________________________. [Note: The Employer must complete the blank line with the applicable time period for computing the QACA Basic Match, such as "each payroll period," "each calendar month," "each Plan Year quarter" or "the Plan Year."]  
+
+(e) [ ] Enhanced Matching Contribution (including QACA). See Sections 1.35(F) and 3.05(E)(6). (Choose one of (1) or (2) and complete (3) for any election.):  
+(1) [ ] Uniform percentage. A Matching Contribution equal to _____% of each Participant's Elective Deferrals but not as to Elective Deferrals exceeding _____% of the Participant's Compensation.  
+(2) [ ] Tiered formula. A Matching Contribution equal to the specified matching rate for the corresponding level of each Participant's Elective Deferral percentage. A Participant's Elective Deferral percentage is equal to the Participant's Elective Deferrals divided by his/her Compensation.  
+
+| Elective Deferral Percentage | Matching Rate |
+|------------------------------|---------------|
+| _____% | _____% |
+| _____% | _____% |
+| _____% | _____% |
+
+(3) Time period. For purposes of this Election 30(e), "Compensation" and "Elective Deferrals" mean Compensation and Elective Deferrals for: ________________________. [Note: The Employer must complete the blank line with the applicable time period for computing the Enhanced Match, such as "each payroll period," "each calendar month," "each Plan Year quarter" or "the Plan Year."]  
+
+[Note: The matching rate may not increase as the Elective Deferral percentage increases and the Enhanced Matching formula otherwise must satisfy the requirements of Code §§401(k)(12)(B)(ii) and (iii) (taking into account Code §401(k)(13)(D)(ii) in the case of a QACA). If the Employer elects to satisfy the ACP safe harbor under Election 38(a)(2)a., the Employer also must limit Elective Deferrals taken into account for the Enhanced Matching Contribution to a maximum of 6% of Plan Year Compensation.]  
+
+(f) Participants who will receive Safe Harbor Contributions. The allocation of Safe Harbor Contributions (Choose one of (1), (2), or (3). Choose (4) if applicable.):  
+(1) [ ] Applies to all Participants. Applies to all Participants except as may be limited under Election 30(g).  
+(2) [ ] NHCEs only. Is limited to NHCE Participants only and may be limited further under Election 30(g). No HCE will receive a Safe Harbor Contribution allocation.  
+
+© 2014 or its suppliers  
+15
+
+
+
+page_017
+
+
+
+Standardized 401(k) Plan
+
+(3) [ ] NHCEs and designated HCEs. Is limited to NHCE Participants and to the following HCE Participants and may be limited further under Election 30(g): _____________________________________________________________ .  
+[Note: Any HCE allocation group the Employer describes under Election 30(f)(3) must be definitely determinable. (e.g., HCEs who own more than 5% of the Employer without regard to attribution rules).]  
+
+(4) [ ] Applies to all Participants except Collective Bargaining Employees. Notwithstanding Elections 30(f)(1), (2) or (3), the Safe Harbor Contributions are not allocated to Collective Bargaining (union) Employees and may be further limited under Election 30(g).  
+
+(g) [ ] Early Elective Deferrals/delay of Safe Harbor Contribution. The Employer may elect this Election 30(g) only if the Employer in Election 14 elects eligibility requirements for Elective Deferrals of less than age 21 and/or one Year of Service but elects age 21 and one Year of Service for Safe Harbor Matching or for Safe Harbor Nonelective Contributions. The Employer under this Election 30(g) applies the rules of Section 3.05(D) to limit the allocation of any Safe Harbor Contribution under Election 30 for a Plan Year to those Participants who the Plan Administrator in applying the OEE rule described in Section 4.06(C), treats as benefiting in the disaggregated plan covering the Includible Employees.  
+
+(h) [ ] Another plan. The Employer will make the Safe Harbor Contribution to the following plan: _____________________________________________________________ .  
+
+(i) Additional Matching Contributions. See Sections 1.35(G) and 3.05(F). (Choose one of (1) or (2).):  
+(1) [ ] No Additional Matching Contributions. The Employer will not make any Additional Matching Contributions to its safe harbor Plan.  
+(2) [ ] Additional Matching Contributions. The Employer will or may make the following Additional Matching Contributions to its safe harbor Plan. (Choose a., b., and c. as applicable.):  
+a. [ ] Fixed Additional Matching Contribution. The following Fixed Additional Matching Contribution (Choose (i) and (ii) as applicable and complete (iii) for any election.):  
+(i) [ ] Uniform percentage. A Matching Contribution equal to _____% of each Participant's Elective Deferrals but not as to Elective Deferrals exceeding _____% of the Participant's Compensation.  
+(ii) [ ] Tiered formula. A Matching Contribution equal to the specified matching rate for the corresponding level of each Participant's Elective Deferral percentage. A Participant's Elective Deferral percentage is equal to the Participant's Elective Deferrals divided by his/her Compensation.  
+
+| Elective Deferral Percentage | Matching Rate |
+|------------------------------|---------------|
+| _____% | _____% |
+| _____% | _____% |
+| _____% | _____% |
+
+(iii) Time period. For purposes of this Election 30(i)(2)a., "Compensation" and "Elective Deferrals" mean Compensation and Elective Deferrals for: ________________________. [Note: The Employer must complete the blank line with the applicable time period for computing the Additional Match, e.g., each payroll period, each calendar month, each Plan Year quarter OR the Plan Year. If the Employer elects a match under both (i) and (ii) and will apply a different time period to each match, the Employer may indicate as such in the blank line.]  
+
+b. [ ] Discretionary Additional Matching Contribution. The Employer may make a Discretionary Additional Matching Contribution. If the Employer makes a Discretionary Matching Contribution, the Discretionary Matching Contribution will not apply as to Elective Deferrals exceeding 6% % of the Participant's Compensation (complete the blank if applicable or leave blank).  
+(i) Time period. For purposes of this Election 30(i)(2)b., "Compensation" and "Elective Deferrals" mean Compensation and Elective Deferrals for: the Plan Year . [Note: The Employer must complete the blank line with the applicable time period for computing the Additional Discretionary Matching Contribution, e.g., each payroll period, each calendar month, each Plan Year quarter OR the Plan Year. If the Employer fails to specify a time period, the Employer is deemed to have elected to compute its Additional Matching Contribution based on the Plan Year.]  
+
+c. [ ] Describe Additional Matching Contribution formula and time period: _____________________________________________________________  
+(The formula described must satisfy the definitely determinable requirement under Treas. Reg. §1.401-1(b) and, if the Employer elects to satisfy the ACP safe harbor under Election 38(a)(2)a., the formula must comply with Section 3.05(G).)  
+
+[Note: If the Employer elects to satisfy the ACP safe harbor under Election 38(a)(2)a. then as to any and all Matching Contributions, including Fixed Additional Matching Contributions and Discretionary Additional Matching Contributions: (i) the matching rate may not increase as the Elective Deferral percentage increases; (ii) no HCE may be entitled to a greater rate of match than any NHCE; (iii) the Employer must limit Elective Deferrals taken into account for the Additional Matching Contributions to a maximum of 6% of Plan Year Compensation.]  
+
+© 2014 or its suppliers  
+16
+
+
+
+page_018
+
+
+Standardized 401(k) Plan
+
+Compensation; (iv) the Plan must apply all Matching Contributions to Catch-Up Deferrals; and (v) in the case of a Discretionary Additional Matching Contribution, the contribution amount may not exceed 4% of the Participant's Plan Year Compensation.]  
+
+(j) [ ] Multiple Safe Harbor Contributions in disaggregated Plan. The Employer elects to make different Safe Harbor Contributions and/or Additional Matching Contributions to disaggregated parts of its Plan under Treas. Reg. §1.401(k)-1(b)(4) as follows: _____________________________________________________________  
+(Specify contributions for disaggregated plans, e.g., as to collectively bargained employees a 3% Nonelective Safe Harbor Contribution applies and as to non-collectively bargained employees, the Basic Matching Contribution applies).  
+
+31. ALLOCATION CONDITIONS (3.06(B)). The Plan does not apply any allocation conditions to: (i) Elective Deferrals; (ii) Safe Harbor Contributions; (iii) Additional Matching Contributions which will satisfy the ACP test safe harbor; (iv) Employee Contributions; (v) Rollover Contributions; (vi) Designated IRA Contributions; or (vii) SIMPLE Contributions. To receive an allocation of Matching Contributions, Nonelective Contributions or Participant forfeitures, a Participant must satisfy the following allocation condition(s) (Choose one of (a) or (b).):  
+(a) [x] No conditions. No allocation conditions apply to Matching Contributions, to Nonelective Contributions or to forfeitures.  
+(b) [ ] Conditions. The following allocation conditions apply to the designated Contribution Type and/or forfeitures (Choose one or both of (1) and (2). Choose Contribution Type as applicable.):  
+
+[Note: For this Election 31, except as provided in Sections 3.03(C)(2) and 3.04(C)(2) regarding Operational QMACs and Operational QNECs, Matching includes all Matching Contributions and Nonelective includes all Nonelective Contributions to which allocation conditions may apply.]  
+
+| (1) Matching, Nonelective and Forfeitures | (2) Matching | (3) Nonelective | (4) Forfeitures |
+|------------------------------------------|--------------|-----------------|------------------|
+| (1) [ ] None. N/A (See Election 31(a)) | [ ] | [ ] | [ ] |
+| (2) [ ] 501 HOS/terminées (91 consecutive days if Elapsed Time). See Section 3.06(B)(1)(b). | [ ] OR [x] | [ ] | [ ] |
+
+32. ALLOCATION CONDITIONS - APPLICATION/WAIVER (3.06(D)). Under Section 3.06(D), in the event of Severance from Employment as described below, apply or do not apply Election 31(b)(2) allocation condition to the specified contributions/forfeitures as follows (If the Employer elects 31(b)(2), the Employer must complete Election 32. Choose one of (a) or (b).):  
+
+[Note: For this Election 32, except as provided in Sections 3.03(C)(2) and 3.04(C)(2) regarding Operational QMACs and Operational QNECs, Matching includes all Matching Contributions and Nonelective includes all Nonelective Contributions to which allocation conditions may apply.]  
+
+(a) [x] Total waiver or application. If a Participant incurs a Severance from Employment on account of or following death, Disability or attainment of Normal Retirement Age or Early Retirement Age (Choose one of (1) or (2).):  
+(1) [x] Do not apply. Do not apply elected allocation conditions to Matching Contributions, to Nonelective Contributions or to forfeitures.  
+(2) [ ] Apply. Apply elected allocation conditions to Matching Contributions, to Nonelective Contributions and to forfeitures.  
+
+(b) [ ] Application/waiver as to Contribution Types events. If a Participant incurs a Severance from Employment, apply allocation conditions except such conditions are waived if Severance from Employment is on account of or following death, Disability or attainment of Normal Retirement Age or Early Retirement Age as specified, and as applied to the specified Contribution Types/forfeitures (Choose one or more of (1) through (4). Choose Contribution Type as applicable.):  
+
+| (1) Matching, Nonelective and Forfeitures | (2) Matching | (3) Nonelective | (4) Forfeitures |
+|------------------------------------------|--------------|-----------------|------------------|
+| (1) [ ] Death. | [ ] OR | [ ] | [ ] |
+| (2) [ ] Disability. | [ ] OR | [ ] | [ ] |
+| (3) [ ] Normal Retirement Age. | [ ] OR | [ ] | [ ] |
+| (4) [ ] Early Retirement Age. | [ ] OR | [ ] | [ ] |
+
+33. FORFEITURE ALLOCATION METHOD (3.07). (Choose one of (a) or (b).):  
+[Note: Even if the Employer elects immediate vesting, the Employer should complete Election 33. See Section 7.07.]  
+
+© 2014 or its suppliers  
+17
+
+
+
+
+page_019
+
+Standardized 401(k) Plan
+
+(a) [ ] Safe harbor/top-heavy exempt. Apply all forfeitures to Safe Harbor Contributions and Plan expenses in accordance with Section 3.07(A)(4).  
+(b) [x] Apply to Contributions. The Plan Administrator will allocate a Participant forfeiture attributable to all Contribution Types or attributable to all Nonelective Contributions or to all Matching Contributions as follows (Choose one or more of (1) through (6) and choose Contribution Type as applicable. Choose (5) only in conjunction with at least one other election.):
+
+| (1) All Forfeitures | (2) Nonelective Forfeitures | (3) Matching Forfeitures |
+|---------------------|-----------------------------|--------------------------|
+| (1) [ ] Additional Nonelective. Allocate as additional Discretionary Nonelective Contribution. | [ ] OR | [ ] OR | [ ] |
+| (2) [ ] Additional Match. Allocate as additional Discretionary Matching Contribution. | [ ] OR | [ ] OR | [ ] |
+| (3) [x] Reduce Nonelective. Apply to Nonelective Contribution. | [x] OR | [ ] OR | [ ] |
+| (4) [ ] Reduce Match. Apply to Matching Contribution. | [x] OR | [ ] OR | [ ] |
+| (5) [ ] Plan expenses. Pay reasonable Plan expenses. (See Section 7.04(C).) | [x] OR | [ ] OR | [ ] |
+| (6) [ ] Describe: _____________________________________________________________ | | | |
+(must satisfy the definitely determinable requirement under Treas. Reg. §1.401-1(b) and be applied in a uniform and nondiscriminatory manner; e.g., Forfeitures attributable to transferred balances from Plan X are allocated only to former Plan X participants.)
+
+[Note: Any allocation under Election 33(b)(6) must be a design-based safe harbor allocation under Treas. §1.401(a)(4)-2(b)(2) and (4) or must result in the same or a lower allocation rate to all HCEs versus any NHCEs.]  
+
+34. AUTOMATIC ESCALATION (3.02(G)). The Automatic Escalation provisions of Section 3.02(G) (Choose one of (a) or (b). See Election 21 regarding Automatic Deferrals. Automatic Escalation applies to Participants who have a Salary Reduction Agreement in effect.):  
+(a) [x] Do not apply.  
+(b) [ ] Apply. (Complete (1), (2), (3), and if appropriate (4).):  
+(1) Participants affected. The Automatic Escalation applies to (Choose one of a., b., or c.):  
+a. [ ] All Deferring Participants. All Participants who have a Salary Reduction Agreement in effect to defer at least _____% of Compensation.  
+b. [ ] New Deferral Elections. All Participants who file a Salary Reduction Agreement after the effective date of this Election, or, as appropriate, any amendment thereto, to defer at least _____% of Compensation.  
+c. [ ] Describe affected Participants: _____________________________________________________________  
+
+[Note: The Employer in Election 34(b)(1)c. may further describe affected Participants, e.g., non-Collective Bargaining Employees OR Division A Employees. The group of Participants must be definitely determinable and if an EACA under Election 21, must be uniform.]  
+
+(2) Automatic Increases. (Choose one of a. or b.):  
+a. [ ] Automatic increase. The Participant’s Elective Deferrals will increase by _____% per year up to a maximum of _____% of Compensation unless the Participant has filed a Contrary Election after the effective date of this Election or, as appropriate, any amendment thereto.  
+b. [ ] Describe increase: _____________________________________________________________  
+
+[Note: The Employer in Election 34(b)(2)b. may define different increases for different groups of Participants or may otherwise limit Automatic Escalation. Any such provisions must be definitely determinable.]  
+
+(3) Change Date. The Elective Deferrals will increase on the following day each Plan Year:  
+a. [ ] First day of the Plan Year.  
+b. [ ] Other: _____________________________________________________________  
+(must be a specified or definitely determinable date that occurs at least annually)  
+
+(4) First Year of Increase. The automatic escalation provision will apply to a participant beginning with the first Change Date after the Participant files a Salary Reduction Agreement (or, if sooner, the effective date of this Election, or, as appropriate, any amendment thereto), unless a. is selected below:  
+a. [ ] The escalation provision will apply as of the second Change Date thereafter.  
+
+© 2014 or its suppliers  
+18
+
+
+
+
+page_020
+
+
+Standardized 401(k) Plan
+
+35. IN-PLAN ROTH ROLLOVER CONTRIBUTION (3.08(E)). The following provisions apply regarding In-Plan Roth Rollover Contributions (Choose one of (a) or (b); also see Election 55(d)(1); leave blank if Election 6(b)(1) is not selected.):  
+(a) [x] Not Applicable. The Plan does not permit In-Plan Roth Rollover Contributions.  
+(b) [ ] Applies. The Plan permits In-Plan Roth Rollover Contributions. (Choose (1) if applicable.)  
+(1) [ ] Effective Date. ________________________ (enter date not earlier than September 28, 2010; may be left blank if same as Plan or Restatement Effective Date).  
+
+36. EMPLOYEE (AFTER-TAX) CONTRIBUTIONS (3.09). The following additional elections apply to Employee Contributions under Election 6(f). (Choose one or both of (a) and (b) if applicable.):  
+(a) [ ] Additional limitations. The Plan permits Employee Contributions subject to the following limitations, if any, in addition to those already imposed under the Plan: _____________________________________________________________  
+[Note: Any designated limitation(s) must be the same for all Participants and must be definitely determinable (e.g., Employee Contributions may not exceed the lesser of $5,000 dollars or 10% of Compensation for the Plan Year and/or Employee Contributions may not be less than $50 or 2% of Compensation per payroll period).]  
+(b) [ ] Apply Matching Contribution. For each Plan Year, the Employer's Matching Contribution made as to Employee Contributions is: _____________________________________________________________  
+[Note: The Employer Matching Contribution formula must be the same for all Participants and must be definitely determinable (e.g., A fixed Matching Contribution equal to 50% of Employee Contributions not exceeding 6% of Plan Year Compensation or A Discretionary Matching Contribution based on Employee Contributions).]  
+
+37. DESIGNATED IRA CONTRIBUTIONS (3.12). Under Election 6(h), a Participant may make Designated IRA Contributions. (Complete (a) and (b).):  
+(a) Type of IRA contribution. A Participant's Designated IRA Contributions will be (Choose one of (1), (2), or (3).):  
+(1) [ ] Traditional.  
+(2) [ ] Roth.  
+(3) [ ] Traditional/Roth. As the Participant elects at the time of contribution.  
+(b) Type of Account. A Participant's Designated IRA Contributions will be held in the following form of Account(s) (Choose one of (1), (2), or (3).):  
+(1) [ ] IRA.  
+(2) [ ] Individual Retirement Annuity.  
+(3) [ ] IRA/Individual Retirement Annuity. As the Participant elects at the time of contribution.  
+
+ARTICLE IV  
+LIMITATIONS AND TESTING  
+
+38. ANNUAL TESTING ELECTIONS (4.06(B)). The Employer makes the following Plan specific annual testing elections under Section 4.06(B). (Complete (a) and (b) as applicable. Leave (a) blank if the Plan is a SIMPLE 401(k) plan.):  
+(a) [x] Nondiscrimination testing. (Choose one or more of (1), (2), and (3).):  
+(1) [x] Traditional 401(k) Plan/ADP/ACP test. The following testing method(s) apply:  
+ADP Test (Choose one of a. or b.)  
+a. [ ] Current Year Testing.  
+b. [x] Prior Year Testing.  
+ACP Test (Choose one of c., d., or e.)  
+c. [x] Not applicable. The Plan does not permit Matching Contributions or Employee Contributions and the Plan Administrator will not recharacterize Elective Deferrals as Employee Contributions for testing.  
+d. [ ] Current Year Testing.  
+e. [ ] Prior Year Testing.  
+(2) [x] Safe Harbor Plan/No testing or ACP test only. (Choose one of a. or b.):  
+
+© 2014 or its suppliers  
+19
+
+
+
+page_021
+
+
+Standardized 401(k) Plan
+
+a. [ ] No testing. ADP test safe harbor applies and if applicable, ACP test safe harbor applies.  
+b. [ ] ACP test only. ADP test safe harbor applies, but Plan will perform ACP test as follows (Choose one of (i) or (ii).):  
+(i) [ ] Current Year Testing.  
+(ii) [ ] Prior Year Testing.  
+
+(3) [ ] Maybe notice (Election 30(b)). See Section 3.05(I).  
+[Note: The Employer may make elections under both the Traditional 401(k) Plan and Safe Harbor Plan elections, in order to accommodate a Plan that applies both testing elections (e.g., Safe Harbor Includible Employees group and tested Otherwise Excludible Employees group, or Safe Harbor Plan with tested after-tax Employee Contributions). In the absence of an election regarding ADP or ACP tested contributions, Current Year Testing applies.]  
+
+(b) [ ] HCE determination. The Top-Paid Group election and the calendar year data election are not used unless elected below (Choose one or both of (1) and (2) if applicable.):  
+(1) [ ] Top-paid group election applies.  
+(2) [ ] Calendar year data election (fiscal year Plan only) applies.  
+
+ARTICLE V  
+VESTING REQUIREMENTS  
+
+39. NORMAL RETIREMENT AGE (5.01). A Participant attains Normal Retirement Age under the Plan on the following date (Choose one of (a) or (b).):  
+(a) [x] Specific age. The date the Participant attains age 65 . [Note: The age may not exceed age 65.]  
+(b) [ ] Age/participation. The later of the date the Participant attains age _____ or the _____ anniversary of the first day of the Plan Year in which the Participant commenced participation in the Plan. [Note: The age may not exceed age 65 and the anniversary may not exceed the 5th.]  
+
+40. EARLY RETIREMENT AGE (5.01). (Choose one of (a) or (b).):  
+(a) [x] Not applicable. The Plan does not provide for an Early Retirement Age.  
+(b) [ ] Early Retirement Age. Early Retirement Age is the later of: (i) the date a Participant attains age X____; (ii) the date a Participant reaches his/her _____ anniversary of the first day of the Plan Year in which the Participant commenced participation in the Plan; or (iii) the date a Participant completes _____ Years of Service.  
+[Note: The Employer should leave blank any of clauses (i), (ii), and (iii) which are not applicable.]  
+
+"Years of Service" under this Election 40 means (Choose one of (1) or (2) as applicable.):  
+(1) [ ] Eligibility. Years of Service for eligibility in Election 16.  
+(2) [ ] Vesting. Years of Service for vesting in Elections 43 and 44.  
+[Note: Election of an Early Retirement Age does not affect the time at which a Participant may receive a Plan distribution. However, a Participant becomes 100% vested at Early Retirement Age.]  
+
+41. ACCELERATION ON DEATH OR DISABILITY (5.02). Under Section 5.02, if a Participant incurs a Severance from Employment as a result of death or Disability (Choose one of (a), (b), or (c).):  
+(a) [x] Applies. Apply 100% vesting.  
+(b) [ ] Not applicable. Do not apply 100% vesting. The Participant's vesting is in accordance with the applicable Plan vesting schedule.  
+(c) [ ] Limited application. Apply 100% vesting, but only if a Participant incurs a Severance from Employment as a result of (Choose one of (1) or (2).):  
+(1) [ ] Death.  
+(2) [ ] Disability.  
+
+© 2014 or its suppliers  
+20
+
+
+
+
+page_022
+
+
+
+Standardized 401(k) Plan
+
+42. VESTING SCHEDULE (5.03). A Participant has a 100% Vested interest at all times in his/her Accounts attributable to: (i) Elective Deferrals; (ii) Employee Contributions; (iii) QNECs; (iv) QMACs; (v) Safe Harbor Contributions (other than QACA Safe Harbor Contributions); (vi) SIMPLE Contributions; (vii) Rollover Contributions; (viii) DECs; and (ix) Designated IRA Contributions. The following vesting schedule applies to Regular Matching Contributions, to Additional Matching Contributions (irrespective of ACP testing status), to Nonelective Contributions and to QACA Safe Harbor Contributions. (Choose (a) or choose one or both of (b) and (c) as applicable.):  
+(a) [ ] Immediate vesting. 100% Vested at all times in all Accounts.  
+[Note: Unless all Contribution Types are 100% Vested, the Employer should not elect 42(a). If the Employer elects immediate vesting under 42(a), the Employer should not complete the balance of Election 42 or Elections 43 and 44 (except as noted therein). The Employer must elect 42(a) if the eligibility Service condition under Election 14 as to all Contribution Types (except Elective Deferrals and Safe Harbor Contributions) exceeds one Year of Service or more than 12 months. The Employer must elect 42(b)(1) as to any Contribution Type where the eligibility service condition exceeds one Year of Service or more than 12 months. The Employer should elect 42(b) if any Contribution Type is subject to a vesting schedule.]  
+
+(b) [x] Vesting schedules: Apply the following vesting schedules (Choose one or more of (1) through (6). Choose Contribution Type as applicable.):  
+
+| (1) All Contributions | (2) Nonelective | (3) Regular Matching | (4) Additional Matching (See Section 3.05(F)) | (5) QACA Safe Harbor |
+|-----------------------|------------------|----------------------|---------------------------------------------|------------------------|
+| (1) [ ] Immediate vesting. N/A (See Election 42(a)) | [ ] OR | [ ] OR | [ ] OR | [ ] OR | [ ] |
+| (2) [x] 6-year graded. | [ ] OR | [ ] OR | [ ] OR | [ ] OR | N/A |
+| (3) [ ] 3-year cliff. | [ ] OR | [ ] OR | [ ] OR | [ ] OR | N/A |
+| (4) [ ] Modified schedule: | [ ] OR | [ ] OR | [ ] OR | [ ] OR | N/A |
+| Years of Service | Vested % | | | | |
+| Less than 1 | a. _______ | | | | |
+| 1 | b. _______ | | | | |
+| 2 | c. _______ | | | | |
+| 3 | d. _______ | | | | |
+| 4 | e. _______ | | | | |
+| 5 | f. _______ | | | | |
+| 6 or more | 100% | | | | |
+| (5) [ ] 2-year cliff. | [ ] OR | [ ] OR | [ ] OR | [ ] OR | [ ] |
+| (6) [ ] Modified 2-year schedule: | [ ] OR | [ ] OR | [ ] OR | [ ] OR | [ ] |
+| Years of Service | Vested % | | | | |
+| Less than 1 | a. _______ | | | | |
+| 1 | b. _______ | | | | |
+| 2 | 100% | | | | |
+
+[Note: If the Employer does not elect 42(a), the Employer under 42(b) must elect immediate vesting or must elect one of the specified alternative vesting schedules. The Employer must elect either 42(b)(5) or (6) as to QACA Safe Harbor Contributions. The modified top-heavy schedule of Election 42(b)(4) must satisfy Code §411(a)(2)(B). If the Employer elects Additional Matching under Election 30(i), the Employer should elect vesting under the Additional Matching column in this Election 42(b). That election applies to the Additional Matching even if the Employer has given the maybe notice but does not give the supplemental notice for any Plan Year and as to such Plan Years, the Plan is not a safe harbor plan and the Matching Contributions are not Additional Matching Contributions. If the Plan's Effective Date is before January 1, 2007, the Employer may wish to complete the override elections in Appendix B relating to the application of non-top-heavy vesting.]  
+
+(c) [ ] Special vesting provisions: _____________________________________________________________  
+[Note: The Employer under Election 42(c) may describe special vesting provisions from the elections available under Election 42 and/or a combination thereof as to a Contribution Type (e.g., Full vesting applies as to Discretionary Nonelective Contributions. 6-year graded vesting applies to Fixed Nonelective Contributions). Any special vesting provision must satisfy Code §411(a) and must be nondiscriminatory.]  
+
+43. YEAR OF SERVICE - VESTING (5.05). (Complete both (a) and (b).):  
+[Note: If the Employer elects the Elapsed Time Method for vesting the Employer should not complete this Election 43. If the Employer elects immediate vesting, the Employer should not complete Election 43 or Election 44 unless it elects to apply a Year of Service for vesting under any other Adoption Agreement election.]  
+
+© 2014 or its suppliers  
+21
+
+
+page_023
+
+
+
+Standardized 401(k) Plan
+
+(a) Year of Service. An Employee must complete at least 1,000 Hours of Service during a Vesting Computation Period to receive credit for a Year of Service under Article V. [Note: The number may not exceed 1,000. If left blank, the requirement is 1,000.]  
+
+(b) Vesting Computation Period. The Plan measures a Year of Service based on the following 12-consecutive month period (Choose one of (1) or (2).):  
+(1) [x] Plan Year.  
+(2) [ ] Anniversary Year.  
+
+44. EXCLUDED YEARS OF SERVICE - VESTING (5.05(C)). (Choose (a) or (b).):  
+(a) [x] None. None other than as specified in Section 5.05(C)(1).  
+(b) [ ] Exclusions. The Plan excludes the following Years of Service for purposes of vesting (Choose one or more of (1) through (4).):  
+(1) [ ] Age 18. Any Year of Service before the Vesting Computation Period during which the Participant attained the age of 18.  
+(2) [ ] Prior to Plan establishment. Any Year of Service during the period the Employer did not maintain this Plan or a predecessor plan.  
+(3) [ ] Rule of Parity. Any Year of Service excluded under the rule of parity. See Plan Section 5.06(C).  
+(4) [ ] Additional exclusions. The following Years of Service: ________________________  
+[Note: The Employer under Election 44(b)(4) may describe vesting service exclusions provisions available under Election 44 and/or a combination thereof as to a Contribution Type (e.g., No exclusions apply as to Discretionary Nonelective Contributions. The age 18 exclusion applies to Fixed Nonelective Contributions). Any exclusion specified under Election 44(b)(4) must comply with Code §411(a)(4). Any exclusion must be nondiscriminatory.]  
+
+ARTICLE VI  
+DISTRIBUTION OF ACCOUNT BALANCE  
+
+45. MANDATORY DISTRIBUTION (6.01(A)(1)/6.08(D)). The Plan provides or does not provide for Mandatory Distribution of a Participant's Vested Account Balance following Severance from Employment, as follows (Choose one of (a) or (b). Choose (c) if applicable.):  
+(a) [ ] No Mandatory Distribution. The Plan will not make a Mandatory Distribution following Severance from Employment.  
+(b) [x] Mandatory Distribution. The Plan will make a Mandatory Distribution following Severance from Employment. (Complete (1) and (2). Choose (3) unless the Employer elects to limit Mandatory Distributions to $1,000 including Rollover Contributions under Elections 45(b)(1)b. and 45(b)(2)b.):  
+(1) Amount limit. As to a Participant who incurs a Severance from Employment and who will receive distribution before attaining the later of age 62 or Normal Retirement Age, the Mandatory Distribution maximum amount is equal to (Choose one of a., b., or c.):  
+a. [ ] $5,000.  
+b. [x] $1,000.  
+c. [ ] Specify amount: $_____ (may not exceed $5,000).  
+[Note: This election only applies to the Mandatory Distribution maximum amount. For other Plan provisions subject to a $5,000 limit, see election 55(g)(7) in Appendix B.]  
+(2) Application of Rollovers to amount limit. In determining whether a Participant's Vested Account Balance exceeds the Mandatory Distribution dollar limit in Election 45(b)(1), the Plan (Choose one of a. or b.):  
+a. [ ] Disregards Rollover Contribution Account.  
+b. [x] Includes Rollover Contribution Account.  
+(3) [ ] Amount of Mandatory Distribution subject to Automatic Rollover. A Mandatory Distribution to a Participant before attaining the later of age 62 or Normal Retirement Age is subject to Automatic Rollover under Section 6.08(D) (Choose one of a. or b.):  
+a. [ ] Only if exceeds $1,000. Only if the amount of the Mandatory Distribution exceeds $1,000, which for this purpose must include any Rollover Contributions Account.  
+b. [ ] Specify lesser amount. Only if the amount of the Mandatory Distribution is at least: $_____ (specify $1,000 or less), which for this purpose must include any Rollover Contributions Account.  
+(c) [ ] Required distribution at Normal Retirement Age. A severed Participant may not elect to delay distribution beyond the later of age 62 or Normal Retirement Age.  
+
+© 2014 or its suppliers  
+22
+
+
+
+page_024
+
+Standardized 401(k) Plan
+
+46. SEVERANCE DISTRIBUTION TIMING (6.01). Subject to the timing limitations of Section 6.01(A)(1) in the case of a Mandatory Distribution, or in the case of any Distribution Requiring Consent under Section 6.01(A)(2), for which consent is received, the Plan Administrator will instruct the Trustee to distribute a Participant's Vested Account Balance as soon as is administratively practical following the time specified below (Choose one or more of (a) through (i) as applicable; choose (i) if applicable.):  
+[Note: If a Participant dies after Severance from Employment but before receiving distribution of all of his/her Account, the elections under this Election 46 no longer apply. See Section 6.01(B) and Election 50.]  
+
+| (1) Mandatory Distribution | (2) Distribution Requiring Consent |
+|----------------------------|-----------------------------------|
+| (a) [ ] Immediate. Immediately following Severance from Employment. | [ ] |
+| (b) [ ] Next Valuation Date. After the next Valuation Date following Severance from Employment. | [ ] |
+| (c) [ ] Plan Year. In the _____ Plan Year following Severance from Employment (e.g., next or fifth). | [ ] |
+| (d) [ ] Plan Year quarter. In the _____ Plan Year quarter following Severance from Employment (e.g., next or fifth). | [ ] |
+| (e) [ ] Contribution Type Accounts. ________________________ (specify timing) as to the Participant's _______________ Account(s) and ________________________ (specify timing) as to the Participant's _______________ Account(s) (e.g., As soon as is practical following Severance from Employment as to the Participant's Elective Deferral Account and as soon as is practical in the next Plan Year following Severance from Employment as to the Participant's Nonelective and Matching Accounts). | [ ] |
+| (f) [x] Vesting controlled timing. If the Participant's total Vested Account Balance exceeds $5,000, distribute within 1 yr of term (specify timing) and if the Participant's total Vested Account Balance does not exceed $5,000, distribute within 120 days of term (specify timing). | [ ] |
+| (g) [ ] Distribute at Normal Retirement Age. As to a Mandatory Distribution, distribute not later than 60 days after the beginning of the Plan Year following the Plan Year in which the previously severed Participant attains the earlier of Normal Retirement Age or age 65. [Note: An election under column (2) only will have effect if the Plan's NRA is less than age 62.] | [ ] |
+| (h) [ ] No buy-back/vesting controlled timing. Distribute as soon as is practical following Severance from Employment if the Participant is fully Vested. Distribute as soon as is practical following a Forfeiture Break in Service if the Participant is not fully Vested. | N/A | [ ] |
+| (i) [ ] Describe Severance from Employment distribution timing: Six months after date of termination of service for distributions requiring consent, unless Participant is Age 59 1/2 or older. | | |
+
+[Note: The Employer under Election 46(i) may describe Severance from Employment distribution timing provisions from the elections available under Election 46 and/or a combination thereof as to any: (i) Contribution Type (e.g., Immediate distribution after Severance from Employment applies as to Elective Deferral Accounts and distribution after the next Valuation Date following Severance from Employment applies to Nonelective Contribution Accounts); and/or (ii) merged plan account now held in the Plan (e.g., The accounts from the X plan merged into this Plan continue to be distributable in accordance with the X plan terms [supply terms] and not in accordance with the terms of this Plan). An Employer's election under Election 46(i) must: (i) be objectively determinable; (ii) not be subject to Employer discretion; (iii) comply with Code §401(a)(14) timing requirements; (iv) be the same for all Participants and (v) preserve Protected Benefits as required.]  
+
+(j) [x] Acceleration. Notwithstanding any later specified distribution date in Election 46, a Participant may elect an earlier distribution following Severance from Employment (Choose (1) and (2) as applicable.):  
+(1) [x] Disability. If Severance from Employment is on account of Disability or if the Participant incurs a Disability following Severance from Employment.  
+(2) [ ] Hardship. If the Participant incurs a hardship under Section 6.07(B) following Severance from Employment.  
+
+47. IN-SERVICE DISTRIBUTIONS/EVENTS (6.01(C)). A Participant may elect an In-Service Distribution of the designated Contribution Type Accounts based on any of the following events in accordance with Section 6.01(C) (Choose one of (a) or (b).):  
+
+© 2014 or its suppliers  
+23
+
+
+
+page_025
+
+**Standardized 401(k) Plan**
+
+[Note: If the Employer elects any In-Service Distribution option, a Participant may elect to receive as many In-Service Distributions per Plan Year (with a minimum of one per Plan Year) as the Plan Administrator’s In-Service Distribution form or policy may permit. If the form or policy is silent, the number of In-Service Distributions is not limited.]
+
+**(a) [ ] None.** The Plan does not permit any In-Service Distributions except as to any of the following (if applicable):  
+(i) RMDs under Section 6.02;  
+(ii) Protected Benefits; and  
+(iii) Designated IRA Contributions.  
+Also see Section 6.01(C)(4)(e) with regard to Rollover Contributions, Employee Contributions and DECs.
+
+**(b) [x] Permitted.** In-Service Distributions are permitted as follows from the designated Contribution Type Accounts (Choose one or more of (1) through (9)):
+
+[Note: Unless the Employer elects otherwise in Election (b)(9) below, Elective Deferrals under Election 47(b) includes Pre-Tax and Roth Deferrals and Matching Contributions includes Additional Matching Contributions (irrespective of the Plan’s ACP status).]
+
+| (1) | None. Except for Plan Section 47(a) exceptions. | (2) | Elective Deferrals | (3) | Safe Harbor Contrib. | (4) | QNECs | (5) | QMACs | (6) | Matching Contrib. | (7) | Nonelective/SIMPLE |
+|-----|--------------------------------------------------|-----|-------------------|-----|----------------------|-----|--------|-----|--------|-----|-------------------|-----|--------------------|
+| (1) | [ ] None. Except for Plan Section 47(a) exceptions. | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| (2) | [ ] Age (Choose one or both of a. and b.):<br>a. [ ] Age (must be at least 59 1/2).<br>b. [ ] Age (may be less than 59 1/2). | [ ] OR [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| (3) | [ ] Hardship (Choose one or both of a. and b.):<br>a. [ ] Hardship (safe harbor), See Section 6.07(A).<br>b. [ ] Hardship (non-safe harbor), See Section 6.07(B). | N/A | [ ] | N/A | N/A | N/A | N/A | [ ] | [ ] | [ ] | [ ] | [ ] |
+| (4) | [ ] Disability. | [ ] OR [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| (5) | [ ] Year contributions. (specify minimum of two years) See Section 6.01(C)(4)(a)(i). | N/A | N/A | N/A | N/A | N/A | N/A | [ ] | [ ] | [ ] | [ ] | [ ] |
+| (6) | [ ] ____ months of participation. (specify minimum of 60 months) See Section 6.01(C)(4)(a)(ii). | N/A | N/A | N/A | N/A | N/A | N/A | [ ] | [ ] | [ ] | [ ] | [ ] |
+| (7) | [ ] Qualified Reservist Distribution. See Section 6.01(C)(4)(b)(iii). | N/A | [ ] | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| (8) | [x] Deemed Severance Distribution. See Section 6.11. | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| (9) | [x] Describe: Attainment of Normal Retirement Age for purposes of Elective Deferrals and Nonelective Contributions | | | | | | | | | | | | |
+
+[Note: The Employer under Election 47(b)(9) may describe In-Service Distribution provisions from the elections available under Election 47 and/or a combination thereof as to any: (i) Contribution Type (e.g., Discretionary Nonelective Contribution Accounts are distributable on Disability; Fixed Nonelective Contribution Accounts are distributable on Disability or Hardship (non-safe harbor); and/or (ii) merged plan account now held in the Plan (e.g., The accounts from the X plan merged into this Plan continue to be distributable in accordance with the X plan terms [supply terms] and not in accordance with the terms of this Plan). An Employer's election under Election 47(b)(9) must: (i) be objectively determinable; (ii) not be subject to Employer discretion; (iii) preserve Protected Benefits as required; (iv) be the same for all Participants.]
+
+© 2014 _________ or its suppliers
+
+
+page_026
+
+
+
+Standardized 401(k) Plan
+
+[Note: If the Employer elects any In-Service Distribution option, a Participant may elect to receive as many In-Service Distributions per Plan Year (with a minimum of one per Plan Year) as the Plan Administrator's In-Service Distribution form or policy may permit. If the form or policy is silent, the number of In-Service Distributions is not limited.]
+
+(a) [ ] None. The Plan does not permit any In-Service Distributions except as to any of the following (if applicable): (i) RMDs under Section 6.02; (ii) Protected Benefits; and (iii) Designated IRA Contributions. Also see Section 6.01(C)(4)(e) with regard to Rollover Contributions, Employee Contributions and DECs.
+
+(b) [x] Permitted. In-Service Distributions are permitted as follows from the designated Contribution Type Accounts (Choose one or more of (1) through (9).):  
+[Note: Unless the Employer elects otherwise in Election (b)(9) below, Elective Deferrals under Election 47(b) includes Pre-Tax and Roth Deferrals and Matching Contributions includes Additional Matching Contributions (irrespective of the Plan's ACP testing status).]
+
+| (1) All Contrib. | (2) Elective Deferrals | (3) Safe Harbor Contrib. | (4) QNECs | (5) QMACs | (6) Matching Contrib. | (7) Nonelective/SIMPLE |
+|------------------|------------------------|--------------------------|---------|---------|----------------------|-----------------------|
+| (1) [ ] None. Except for Election 47(a) exceptions. | N/A (See Election 47(a)) | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| (2) [ ] Age (Choose one or both of a. and b.): | | | | | | | | |
+| a. [ ] Age 59 1/2 (must be at least 59 1/2). | [x] OR | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| b. [ ] Age _____ (may be less than 59 1/2). | N/A | N/A | N/A | N/A | N/A | [ ] | [ ] |
+| (3) [ ] Hardship (Choose one or both of a. and b.): | | | | | | | | |
+| a. [ ] Hardship (safe harbor). See Section 6.07(A). | N/A | [x] | N/A | N/A | N/A | [ ] | [ ] |
+| b. [ ] Hardship (non-safe harbor). See Section 6.07(B). | N/A | N/A | N/A | N/A | N/A | [ ] | [ ] |
+| (4) [ ] Disability. | [ ] OR | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| (5) [ ] _____ year contributions. (specify minimum of two years) See Section 6.01(C)(4)(a)(i). | N/A | N/A | N/A | N/A | N/A | [ ] | [ ] |
+| (6) [ ] _____ months of participation. (specify minimum of 60 months) See Section 6.01(C)(4)(a)(ii). | N/A | N/A | N/A | N/A | N/A | [ ] | [ ] |
+| (7) [ ] Qualified Reservist Distribution. See Section 6.01(C)(4)(b)(iii). | N/A | [x] | N/A | N/A | N/A | N/A | N/A |
+| (8) [x] Deemed Severance Distribution. See Section 6.11. | [x] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| (9) [x] Describe: ______________Attainment of Normal Retirement Age for the Purpose of Elected deferral and Non Elective Contribution_______________________________________________ | | | | | | | |
+
+[Note: The Employer under Election 47(b)(9) may describe In-Service Distribution provisions from the elections available under Election 47 and/or a combination thereof as to any: (i) Contribution Type (e.g., Discretionary Nonelective Contribution Accounts are distributable on Disability. Fixed Nonelective Contribution Accounts are distributable on Disability or Hardship (non-safe harbor)); and/or (ii) merged plan account now held in the Plan (e.g., The accounts from the X plan merged into this Plan continue to be distributable in accordance with the X plan terms [supply terms] and not in accordance with the terms of this Plan). An Employer's election under Election 47(b)(9) must: (i) be objectively determinable; (ii) not be subject to Employer discretion; (iii) preserve Protected Benefits as required; (iv) be the same for all Participants.]  
+
+© 2014 or its suppliers  
+24
+
+
+
+
+page_027
+
+
+
+
+Standardized 401(k) Plan
+
+same for all Participants; and (v) not permit an "early" distribution of any Restricted 401(k) Accounts or Restricted Pension Accounts. See Sections 6.01(C)(4) and 11.02(C)(3).]
+
+48. IN-SERVICE DISTRIBUTIONS/ADDITIONAL CONDITIONS (6.01(C)). The following additional conditions apply to In-Service Distributions under Election 47(b) (Choose one of (a) or (b).):  
+(a) [ ] Additional conditions. (Choose one or more of (1) through (3) as applicable.):  
+(1) [ ] 100% vesting required. A Participant may not receive an In-Service Distribution unless the Participant is 100% Vested in the distributing Account. This restriction applies to (Choose one or more of a. or b.):  
+a. [ ] Hardship distributions. Distributions based on hardship.  
+b. [ ] Other In-Service. In-Service distributions other than distributions based on hardship.  
+(2) [ ] Minimum amount. A Participant may not receive an In-Service Distribution in an amount which is less than: $_____ (specify amount not exceeding $1,000).  
+(3) [ ] Describe other conditions: _____________________________________________________________  
+[Note: An Employer's election under Election 48(a)(3) must: (i) be objectively determinable; (ii) not be subject to Employer discretion; (iii) preserve Protected Benefits as required; (iv) be the same for all Participants; and (v) not permit an "early" distribution of any Restricted 401(k) Accounts or Restricted Pension Accounts. See Section 6.01(C)(4).]  
+(b) [x] No other conditions. A Participant may elect to receive an In-Service Distribution upon any Election 47(b) event without further condition, provided that the amount distributed may not exceed the Vested amount in the distributing Account.  
+
+49. POST-SEVERANCE AND LIFETIME RMD DISTRIBUTION METHODS (6.03). A Participant whose Vested Account Balance exceeds $5,000 (or any lesser amount elected in Appendix B, Election 55(g)(7)): (i) who has incurred a Severance from Employment and will receive a distribution; or (ii) who remains employed but who must receive lifetime RMDs, may elect distribution under one of the following method(s) of distribution described in Section 6.03 and subject to any Section 6.03 limitations. (Choose one or more of (a) through (f) as applicable.):  
+[Note: If a Participant dies after Severance from Employment but before receiving distribution of all of his/her Account, the elections under this Election 49 no longer apply. See Section 6.01(B) and Election 50.]  
+(a) [x] Lump-Sum. See Section 6.03(A)(3).  
+(b) [x] Installments only if Participant subject to lifetime RMDs. A Participant who is required to receive lifetime RMDs may receive installments payable in monthly, quarterly or annual installments equal to or exceeding the annual RMD amount. See Sections 6.02(A) and 6.03(A)(4)(a).  
+(c) [ ] Installments. See Section 6.03(A)(4).  
+(d) [ ] Alternative Annuity: _____________________________________________________________  
+See Section 6.03(A)(5).  
+[Note: Under a Plan which is subject to the joint and survivor annuity distribution requirements of Section 6.04 (Election 51(b)), the Employer may elect under 49(d) to offer one or more additional annuities (Alternative Annuity) to the Plan's QJSA, QPSA or QOSA. If the Employer elects under Election 51(a) to exempt Exempt Participants from the joint and survivor annuity requirements, the Employer should not elect to provide an Alternative Annuity under 49(d).]  
+(e) [ ] Ad-Hoc distributions. See Section 6.03(A)(6).  
+[Note: If an Employer elects to permit Ad-Hoc distributions the option must be available to all Participants.]  
+(f) [ ] Describe distribution method(s): _____________________________________________________________  
+[Note: The Employer under Election 49(f) may describe Severance from Employment distribution methods from the elections available under Election 49 and/or a combination thereof as to any: (i) Contribution Type (e.g., Discretionary Nonelective Contribution Accounts are distributable in a Lump-Sum. Fixed Nonelective Contribution Accounts are distributable in a Lump-Sum or in Installments); and/or (ii) merged plan account now held in the Plan (e.g., The accounts from the X plan merged into this Plan continue to be distributable in accordance with the X plan terms [supply terms] and not in accordance with the terms of this Plan). An Employer's election under Election 49(f) must: (i) be objectively determinable; (ii) not be subject to Employer, Plan Administrator or Trustee discretion; (iii) be the same for all Participants; and (iv) preserve Protected Benefits as required.]  
+
+50. BENEFICIARY DISTRIBUTION ELECTIONS (6.01(B)). Distributions following a Participant's death will be made as follows (Choose one of (a), (b), or (c); choose (d) if applicable.):  
+(a) [ ] Immediate. As soon as practical following the Participant's death.  
+(b) [ ] Next Calendar Year. At such time as the Beneficiary may elect, but in any event on or before the last day of the calendar year which next follows the calendar year of the Participant's death.  
+
+© 2014 or its suppliers  
+25
+
+
+
+
+page_028
+
+
+Standardized 401(k) Plan
+
+(c) [x] As Beneficiary elects. At such time as the Beneficiary may elect, consistent with Section 6.02.  
+(d) [ ] Describe: _____________________________________________________________  
+[Note: The Employer under Election 50(d) may describe an alternative distribution timing or afford the Beneficiary an election which is narrower than that permitted under election 50(c), or include special provisions related to certain beneficiaries, (e.g., a surviving spouse). However, any election under Election 50(d) must require distribution to commence no later than the Section 6.02 required date.]  
+
+51. JOINT AND SURVIVOR ANNUITY REQUIREMENTS (6.04). The joint and survivor annuity distribution requirements of Section 6.04 (Choose one of (a) or (b).):  
+(a) [x] Profit sharing exception. Do not apply to an Exempt Participant, as described in Section 6.04(G)(1), but apply to any other Participants (or to a portion of their Account as described in Section 6.04(G)) (Complete (1).):  
+(1) One-year marriage rule. Under Section 7.05(A)(3) relating to an Exempt Participant's Beneficiary designation under the profit sharing exception (Choose one of a. or b.):  
+a. [ ] Applies. The one-year marriage rule applies.  
+b. [x] Does not apply. The one-year marriage rule does not apply.  
+(b) [ ] Joint and survivor annuity applicable. Section 6.04 applies to all Participants (Complete (1).):  
+(1) One-year marriage rule. Under Section 6.04(B) relating to the QPSA (Choose one of a. or b.):  
+a. [ ] Applies. The one-year marriage rule applies.  
+b. [x] Does not apply. The one-year marriage rule does not apply.  
+
+ARTICLE VII  
+ADMINISTRATIVE PROVISIONS  
+
+52. ALLOCATION OF EARNINGS (7.04(B)). For each Contribution Type provided under the Plan, the Plan allocates Earnings using the following method (Choose one or more of (a) through (f). Choose Contribution Type as applicable.):  
+[Note: Elective Deferrals/Employee Contributions also includes Rollover Contributions, Transfers, DECs and Designated IRA Contributions, Matching Contributions includes all Matching Contributions and Nonelective Contributions includes all Nonelective Contributions, unless described otherwise in Election 52(f).]  
+
+| (1) All Contributions | (2) Elective Deferrals/Employee Contributions | (3) Matching Contributions | (4) Nonelective Contributions |
+|------------------------|----------------------------------------------|----------------------------|------------------------------|
+| (a) [x] Daily. See Section 7.04(B)(4)(a). | [x] OR | [ ] | [ ] | [ ] |
+| (b) [ ] Balance forward. See Section 7.04(B)(4)(b). | [ ] OR | [ ] | [ ] | [ ] |
+| (c) [ ] Balance forward with adjustment. See Section 7.04(B)(4)(c). Allocate pursuant to the balance forward method, except treat as part of the relevant Account at the beginning of the Valuation Period ____% of the contributions made during the following Valuation Period: ____________________. | [ ] OR | [ ] | [ ] | [ ] |
+| (d) [ ] Weighted average. See Section 7.04(B)(4)(d). If not a monthly weighting period, the weighting period is: ____________________. | [ ] OR | [ ] | [ ] | [ ] |
+| (e) [ ] Participant-Directed Account method. See Section 7.04(B)(4)(e). | [ ] OR | [ ] | [ ] | [ ] |
+| (f) [ ] Describe Earnings allocation method: _____________________________________________________________ | | | | |
+
+[Note: The Employer under Election 52(f) may describe Earnings allocation methods from the elections available under Election 52 and/or a combination thereof as to any: (i) Contribution Type (e.g., Daily applies as to Discretionary Nonelective Contribution Accounts. Participant-Directed Account applies to Fixed Nonelective Contribution Accounts); (ii) investment type, investment vendor or Account type (e.g., Balance forward applies to investments placed with vendor A and Participant-Directed Account applies to investments placed with vendor B OR Daily applies to Participant-Directed Accounts and balance forward applies to pooled Accounts); and/or (iii) merged plan account now held in the Plan (e.g., The accounts from the X plan merged into this Plan continue to be distributable in accordance with the X plan terms [supply terms] and not in accordance with the terms of this Plan). An Employer's election under Election 52(f) must: (i) be objectively determinable; (ii) not be subject to Employer discretion; (iii) be the same for all Participants; and (iv) preserve Protected Benefits as required.]  
+
+© 2014 or its suppliers  
+26
+
+
+page_029
+
+
+
+
+Standardized 401(k) Plan
+
+account now held in the Plan (e.g., The accounts from the X plan merged into this Plan continue to be subject to Earnings allocation in accordance with the X plan terms [supply terms] and not in accordance with the terms of this Plan). An Employer's election under Election 52(f) must: (i) be objectively determinable; (ii) not be subject to Employer discretion; and (iii) be nondiscriminatory.]
+
+ARTICLE VIII  
+TRUSTEE AND CUSTODIAN, POWERS AND DUTIES  
+
+53. VALUATION OF TRUST (8.02(C)(4)). In addition to the last day of the Plan Year, the Trustee (or Named Fiduciary as applicable) must value the Trust Fund on the following Valuation Date(s) (Choose one or more of (a) through (d). Choose Contribution Type as applicable.):  
+[Note: Elective Deferrals/Employee Contributions also include Rollover Contributions, Transfers, DECs and Designated IRA Contributions, Matching Contributions includes all Matching Contributions and Nonelective Contributions includes all Nonelective Contributions, unless described otherwise in Election 53(d).]  
+
+| (1) All Contributions | (2) Elective Deferrals/Employee Contributions | (3) Matching Contributions | (4) Nonelective Contributions |
+|------------------------|----------------------------------------------|----------------------------|------------------------------|
+| (a) [ ] No additional Valuation Dates. | [ ] OR | [ ] | [ ] | [ ] |
+| (b) [x] Daily Valuation Dates. Each business day of the Plan Year on which Plan assets for which there is an established market are valued and the Trustee is conducting business. | [ ] OR | [ ] | [ ] | [ ] |
+| (c) [ ] Last day of a specified period. The last day of each _____ of the Plan Year. | [ ] OR | [ ] | [ ] | [ ] |
+| (d) [ ] Specified Valuation Dates: _____________________________ | | | | |
+
+[Note: The Employer under Election 53(d) may describe Valuation Dates from the elections available under Election 53 and/or a combination thereof as to any: (i) Contribution Type (e.g., No additional Valuation Dates apply as to Discretionary Nonelective Contribution Accounts. The last day of each Plan Year quarter applies to Fixed Nonelective Contribution Accounts); (ii) investment type, investment vendor or Account type (e.g., No additional Valuation Dates apply to investments placed with vendor A and Daily Valuation Dates apply to investments placed with vendor B OR Daily Valuation Dates apply to Participant-Directed Accounts and no additional Valuation Dates apply to pooled Accounts); and/or (iii) merged plan account now held in the Plan (e.g., The accounts from the X plan merged into this Plan continue to be subject to Trust valuation in accordance with the X plan terms [supply terms] and not in accordance with the terms of this Plan). An Employer's election under Election 53(d) must: (i) be objectively determinable; (ii) not be subject to Employer discretion; and (iii) be nondiscriminatory.]  
+
+© 2014 or its suppliers  
+27
+
+
+
+page_030
+
+
+Standardized 401(k) Plan
+
+EXECUTION PAGE
+
+The Employer, by executing this Adoption Agreement, hereby agrees to the provisions of this Plan and Trust.
+
+Employer: ________________________________________________________  
+Date: ___________________________________________________________  
+Signed: __________________________________________________________  
+[print name/title]
+
+The Trustee (and Custodian, if applicable), by executing this Adoption Agreement, hereby accepts its position and agrees to all of the obligations, responsibilities and duties imposed upon the Trustee (or Custodian) under the Prototype Plan and Trust. If the Employer under Elections 5(c) or 5(d) will use a separate Trust, the Trustee need not execute this Adoption Agreement.
+
+Discretionary Trustee(s): _____________________________________________  
+Date: ___________________________________________________________  
+Signed: __________________________________________________________  
+[print name/title]
+
+Nondiscretionary Trustee(s): __________________________________________  
+Date: ___________________________________________________________  
+Signed: __________________________________________________________  
+[print name/title]
+
+Custodian(s) (Optional): ______________________________________________  
+Date: ___________________________________________________________  
+Signed: __________________________________________________________  
+[print name/title]
+
+Use of Adoption Agreement. Failure to complete properly the elections in this Adoption Agreement may result in disqualification of the Employer's Plan. The Employer only may use this Adoption Agreement only in conjunction with the basic plan document referenced by its document number on Adoption Agreement page one.
+
+Execution for Page Substitution Amendment Only. If this paragraph is completed, this Execution Page documents an amendment to Adoption Agreement Election(s) _____ effective ____________________, by substitute Adoption Agreement page number(s) ____. The Employer should retain all Adoption Agreement Execution Pages and amended pages. [Note: The Effective Date may be retroactive or may be prospective.]
+
+Prototype Plan Sponsor. The Prototype Plan Sponsor identified on the first page of the basic plan document will notify all adopting Employers of any amendment to this Prototype Plan or of any abandonment or discontinuance by the Prototype Plan Sponsor of its maintenance of this Prototype Plan. For inquiries regarding the adoption of the Prototype Plan, the Prototype Plan Sponsor's intended meaning of any Plan provisions or the effect of the Opinion Letter issued to the Prototype Plan Sponsor, please contact the Prototype Plan Sponsor at the following address and telephone number: ________________________________________________________.
+
+Reliance on Sponsor Opinion Letter. The Prototype Plan Sponsor has obtained from the IRS an Opinion Letter specifying the form of this Adoption Agreement and the basic plan document satisfy, as of the date of the Opinion Letter, Code §401. An adopting Employer may rely on the Prototype Sponsor's IRS Opinion Letter only to the extent provided in Rev. Proc. 2011-49. The Employer may not rely on the Opinion Letter in certain other circumstances or with respect to certain qualification requirements, which are specified in the Opinion Letter and in Rev. Proc. 2011-49 or subsequent guidance. In order to have reliance in such circumstances or with respect to such qualification requirements, the Employer must apply for a determination letter to Employee Plans Determinations of the IRS.
+
+© 2014 or its suppliers  
+28
+
+page_031
+
+
+
+
+Standardized 401(k) Plan
+
+APPENDIX A  
+SPECIAL RETROACTIVE OR PROSPECTIVE EFFECTIVE DATES  
+
+54. SPECIAL EFFECTIVE DATES (1.20). The Employer elects or does not elect Appendix A special Effective Date(s) as follows. (Choose (a) or one or more of (b) through (s) as applicable.):  
+[Note: If the Employer elects 54(a), do not complete the balance of this Election 54.]  
+
+(a) [x] Not applicable. The Employer does not elect any Appendix A special Effective Dates.  
+[Note: The Employer may use this Appendix A to specify an Effective Date for one or more Adoption Agreement elections which does not correspond to the Plan's new Plan or Restated Plan Effective Date under Election 4. As to Restated Plans, for periods prior to: (i) the below-specified special Effective Date(s); or (ii) the Restated Plan's general Effective Date under Election 4, as applicable, the Plan terms in effect prior to its restatement under this Adoption Agreement control for purposes of the designated provisions.]  
+
+(b) [ ] Trustee (1.67). The Trustee provisions under Election 5 or Appendix C are effective: ________________________.  
+(c) [ ] Contribution Types (1.12). The Contribution Types under Election(s) 6 _____ are effective: ________________________.  
+(d) [ ] Excluded Employees (1.22(D)). The Excluded Employee provisions under Election(s) 8 _____ are effective: ________________________.  
+(e) [ ] Compensation (1.11). The Compensation definition under Election(s) _____ (specify 9-11 as applicable) are effective: ________________________.  
+(f) [ ] Hour of Service/Elective Service Crediting (1.32/1.59(C)). The Hour of Service and/or elective Service crediting provisions under Election(s) _____ (specify 12-13 as applicable) are effective: ________________________.  
+(g) [ ] Eligibility (2.01-2.03). The eligibility provisions under Election(s) _____ (specify 14-19 as applicable) are effective: ________________________.  
+(h) [ ] Elective Deferrals (3.02(A)-(D)). The Elective Deferral provisions under Election(s) _____ (specify 20-23 as applicable) are effective: ________________________.  
+(i) [ ] Matching Contributions (3.03). The Matching Contribution provisions under Election(s) _____ (specify 24-26 as applicable) are effective: ________________________.  
+(j) [ ] Nonelective Contributions (3.04). The Nonelective Contribution provisions under Election(s) _____ (specify 27-29 as applicable) are effective: ________________________.  
+(k) [ ] 401(k) safe harbor (3.05). The 401(k) safe harbor provisions under Election(s) 30 _____ are effective: ________________________.  
+(l) [ ] Allocation conditions (3.06). The allocation conditions under Election(s) _____ (specify 31-32 as applicable) are effective: ________________________.  
+(m) [ ] Forfeitures (3.07). The forfeiture allocation provisions under Election(s) 33 _____ are effective: ________________________.  
+(n) [ ] Employee Contributions (3.09). The Employee Contribution provisions under Election(s) 36 _____ are effective: ________________________.  
+(o) [ ] Testing elections (4.06(B)). The testing elections under Election(s) 38 _____ are effective: ________________________.  
+(p) [ ] Vesting (5.03). The vesting provisions under Election(s) _____ (specify 39-44 as applicable) are effective: ________________________.  
+(q) [ ] Distributions (6.01, 6.03 and 6.04). The distribution elections under Election(s) _____ (specify 45-51 as applicable) are effective: ________________________.  
+(r) [ ] Earnings/Trust valuation (7.04(B)/8.02(C)(4)). The Earnings allocation and Trust valuation provisions under Election(s) _____ (specify 52-53 as applicable) are effective: ________________________.  
+(s) [ ] Special Effective Date(s) for other elections (specify elections and dates): _____________________________________________________________.
+
+© 2014 or its suppliers  
+1
+
+
+
+page_032
+
+
+Standardized 401(k) Plan
+
+APPENDIX B  
+BASIC PLAN DOCUMENT OVERRIDE ELECTIONS  
+
+55. BASIC PLAN OVERRIDES. The Employer elects or does not elect to override various basic plan provisions as follows (Choose (a) or choose one or more of (b) through (k) as applicable.):  
+[Note: If the Employer elects 55(a), do not complete the balance of this Election 55.]  
+
+(a) [ ] Not applicable. The Employer does not elect to override any basic plan provisions.  
+[Note: The Employer at the time of restating its Plan with this Adoption Agreement may make an election on Appendix A (Election 54(s)) to specify a special Effective Date for any override provision the Employer elects in this Election 55. If the Employer, after it has executed this Adoption Agreement, later amends its Plan to change any election on this Appendix B, the Employer should document the Effective Date of the Appendix B amendment on the Execution Page or otherwise in the amendment.]  
+
+(b) [x] Definition (Article I) overrides. (Choose one or more of (1) through (6) as applicable.):  
+(1) [ ] W-2 Compensation exclusion of paid/reimbursed moving expenses (1.11(B)(1)). W-2 Compensation excludes amounts paid or reimbursed by the Employer for moving expenses incurred by an Employee, but only to the extent that, at the time of payment, it is reasonable to believe that the Employee may deduct these amounts under Code §217.  
+(2) [ ] Alternative (general) 415 Compensation (1.11(B)(4)). The Employer elects to apply the alternative (general) 415 definition of Compensation in lieu of simplified 415 Compensation.  
+(3) [ ] Inclusion of Deemed 125 Compensation (1.11(C)). Compensation under Section 1.11 includes Deemed 125 Compensation.  
+(4) [ ] Pre-Regulatory inclusion of Post-Severance Compensation (1.11(I) and 4.05(F)). Prior to the first Limitation Year beginning on or after July 1, 2007 (the Effective Date of the final 415 regulations), the Plan includes Post-Severance Compensation within the meaning of Prop. Treas. Reg. §1.415(c)-2(e) as described in Sections 1.11(I) and 4.05(F) as follows (Choose one or both of a. and b.):  
+a. [ ] Include for 415 testing. Include for 415 testing and for other testing which uses 415 Compensation. This provision applies effective as of ________________________ (specify a date which is no earlier than January 1, 2005).  
+b. [ ] Include for allocations. Include for allocations as follows (specify affected Contribution Type(s) and any adjustments to Post-Severance Compensation used for allocation): ________________________. This provision applies effective as of ________________________ (specify a date which is no earlier than January 1, 2002).  
+(5) [ ] Inclusion of Deemed Disability Compensation (1.11(K)). Include Deemed Disability Compensation. (Choose one of a. or b.):  
+a. [ ] NHCEs only. Apply only to disabled NHCEs.  
+b. [ ] All Participants. Apply to all disabled Participants. The Employer will make Employer Contributions for such disabled Participants for: ________________________ (specify a fixed or determinable period).  
+(6) [ ] Treatment of Differential Wage Payments (1.11(L)). In lieu of the provisions of Section 1.11(L), the Employer elects the following (Choose one or more of a., b., c., and d. as applicable.):  
+a. [ ] Effective date. The inclusion is effective for Plan Years beginning after ________________________ (may not be earlier than December 31, 2008).  
+b. [ ] Elective Deferrals only. The inclusion only applies to Compensation for purposes of Elective Deferrals.  
+c. [ ] Not included. The inclusion does not apply to Compensation for purposes of any Contribution Type.  
+d. [ ] Other: ________________________ (specify other Contribution Type Compensation which includes Differential Wage Payments)  
+
+(c) [ ] Rule of parity - participation (Article II) override (2.03(D)). For purposes of Plan participation, the Plan applies the "rule of parity" under Code §410(a)(5)(D).  
+(d) [ ] Contribution/allocation (Article III) overrides. (Choose one or more of (1) through (7) as applicable.):  
+(1) [ ] Roth overrides. (Choose one or more of a., b., c., or d. as applicable.):  
+a. [ ] Treatment of Automatic Deferrals as Roth Deferrals (3.02(B)). The Employer elects to treat Automatic Deferrals as Roth Deferrals in lieu of treating Automatic Deferrals as Pre-Tax Deferrals.  
+b. [ ] In-Plan Roth Rollovers limited to In-Service only (3.08(E)(2)(a)). Only Participants who are Employees may elect to make an In-Plan Roth Rollover Contribution.  
+
+© 2014 or its suppliers  
+1
+
+
+
+page_033
+
+
+
+Standardized 401(k) Plan
+
+c. [ ] Vested In-Plan Roth Rollovers (3.08(E)(2)(b)). Distributions related to In-Plan Roth Rollovers may only be made from accounts which are fully Vested.  
+d. [ ] Source of In-Plan Roth Rollover Contribution (3.08(E)(3)(b)). The Plan permits an In-Plan Roth Rollover only from the following qualifying sources (Choose one or more.):  
+(i) [ ] Elective Deferrals  
+(ii) [ ] Matching Contributions (including any Safe Harbor Matching Contributions and Additional Matching Contributions)  
+(iii) [ ] Nonelective Contributions  
+(iv) [ ] QNECs (including any Safe Harbor Nonelective Contributions)  
+(v) [ ] Rollovers  
+(vi) [ ] Transfers  
+(vii) [ ] Other: _____________________________________________________________  
+(specify account(s) and conditions in a manner that is definitely determinable and not subject to Employer discretion)  
+
+(2) [ ] No offset of Safe Harbor Contributions to other allocations (3.05(E)(12)). Any Safe Harbor Nonelective Contributions allocated to a Participant's account will not be applied toward (offset) any allocation to the Participant of a non-Safe Harbor Nonelective Contribution.  
+
+(3) [ ] Short Plan Year or allocation period (3.06(B)(1)(c)). The Plan Administrator (Choose one of a. or b.):  
+a. [ ] No pro-ration. Will not pro-rate Hours of Service in any short allocation period.  
+b. [ ] Pro-ration based on months. Will pro-rate any Hour of Service requirement based on the number of months in the short allocation period.  
+
+(4) [ ] Limited waiver of allocation conditions for rehired Participants (3.06(G)). The allocation conditions the Employer has elected in the Adoption Agreement do not apply to rehired Participants in the Plan Year they resume participation, as described in Section 3.06(G).  
+
+(5) [ ] Associated Match forfeiture timing (3.07(A)(1)(c)). Forfeiture of associated matching contributions occurs in the Testing Year.  
+
+(6) [ ] Safe Harbor top-heavy exempt fail-safe (3.07(A)(4)). In lieu of ordering forfeitures as (a), (b), and (c) under Section 3.07(A)(4), the Employer establishes the following forfeiture ordering rules (Specify the ordering rules, for example, (b), (c), and (a).): ________________________.  
+
+(7) [ ] HEART Act continued benefit accrual (3.11(K)). The Employer elects to apply the benefit accrual provisions of Section 3.11(K). The provisions are effective as of (Choose one of a. or b.; and choose c. if the provisions no longer are effective.):  
+a. [ ] 2007 Effective Date. The first day of the 2007 Plan Year.  
+b. [ ] Other Effective Date. ________________________ (may not be earlier than the first day of the 2007 Plan Year).  
+c. [ ] No longer effective. The provisions no longer apply effective as of ________________________.  
+
+(e) [ ] Testing (Article IV) overrides. (Choose one or both of (1) and (2) as applicable.):  
+(1) [ ] First few weeks rule for Code §415 testing Compensation (4.05(F)(1)). The Plan applies the first few weeks rule in Section 4.05(F)(1).  
+(2) [ ] Post-Severance Compensation for Code §415 testing Compensation (4.05(F)). The Employer elects the following adjustments to Post-Severance Compensation for purposes of determining 415 testing Compensation (Choose one or more of a. through d.):  
+[Note: Under the basic plan document, if the Employer does not elect any adjustments, post-severance compensation includes leave cashouts and deferred compensation, and excludes military and disability continuation payments.]  
+a. [ ] Exclude leave cash-outs. See Section 1.11(I)(1)(b).  
+b. [ ] Exclude deferred compensation. See Section 1.11(I)(1)(c).  
+c. [ ] Include salary continuation for military service. See Section 1.11(I)(2).  
+d. [ ] Include salary continuation for disabled Participants. See Section 1.11(I)(3). (Choose one of (i) or (ii).):  
+(i) [ ] For Nonhighly Compensated Employees only.  
+
+© 2014 or its suppliers  
+2
+
+
+
+
+
+
+
+
+page_034
+
+
+
+Standardized 401(k) Plan
+
+a. [ ] Deferrals. Under the same provisions which apply to Elective Deferrals.  
+b. [ ] Match. Under the same provisions which apply to Matching Contributions.  
+c. [ ] Nonelective. Under the same provisions which apply to Nonelective Contributions.  
+d. [ ] Other: _____________________________________________________________  
+
+[Note: The Employer under Election 55(g)(1)d. may describe In-Service Rollover Distribution restrictions using the options available for In-Service Distributions under Election 47 and/or a combination thereof as to all Participants or as to any: (i) Participant group (e.g., Division A Rollover Accounts are distributable at age 59 1/2 OR Rollover Accounts of Employees hired on/before "x" date are distributable at age 59 1/2. No In-Service Rollover Distributions apply to Division B Employees OR to Employees hired after "x" date). An Employer's election under Election 55(g)(1)d. must: (i) be objectively determinable; (ii) not be subject to Employer discretion; (iii) preserve Protected Benefits as required; (iv) be nondiscriminatory; and (v) not permit an "early" distribution of any Restricted 401(k) Accounts or Restricted Pension Accounts. See Sections 6.01(C)(4) and 11.02(C)(3).]  
+
+(2) [ ] Elections related to In-Plan Roth Rollovers (6.01(C)(7)). (Choose one or more of a. through c. as applicable.):  
+a. [ ] In-Service Roth Rollover events. The Employer elects to permit In-Service Distributions under the following conditions solely for purposes of making an In-Plan Roth Rollover Contribution (Choose one or more of (i) through (iv); select (v) if applicable.):  
+(i) [ ] Age. The Participant has attained age _____.  
+(ii) [ ] Participation. The Participant has _____ months of participation (specify minimum of 60 months). Section 6.01(C)(4)(a)(ii).  
+(iii) [ ] Seasoning. The amounts being distributed have accumulated in the Plan for at least _____ years (at least 2). See Section 6.01(C)(4)(a)(i).  
+(iv) [ ] Other (describe): _____________________________________________________________  
+(must be definitely determinable and not subject to Employer discretion (e.g., age 50, but only with respect to Nonelective Contributions, and not Matching Contributions))  
+[Note: Regardless of any election above to the contrary, In-Plan Roth Rollover Contributions are not permitted from a Participant's Elective Deferral Account, Qualified Matching Contribution Account, Qualified Nonelective Contribution Account and accounts attributable to Safe Harbor Contributions prior to age 59 1/2.]  
+(v) [ ] Distribution for withholding. A Participant may elect to have a portion of the amount that may be distributed as an In-Plan Roth Rollover Contribution distributed solely for purposes of federal or state income tax withholding related to the In-Plan Roth Rollover Contribution.  
+b. [ ] Minimum amount. The minimum amount that may be rolled over is _____ (may not exceed $1,000).  
+c. [ ] No transfer of loans. Loans may not be distributed as part of an In-Plan Roth Rollover Contribution. (if not selected, any loans may be transferred)  
+
+(3) [ ] Elections related to Required Minimum Distributions. (Choose one or more of a. through c. as applicable.):  
+a. [ ] RMD overrides if Participant dies before DCD (6.02(B)(1)(e)). If the Participant dies before the DCD and the Beneficiary is a designated Beneficiary, the RMD distribution rules are modified as follows (Choose one of (i) through (iv).):  
+(i) [ ] Election of 5-year rule. If a Designated Beneficiary does not make a timely election, the 5-year rule applies in lieu of the Life Expectancy rule.  
+(ii) [ ] Life Expectancy rule. The Life Expectancy rule applies to the Designated Beneficiary. See Section 6.02(B)(1)(d).  
+(iii) [ ] 5-year rule. The 5-year rule applies to the Beneficiary. See Section 6.02(B)(1)(c).  
+(iv) [ ] Other: _____________________________________________________________  
+(Describe, e.g., the 5-year rule applies to all Beneficiaries other than a surviving spouse Beneficiary.)  
+b. [ ] RBD definition (6.02(E)(7)(c)). In lieu of the RBD definition in Section 6.02(E)(7)(a) and (b), the Plan Administrator (Choose one of (i) or (ii).):  
+(i) [ ] SBJPA definition indefinitely. Indefinitely will apply the pre-SBJPA RBD definition.  
+(ii) [ ] SBJPA definition to specified date. Will apply the pre-SBJPA definition until ________________________ (the stated date may not be earlier than January 1, 1997), and thereafter will apply the RBD definition in Sections 6.02(E)(7)(a) and (b).  
+c. [ ] 2009 RMD waiver elections (6.02(F)). In lieu of the 2009 RMDs suspension (subject to a Participant or Beneficiary election to continue), as provided in Section 6.02(F) (Choose one of (i) through (iii) if applicable. Choose (iv) or (v) if applicable.):  
+
+© 2014 or its suppliers  
+4
+
+
+page_035
+
+
+
+
+Standardized 401(k) Plan
+
+(i) [ ] RMDs continued unless election. 2009 RMDs are continued as provided in Section 6.02(F)(2), unless a Participant or Beneficiary otherwise elects.  
+(ii) [ ] RMDs continued - no election. 2009 RMDs are continued as provided in Section 6.02(F)(3), without regard to a waiver. No election is available to Participants or Beneficiaries.  
+(iii) [ ] Other: _____________________________________________________________  
+(Describe, e.g., the Plan suspended 2009 RMDs and did not offer an election or the Plan changed from one treatment of 2009 RMDs to another treatment during 2009.)  
+
+Treatment as Eligible Rollover Distribution. For purposes of 2009 RMDs, the Plan also will treat the following distributions as Eligible Rollover Distributions (Choose (iv) or (v), if applicable. If the Employer elects neither (iv) nor (v), then a direct rollover for 2009 will be offered only for distributions that would be Eligible Rollover Distributions without regard to Code §401(a)(9)(H).):  
+(iv) [ ] 2009 RMDs and Extended 2009 RMDs, both as defined in Section 6.02(F).  
+(v) [ ] 2009 RMDs, as defined in Section 6.02(F), but only if paid with an additional amount that is an Eligible Rollover Distribution without regard to Code §401(a)(9)(H).  
+
+(4) [x] Distribution Methods (Choose one or both of a. and b. if applicable.):  
+a. [x] Default Distribution Methods (6.03(B)(2)). If a Participant or Beneficiary does not make a timely election as to distribution method and timing the Plan Administrator will direct the Trustee to distribute using the following method and timing: Installments sufficient to satisfy RMD beginning at the Required Beginning Date  
+(Describe, e.g., Installments sufficient to satisfy RMD beginning at the Required Beginning Date. The selected method and timing must not be discriminatory and must be an option the plan makes available to participants and/or beneficiaries.)  
+b. [ ] Beneficiary Distribution Methods (6.03(A)(2)). The Plan will distribute to the Beneficiary under the following distribution method(s). If more than one method is elected, the Beneficiary may choose the method of distribution:  
+(i) [ ] Lump-Sum. See Section 6.03(A)(3).  
+(ii) [ ] Installments sufficient to satisfy RMD. See Section 6.03(A)(4)(a).  
+(iii) [ ] Ad-Hoc sufficient to satisfy RMD. See Section 6.03(A)(6).  
+(iv) [ ] Other: _____________________________________________________________  
+(Describe, e.g., Lump-Sum or Installments for surviving spouse Beneficiaries, Lump-Sum only for all other Beneficiaries.)  
+
+(5) [ ] Annuity Distributions (6.04). (Choose one or both of a. and b. if applicable.):  
+a. [ ] Modification of QJSA (6.04(A)(3)). The Survivor Annuity percentage will be _____%. (Specify a percentage between 50% and 100%.)  
+b. [ ] Modification of QPSA (6.04(B)(2)). The QPSA percentage will be _____%. (Specify a percentage between 50% and 100%.)  
+
+(6) [ ] Hardship Distributions (6.07). (Choose one or both of a. and b. if applicable.):  
+a. [ ] Restriction on hardship source; grandfathering (6.07(E)). The hardship distribution limit includes grandfathered amounts.  
+b. [ ] Hardship acceleration. The existence of a hardship occurring after Separation from Service/Severance from Employment will be determined under the non-safe harbor rules of Section 6.07(B).  
+
+(7) [ ] Replacement of $5,000 amount (6.09). All Plan references (except in Sections 3.02(D), 3.10 and 3.12(C)(2)) to "$5,000" will be $_____. (Specify an amount less than $5,000.)  
+
+(8) [ ] Beneficiary's hardship need (6.07(H)). Effective August 17, 2006 (Specify date not earlier than August 17, 2006), a Participant's hardship includes an immediate and heavy financial need of the Participant's primary Designated Beneficiary under the Plan, as described in Section 6.07(H).  
+
+(9) [ ] Non-spouse beneficiary rollover not permitted before required (6.08(G)). For distributions after December 31, 2006, and before ________________________ (Specify a date not later than January 1, 2010), the Plan does not permit a Designated Beneficiary other than the Participant's surviving spouse to elect to roll over a death benefit distribution.  
+
+(h) [ ] Administrative overrides (Article VII). (Choose one or more of (1) through (7) as applicable.):  
+(1) [ ] Contributions prior to accrual or precise determination (7.04(B)(5)(b)). The Plan Administrator will allocate Earnings described in Section 7.04(B)(5)(b) as follows (Choose one of a., b., or c.):  
+a. [ ] Treat as contribution. Treat the Earnings as an Employer Matching or Nonelective Contribution and allocate accordingly.  
+
+© 2014 or its suppliers  
+5
+
+
+
+
+page_036
+
+
+
+Standardized 401(k) Plan
+
+b. [ ] Balance forward. Allocate the Earnings using the balance forward method described in Section 7.04(B)(4)(b).  
+c. [ ] Weighted average. Allocate the Earnings on Matching Contributions using the weighted average method in a manner similar to the method described in Section 7.04(B)(4)(d).  
+
+(2) [ ] Automatic revocation of spousal designation (7.05(A)(1)). The automatic revocation of a spousal Beneficiary designation in the case of divorce does not apply.  
+
+(3) [ ] Limitation on frequency of Beneficiary designation changes (7.05(A)(4)). Except in the case of a Participant incurring a major life event, a period of at least ________________________ must elapse between Beneficiary designation changes. (Specify a period of time, e.g., 90 days OR 12 months.)  
+
+(4) [ ] Definition of "spouse" (7.05(A)(5)). The following definition of "spouse" applies: ________________________ (Specify a definition.)  
+
+(5) [ ] Administration of default provision; default Beneficiaries (7.05(C)). The following list of default Beneficiaries will apply: ________________________ (Specify, in order, one or more Beneficiaries who will receive the interest of a deceased Participant.)  
+
+(6) [ ] Subsequent restoration of forfeiture-sources and ordering (7.07(A)(3)). Restoration of forfeitures will come from the following sources, in the following order ________________________ (Specify, in order, one or more of the following: Forfeitures, Employer Contribution, Trust Fund Earnings.)  
+
+(7) [ ] State law (7.10(H)). The law of the following state will apply: ________________________ (Specify one of the 50 states or the District of Columbia, or other appropriate legal jurisdiction, such as a territory of the United States or an Indian tribal government.)  
+
+(i) [ ] Trust and insurance overrides (Articles VIII and IX). (Choose one or both of (1) and (2) if applicable.):  
+(1) [ ] Employer securities/real property in Profit Sharing Plans/401(k) Plans (8.02(A)(13)(a)). The Plan limit on investment in qualifying Employer securities/real property is _____%. (Specify a percentage which is less than 100%.)  
+(2) [ ] Provisions relating to insurance and insurance company (9.08). The following provisions apply: ________________________ (Specify such language as necessary to accommodate life insurance Contracts the Plan holds.)  
+[Note: The provisions in this Election 55(i)(2) may override provisions in Article IX of the Plan, but must be consistent with all other provisions of the Plan.]  
+
+(j) [ ] Code Section 415 (Article XI) override (11.02(A)(1), 4.02(F)). Because of the required aggregation of multiple plans, to satisfy Code §415, the following overriding provisions apply: ________________________ (Specify such language as necessary to satisfy §415, e.g., the Employer will reduce Additional Additions to this plan before reducing Annual Additions to other plans.)  
+
+(k) [ ] Code Section 416 (Article XI) override (11.02(A)(1), 10.03(D)). Because of the required aggregation of multiple plans, to satisfy Code §416, the following overriding provisions apply: ________________________ (Specify such language as necessary to satisfy §416, e.g., If an Employee participates in this Plan and another Plan the Employer maintains, the Employer will satisfy any Top-Heavy Minimum Allocation in this Plan and not the other plan.)  
+
+© 2014 or its suppliers  
+6
+
+
+page_037
+
+
+
+
+
+Standardized 401(k) Plan
+
+APPENDIX C  
+LIST OF GROUP TRUST FUNDS/PERMISSIBLE TRUST AMENDMENTS  
+
+[Note: An Employer maintaining its Plan under a Standardized Adoption Agreement only may amend its Adoption Agreement (as it relates to the Trust) to specify: (i) the names of the Plan, the Employer, the Trustee, the Custodian or other Plan fiduciaries; (ii) the Trust (Plan) Year; or the names of any pooled trust in which the Plan's Trust will participate. Do not use election 56 to substitute another pre-approved trust for the Trust. See Election 5(c) as to a substitute trust.]  
+
+56. [ ] INVESTMENT IN GROUP TRUST FUND (8.09). The nondiscretionary Trustee, as directed or the discretionary Trustee acting without direction (and in addition to the discretionary Trustee's authority to invest in its own funds under Section 8.02(A)(3)), may invest in any of the following group trust funds: _____________________________________________________________  
+(Specify the names of one or more group trust funds in which the Plan can invest.)  
+
+[Note: A discretionary or nondiscretionary Trustee also may invest in any group trust fund authorized by an independent Named Fiduciary.]  
+
+57. [ ] DUTY TO COLLECT (8.02(D)(1)). ________________________ is hereby appointed as a Trustee for the Plan, and is referred to as the Special Trustee. The sole responsibility of the Special Trustee is to collect contributions the Employer owes to the Plan. No other Trustee has any duty to ensure that the contributions received comply with the provisions of the Plan or is obliged to collect any contributions from the Employer. No Trustee, other than the Special Trustee, is obliged to ensure that funds deposited are deposited according to the provisions of the Plan. The Special Trustee will execute a form accepting its position and agreeing to its obligations hereunder.  
+
+© 2014 or its suppliers  
+1
+
+
+
+page_038
+
+
+
+PARTICIPATION AGREEMENT (1.24(D))  
+[Standardized Adoption Agreement]  
+
+[Note: See Section 1.24(D)(1) as to participation by the Employees of Related Employers even where such Employers do not become Participating Employers. However, a Related Employer should execute a Participation Agreement to make clear that its Employees are Eligible Employees and to insure deductibility of its Employer Contributions.]  
+
+Agreement as to Signatory Employer control. The undersigned Related Employer, by executing this Participation Agreement, elects to become a Participating Employer in the Plan identified in the foregoing Adoption Agreement. The Participating Employer accepts, and agrees to be bound by, all of the Elections as made by the Signatory Employer. The Participating Employer also hereby consents to the Signatory Employer's sole authority (without further signature or other action by the Participating Employer) to amend, to restate or to terminate the Plan, to terminate the Participating Employer's participation in the Plan, and to take certain other actions, in accordance with Section 1.24(A) as applicable.  
+
+Plan Status. (Choose one.):  
+[ ] New Plan.  
+[ ] Restated Plan.  
+
+Initial Effective Date of Plan. (enter date)  
+[ ] 1/1/2023 (hereinafter called the "Effective Date" unless Restatement Effective Date is entered below)  
+
+Restatement Effective Date. (If this is an amendment and restatement, enter effective date of the restatement.)  
+[ ] ________________________ (enter month day, year; may enter a restatement date that is the first day of the current Plan Year. The Plan contains appropriate retroactive effective dates with respect to provisions for the appropriate laws.) (hereinafter called the "Effective Date")  
+
+[Note: Unless otherwise noted, if the Participating Employer is adopting this Plan as a PPA restated Plan, the restated Effective Date is the date specified in Election 4 on the Adoption Agreement or the Participating Employer's original Effective Date, whichever is later. Where the Participating Employer is restating its Plan, the Participating Employer may wish to execute this Participation Agreement even if the prior version of the Plan accorded to the Signatory Employer the authority to make Plan amendments on behalf of Participating Employers without Participating Employer signature or approval.]  
+
+Participating Employer:   
+Date:  
+Signed: 
+Thomas Knight  
+[print name/title]  
+
+Participating Employer's TIN: XXXXXXXXX  
+
+Acceptance by Signatory Employer and Trustee/Custodian.  
+
+Signatory Employer: 
+Date: 
+Signed:   
+Boone Knight  
+[print name/title]  
+
+Trustee(s)/Custodian(s): 
+Date: 
+Signed: 
+Bubba Bigtime  
+[print name/title]  
+
+© 2014 or its suppliers  
+1
+
+
+
+
+
