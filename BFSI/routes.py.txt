@@ -1,0 +1,910 @@
+# mca_chatbot/routes.py
+from __future__ import annotations
+
+import json
+import os
+import logging
+import threading
+import uuid
+import re
+import hashlib
+import difflib
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import List, Optional, Literal, Dict, Any, Tuple
+
+import boto3
+from fastapi import APIRouter, HTTPException, Request
+from pydantic import BaseModel, Field
+
+from .rag_config import settings
+from .prompts import create_plan_prompt, create_service_prompt, Chunk as PromptChunk
+from .party_normalize import canonical_party_key
+from langchain_community.vectorstores import FAISS
+from langchain_community.embeddings import BedrockEmbeddings
+
+from .build_party_indices import build as build_party_indices
+from .auth_role import _decode_and_verify_cognito_jwt
+from .predefined_qa import find_predefined_answer
+
+# --------------------------------------------------------------------------
+# Logging
+# --------------------------------------------------------------------------
+log = logging.getLogger(__name__)
+if not log.handlers:
+    logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO"))
+
+router = APIRouter()
+
+# --------------------------------------------------------------------------
+# LLM Model Routing
+# --------------------------------------------------------------------------
+ROUTER_MODEL_ID = settings.LLM_MODEL_ID or "anthropic.claude-3-sonnet-20240229-v1:0"
+ROUTER_PROFILE_ARN = (settings.INFERENCE_PROFILE_ARN or "").strip()
+
+ANSWER_MODEL_ID = settings.ANSWER_MODEL_ID
+ANSWER_PROFILE_ARN = (settings.ANSWER_INFERENCE_PROFILE_ARN or "").strip()
+
+AWS_REGION = settings.AWS_REGION
+
+# --------------------------------------------------------------------------
+# Optional DynamoDB-backed session store (fallback to in-memory)
+# --------------------------------------------------------------------------
+DDB_TABLE_NAME = settings.DDB_TABLE_NAME
+USE_DDB = settings.USE_DDB
+
+_ddb = None
+_ddb_table = None
+if USE_DDB:
+    try:
+        _ddb = boto3.resource("dynamodb", region_name=AWS_REGION)
+        _ddb_table = _ddb.Table(DDB_TABLE_NAME)
+        log.info("DynamoDB client ready (table=%s)", DDB_TABLE_NAME)
+    except Exception as e:
+        _ddb = None
+        _ddb_table = None
+        log.warning("Couldn't init DynamoDB (%s). Using in-memory session store.", e)
+
+# --------------------------------------------------------------------------
+# API Schemas
+# --------------------------------------------------------------------------
+class SessionCreateOut(BaseModel):
+    session_id: str
+
+class ChatMsgIn(BaseModel):
+    session_id: str = Field(..., description="UUID from POST /chatbot/session")
+    message: str = Field(..., description="User free-text")
+
+class ChatMsgOut(BaseModel):
+    session_id: str
+    response: str
+    current_plan: str
+    show_plan_picker: bool = False
+    plan_options: List[str] = Field(default_factory=list)
+    recent_plans: List[str] = Field(default_factory=list)
+
+class PlanListOut(BaseModel):
+    plans: List[str]
+
+# --------------------------------------------------------------------------
+# String helpers
+# --------------------------------------------------------------------------
+_PUNCT_RE = re.compile(r"[^a-z0-9\s]")
+_WS_RE = re.compile(r"\s+")
+
+def _normalize(s: str) -> str:
+    s = (s or "").lower()
+    s = _PUNCT_RE.sub(" ", s)
+    s = _WS_RE.sub(" ", s).strip()
+    return s
+
+def _tokens(s: str) -> List[str]:
+    return _normalize(s).split()
+
+_GREETING_TOKENS = {"hi", "hello", "hey", "yo", "hiya", "howdy", "sup"}
+
+def _is_greeting_message(msgn: str) -> bool:
+    toks = _tokens(msgn)
+    if not toks:
+        return False
+    if len(toks) <= 3 and all(t in _GREETING_TOKENS for t in toks):
+        return True
+    if len(toks) == 1 and toks[0] in _GREETING_TOKENS:
+        return True
+    return False
+
+# Treat messages that are only punctuation/whitespace or too short as noise
+_NOISE_ONLY_RE = re.compile(r"^[\s\.\,\!\?\*\-\+\=\|\(\)\[\]\{\}\/\\:;\'\"`~^&_]+$")
+
+def _is_noise_query(msg: str) -> bool:
+    if not msg:
+        return True
+    if _is_greeting_message(msg):  # greetings are not noise
+        return False
+    if _NOISE_ONLY_RE.match(msg):
+        return True
+    toks = _tokens(msg)
+    alnum_len = sum(len(t) for t in toks)
+    if len(toks) < 2 and alnum_len < 4:
+        return True
+    return False
+
+# --------------------------------------------------------------------------
+# Plans discovery (indices and S3 display names)
+# --------------------------------------------------------------------------
+_s3 = boto3.client("s3", region_name=AWS_REGION)
+
+def _party_index_root() -> Path:
+    return (settings.INDEX_DIR / "party").resolve()
+
+def _available_plan_keys() -> List[str]:
+    root = _party_index_root()
+    if not root.exists():
+        return []
+    out: List[str] = []
+    for p in sorted(root.iterdir()):
+        if p.is_dir() and (p / "index.faiss").exists():
+            out.append(p.name.replace("_", " "))
+    return out
+
+_PLAN_DISPLAY_CACHE: Dict[str, str] = {}
+
+def _title_from_key(key: str) -> str:
+    base = key.rsplit("/", 1)[-1]
+    if "." in base:
+        base = ".".join(base.split(".")[:-1])
+    return base
+
+def _load_plan_display_cache() -> None:
+    global _PLAN_DISPLAY_CACHE
+    if _PLAN_DISPLAY_CACHE:
+        return
+    base = settings.S3_BASE_PREFIX.strip().strip("/")
+    plan_prefix = f"{base}/plan/"
+    token = None
+    out: Dict[str, str] = {}
+    while True:
+        kwargs = {"Bucket": settings.S3_BUCKET, "Prefix": plan_prefix}
+        if token:
+            kwargs["ContinuationToken"] = token
+        resp = _s3.list_objects_v2(**kwargs)
+        for o in resp.get("Contents", []):
+            k = o["Key"]
+            if not k.lower().endswith(".txt"):
+                continue
+            title = _title_from_key(k)
+            ckey = _normalize(canonical_party_key(title))
+            if ckey and ckey not in out:
+                out[ckey] = title
+        token = resp.get("NextContinuationToken")
+        if not token:
+            break
+    _PLAN_DISPLAY_CACHE = out
+
+def _display_name_for_plan_key(plan_key: str) -> str:
+    _load_plan_display_cache()
+    ckey = _normalize(canonical_party_key(plan_key))
+    disp = _PLAN_DISPLAY_CACHE.get(ckey)
+    if disp:
+        return disp
+    return " ".join(w.capitalize() for w in _normalize(plan_key).split())
+
+def _list_plan_display_titles() -> List[str]:
+    return [_display_name_for_plan_key(k) for k in _available_plan_keys()]
+
+def _current_plan_or_default(plan_key: Optional[str]) -> str:
+    return "default" if not plan_key else _display_name_for_plan_key(plan_key)
+
+# --------------------------------------------------------------------------
+# Session store
+# --------------------------------------------------------------------------
+class _SessionData(BaseModel):
+    session_id: str
+    current_plan_key: Optional[str] = None
+    recent_plan_keys: List[str] = Field(default_factory=list)
+    history: List[Dict[str, Any]] = Field(default_factory=list)
+    pending_plan_selection: bool = False
+    created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    updated_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+
+    def touch(self) -> None:
+        self.updated_at = datetime.now(timezone.utc).isoformat()
+
+    def add_history(self, role: str, text: str, plan_display: str) -> None:
+        self.history.append({
+            "ts": datetime.now(timezone.utc).isoformat(),
+            "role": role,
+            "text": (text or "")[:4000],
+            "plan": plan_display
+        })
+        if len(self.history) > 200:
+            self.history = self.history[-200:]
+        self.touch()
+
+    def push_recent_plan(self, plan_key: Optional[str]) -> None:
+        if not plan_key:
+            return
+        r = [k for k in self.recent_plan_keys if k != plan_key]
+        self.recent_plan_keys = [plan_key] + r
+        self.recent_plan_keys = self.recent_plan_keys[:3]
+        self.touch()
+
+class _ISessionStore:
+    def create(self) -> _SessionData: ...
+    def get(self, session_id: str) -> _SessionData: ...
+    def set_current_plan(self, session_id: str, plan_key: Optional[str]) -> _SessionData: ...
+    def set_pending_selection(self, session_id: str, value: bool) -> None: ...
+    def recent_plans(self, session_id: str) -> List[str]: ...
+    def add_history(self, session_id: str, role: str, text: str, plan_display: str) -> None: ...
+
+class _MemorySessionStore(_ISessionStore):
+    def __init__(self) -> None:
+        self._d: Dict[str, _SessionData] = {}
+        self._lock = threading.Lock()
+
+    def create(self) -> _SessionData:
+        with self._lock:
+            sid = str(uuid.uuid4())
+            sd = _SessionData(session_id=sid)
+            self._d[sid] = sd
+            return sd
+
+    def get(self, session_id: str) -> _SessionData:
+        with self._lock:
+            if session_id not in self._d:
+                self._d[session_id] = _SessionData(session_id=session_id)
+            return self._d[session_id]
+
+    def set_current_plan(self, session_id: str, plan_key: Optional[str]) -> _SessionData:
+        with self._lock:
+            sd = self.get(session_id)
+            sd.current_plan_key = plan_key
+            sd.push_recent_plan(plan_key)
+            sd.pending_plan_selection = False
+            return sd
+
+    def set_pending_selection(self, session_id: str, value: bool) -> None:
+        with self._lock:
+            sd = self.get(session_id)
+            sd.pending_plan_selection = value
+            sd.touch()
+
+    def recent_plans(self, session_id: str) -> List[str]:
+        with self._lock:
+            return list(self.get(session_id).recent_plan_keys)
+
+    def add_history(self, session_id: str, role: str, text: str, plan_display: str) -> None:
+        with self._lock:
+            self.get(session_id).add_history(role, text, plan_display)
+
+class _DynamoSessionStore(_ISessionStore):
+    def __init__(self, table) -> None:
+        self._table = table
+
+    def _load(self, session_id: str) -> Optional[_SessionData]:
+        try:
+            resp = self._table.get_item(Key={"session_id": session_id})
+            item = resp.get("Item")
+            return _SessionData(**item) if item else None
+        except Exception as e:
+            log.warning("DDB get_item failed: %s", e)
+            return None
+
+    def _save(self, sd: _SessionData) -> None:
+        try:
+            self._table.put_item(Item=json.loads(sd.model_dump_json()))
+        except Exception as e:
+            log.warning("DDB put_item failed: %s", e)
+
+    def create(self) -> _SessionData:
+        sd = _SessionData(session_id=str(uuid.uuid4()))
+        self._save(sd)
+        return sd
+
+    def get(self, session_id: str) -> _SessionData:
+        sd = self._load(session_id)
+        if sd is None:
+            sd = _SessionData(session_id=session_id)
+            self._save(sd)
+        return sd
+
+    def set_current_plan(self, session_id: str, plan_key: Optional[str]) -> _SessionData:
+        sd = self.get(session_id)
+        sd.current_plan_key = plan_key
+        sd.push_recent_plan(plan_key)
+        sd.pending_plan_selection = False
+        self._save(sd)
+        return sd
+
+    def set_pending_selection(self, session_id: str, value: bool) -> None:
+        sd = self.get(session_id)
+        sd.pending_plan_selection = value
+        self._save(sd)
+
+    def recent_plans(self, session_id: str) -> List[str]:
+        return list(self.get(session_id).recent_plan_keys)
+
+    def add_history(self, session_id: str, role: str, text: str, plan_display: str) -> None:
+        sd = self.get(session_id)
+        sd.add_history(role, text, plan_display)
+        self._save(sd)
+
+_STORE: _ISessionStore = _DynamoSessionStore(_ddb_table) if _ddb_table else _MemorySessionStore()
+
+def _recent_display_titles(session_id: str) -> List[str]:
+    keys = _STORE.recent_plans(session_id)
+    if keys:
+        return [_display_name_for_plan_key(k) for k in keys]
+    titles = _list_plan_display_titles()
+    return sorted(titles)[:3]
+
+# --------------------------------------------------------------------------
+# Bedrock helpers
+# --------------------------------------------------------------------------
+def _bedrock_infer(
+    messages: List[Dict],
+    max_tokens: int,
+    model_id: str,
+    profile_arn: Optional[str] = None,
+) -> str:
+    client = boto3.client("bedrock-runtime", region_name=AWS_REGION)
+    model_or_profile = (profile_arn or model_id).strip()
+
+    body = {
+        "anthropic_version": "bedrock-2023-05-31",
+        "max_tokens": max_tokens,
+        "messages": messages,
+    }
+    try:
+        resp = client.invoke_model(
+            modelId=model_or_profile,
+            body=json.dumps(body).encode("utf-8"),
+            accept="application/json",
+            contentType="application/json",
+        )
+        payload = resp["body"].read().decode("utf-8")
+        data = json.loads(payload)
+        out = []
+        for block in (data.get("content") or []):
+            if block.get("type") == "text" and "text" in block:
+                out.append(block["text"])
+        return "".join(out).strip()
+    except Exception as e:
+        log.warning("Bedrock invoke_model error (%s): %s", model_or_profile, e)
+        return ""
+
+def _router_infer(messages: List[Dict], max_tokens: int = 64) -> str:
+    profile = ROUTER_PROFILE_ARN if ROUTER_PROFILE_ARN else None
+    return _bedrock_infer(messages, max_tokens=max_tokens, model_id=ROUTER_MODEL_ID, profile_arn=profile)
+
+def _answer_infer(prompt: str, max_tokens: int = 800) -> str:
+    return _bedrock_infer(
+        messages=[{"role": "user", "content": [{"type": "text", "text": prompt}]}],
+        max_tokens=max_tokens,
+        model_id=ANSWER_MODEL_ID,
+        profile_arn=(ANSWER_PROFILE_ARN or None),
+    )
+
+# --------------------------------------------------------------------------
+# Plan resolution & intent — hybrid local + LLM with few-shots
+# --------------------------------------------------------------------------
+_SWITCH_OBVIOUS_PATTERNS = [
+    "change my plan","switch my plan","change plan","switch plan",
+    "use a different plan","another plan","different plan",
+    "i want to change my plan","i want to change plan",
+    "select a plan","pick a plan",
+    "set plan to","set the plan to","set plan as",
+    "switch to","change to",
+    "change plan to","switch plan to","update plan to",
+    "change the plan to","context set to","use plan context","use this plan"
+]
+
+_SWITCH_REGEX = re.compile(
+    r"(?:\b(?:switch|change|set|update)\b.*\bplan\b)|(?:\b(?:switch|change)\b.*\bto\b.*)",
+    re.IGNORECASE
+)
+
+def _has_token_overlap(user_text: str, titles: List[str], min_hits: int = 1) -> bool:
+    utoks = set(_tokens(user_text))
+    if not utoks:
+        return False
+    hits = 0
+    for t in titles:
+        ttoks = set(_tokens(t))
+        if utoks & ttoks:
+            hits += 1
+            if hits >= min_hits:
+                return True
+    return False
+
+def _score_title(user_text: str, title: str) -> float:
+    utoks = _tokens(user_text)
+    ttoks = _tokens(title)
+    if not utoks or not ttoks:
+        return 0.0
+    set_u, set_t = set(utoks), set(ttoks)
+    jaccard = len(set_u & set_t) / max(1, len(set_u | set_t))
+    u_join = "".join(utoks)[:20]
+    t_join = "".join(ttoks)[:20]
+    prefix = 1.0 if t_join.startswith(u_join) or u_join.startswith(t_join) else 0.0
+    ratio = difflib.SequenceMatcher(None, " ".join(utoks), " ".join(ttoks)).ratio()
+    return 0.45 * jaccard + 0.15 * prefix + 0.40 * ratio
+
+def _resolve_plan_hybrid(user_text: str, all_display_titles: List[str]) -> Optional[str]:
+    if not user_text or not all_display_titles:
+        return None
+
+    low = user_text.strip().lower()
+    for t in all_display_titles:
+        if low == t.lower():
+            return t
+
+    scored: List[Tuple[str, float]] = [(t, _score_title(user_text, t)) for t in all_display_titles]
+    scored.sort(key=lambda x: x[1], reverse=True)
+    best_title, best_score = scored[0]
+    local_thr = float(os.getenv("PLAN_LOCAL_FUZZY_THRESHOLD", "0.56"))
+    if best_score >= local_thr:
+        return best_title
+
+    # Keep token-overlap check to reduce LLM calls; if no overlap, skip selector.
+    if not _has_token_overlap(user_text, all_display_titles):
+        return None
+
+    MAX_CANDIDATES = int(os.getenv("PLAN_PICKER_MAX", "150"))
+    titles = [t for t, _ in scored[:MAX_CANDIDATES]]
+    indexed = "\n".join([f"{i+1}. {t}" for i, t in enumerate(titles)])
+
+    guide = (
+        "You are a strict selector. Choose the SINGLE best matching plan from the list given the user's text.\n"
+        "If there is no confident match, output exactly: NONE\n"
+        "Rules:\n"
+        " - Respond ONLY with the index number (e.g., 7) or NONE.\n"
+        " - Prefer exact/near-exact name matches; user may give partials or misspellings (e.g., 'jo fr', 'kng trn').\n"
+        " - Do not invent names; choose from the list only.\n\n"
+        "Few-shot examples:\n"
+        "User: jo fr -> pick the entry for 'Joe Frazier ...'\n"
+        "User: joe fraz -> pick 'Joe Frazier ...'\n"
+        "User: kng trn -> pick 'Knight Train ...'\n"
+        "User: tri st -> pick 'Tri State ...'\n"
+        "User: completely unknown text -> NONE\n"
+    )
+    question = f"{guide}\nUser text: {user_text}\n\nPlans:\n{indexed}\n\nAnswer:"
+
+    out = _router_infer(
+        messages=[{"role": "user", "content": [{"type": "text", "text": question}]}],
+        max_tokens=8,
+    ).strip()
+
+    if not out or "none" in out.lower():
+        return None
+    m = re.search(r"\d+", out)
+    if not m:
+        return None
+    idx = int(m.group(0))
+    if 1 <= idx <= len(titles):
+        return titles[idx - 1]
+    return None
+
+def _intent_is_switch_plan(message: str) -> bool:
+    msg = (message or "").strip()
+    if not msg:
+        return False
+    low = msg.lower()
+
+    if any(x in low for x in _SWITCH_OBVIOUS_PATTERNS):
+        return True
+    if _SWITCH_REGEX.search(msg):
+        return True
+    return False
+
+# --------------------------------------------------------------------------
+# Retrieval helpers
+# --------------------------------------------------------------------------
+def _party_index_path_for_plan(plan_key: str) -> Path:
+    folder = _normalize(plan_key).replace(" ", "_")
+    return (_party_index_root() / folder).resolve()
+
+def _load_vectorstore(plan_key: str) -> FAISS:
+    idx = _party_index_path_for_plan(plan_key)
+    if not idx.exists():
+        raise HTTPException(status_code=404, detail=f"Index not found for plan '{plan_key}'")
+    emb = BedrockEmbeddings(region_name=AWS_REGION, model_id=settings.EMBEDDING_MODEL_ID)
+    return FAISS.load_local(str(idx), embeddings=emb, allow_dangerous_deserialization=True)
+
+def _retrieve_chunks(plan_key: str, query: str, k: int = 20) -> List[PromptChunk]:
+    vs = _load_vectorstore(plan_key)
+    docs = vs.similarity_search(query, k=k)
+    return [PromptChunk(text=d.page_content, metadata=d.metadata or {}) for d in docs]
+
+def _classify_query_type(q: str) -> Literal["plan", "service"]:
+    t = (q or "").lower()
+    service_triggers = [
+        "fee","recordkeeping","hardship","optional service","qdia",
+        "additional plan services","effective date","schedule","pricing","service"
+    ]
+    return "service" if any(w in t for w in service_triggers) else "plan"
+
+# --------------------------------------------------------------------------
+# Persist retrieved chunks (for audit)
+# --------------------------------------------------------------------------
+def _format_chunk_block(idx: int, ch: PromptChunk) -> str:
+    md = ch.metadata or {}
+    md_lines = []
+    for k in ["party_key", "doc_type", "s3_key", "title", "chunk_id"]:
+        if k in md:
+            md_lines.append(f"{k}: {md[k]}")
+    for k in sorted(set(md.keys()) - {"party_key", "doc_type", "s3_key", "title", "chunk_id"}):
+        md_lines.append(f"{k}: {md[k]}")
+    meta_block = "\n".join(md_lines) if md_lines else "(no metadata)"
+    text = ch.text.strip()
+    return f"---- Chunk {idx+1} ----\n{meta_block}\n\n{text}\n"
+
+def _save_chunks_for_answer(
+    session_id: str,
+    plan_key: str,
+    qtype: Literal["plan", "service"],
+    query: str,
+    chunks: List[PromptChunk],
+) -> str:
+    plan_folder = _normalize(plan_key).replace(" ", "_")
+    out_dir = (settings.CHUNKS_FOR_ANS_DIR / plan_folder)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    ts_utc = datetime.now(timezone.utc).isoformat()
+    short_ts = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
+    qhash = hashlib.sha1(query.encode("utf-8")).hexdigest()[:8]
+    txt_fname = f"{short_ts}_{qtype}_{qhash}.txt"
+    txt_fpath = out_dir / txt_fname
+
+    header = (
+        "=== Retrieved Chunks Used For Answer ===\n"
+        f"timestamp_utc: {ts_utc}\n"
+        f"session_id: {session_id}\n"
+        f"plan_key: {plan_key}\n"
+        f"plan_display: {_display_name_for_plan_key(plan_key)}\n"
+        f"query_type: {qtype}\n"
+        f"query: {query}\n"
+        "========================================\n\n"
+    )
+    body = "".join(_format_chunk_block(i, ch) for i, ch in enumerate(chunks))
+    txt_fpath.write_text(header + body, encoding="utf-8")
+    return str(txt_fpath)
+
+# --------------------------------------------------------------------------
+# Role-aware greetings
+# --------------------------------------------------------------------------
+def _compose_role_greeting(role_key: str) -> str:
+    rk = (role_key or "").strip().lower()
+    if rk == "clientmanager":
+        base = (
+            "Alright! Please start by providing me a Plan Name. "
+            "You can either type a few words of the Plan Name, or select from the below last 3 Plans that you searched for."
+        )
+        return f"{base}\n\nHello! You have 45 plans in your portfolio.Ask me anything?"
+    if rk in {"projectmanager", "seniorleader"}:
+        return "Alright! There are 20,091 plans in your book of business.Ask mme anything?"
+    # default (no role): behave like CM for UX
+    base = (
+        "Alright! Please start by providing me a Plan Name. "
+        "You can either type a few words of the Plan Name, or select from the below last 3 Plans that you searched for."
+    )
+    return f"{base}\n\nHello! You have 45 plans in your portfolio.Ask me anything?"
+
+# --------------------------------------------------------------------------
+# Routes
+# --------------------------------------------------------------------------
+@router.get("/health")
+def health():
+    return {"status": "ok", "service": "chatbot"}
+
+@router.get("/build-indices")
+def build_indices():
+    build_party_indices()
+    return {"status": "built", "plans": _available_plan_keys()}
+
+@router.get("/plans", response_model=PlanListOut)
+def list_plans():
+    return PlanListOut(plans=_list_plan_display_titles())
+
+@router.post("/session", response_model=SessionCreateOut)
+def create_session():
+    sd = _STORE.create()
+    return SessionCreateOut(session_id=sd.session_id)
+
+@router.post("/chat", response_model=ChatMsgOut)
+def chat(body: ChatMsgIn, request: Request):
+    """
+    Role matrix:
+      - Client Manager: greetings ✅, predefined_qa ✅, plan/service Q&A ✅, plan switching ✅
+      - Project Manager: greetings ✅, predefined_qa ✅, plan/service Q&A ❌, plan switching ❌
+      - Senior Leader:  greetings ✅, predefined_qa ✅, plan/service Q&A ❌, plan switching ❌
+    """
+    plan_keys = _available_plan_keys()
+    # We only need plan indices for CM flows; PM/SL don't use them
+    if not plan_keys:
+        log.info("No plan indices found on disk.")
+
+    msg = (body.message or "").strip()
+    sd = _STORE.get(body.session_id)
+    active_key = sd.current_plan_key
+
+    # Resolve role (header first; then JWT)
+    role_key = (request.headers.get("x-user-role") or "").strip().lower()
+    if not role_key:
+        auth = request.headers.get("authorization") or ""
+        if auth.lower().startswith("bearer "):
+            try:
+                claims = _decode_and_verify_cognito_jwt(auth.split(" ", 1)[1].strip())
+                role_key = (claims.get("custom:role") or "").strip().lower()
+            except Exception:
+                role_key = ""
+
+    is_cm = (role_key == "clientmanager") or (role_key == "")
+    is_pm = (role_key == "projectmanager")
+    is_sl = (role_key == "seniorleader")
+    role_limited = is_pm or is_sl
+
+    def _show_picker_response(text: str, current_key: Optional[str]) -> ChatMsgOut:
+        _STORE.set_pending_selection(body.session_id, True)
+        resp = ChatMsgOut(
+            session_id=body.session_id,
+            response=text,
+            current_plan=_current_plan_or_default(current_key),
+            show_plan_picker=True,
+            plan_options=_list_plan_display_titles(),
+            recent_plans=_recent_display_titles(body.session_id),
+        )
+        _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+        return resp
+
+    # Empty -> greet per-role
+    if not msg:
+        greet = _compose_role_greeting(role_key)
+        if role_limited:
+            # PM/SL: no plan picker
+            resp = ChatMsgOut(
+                session_id=body.session_id,
+                response=greet,
+                current_plan=_current_plan_or_default(active_key),
+                show_plan_picker=False,
+                plan_options=[],
+                recent_plans=_recent_display_titles(body.session_id),
+            )
+            _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+            return resp
+        # CM/default: show plan picker
+        return _show_picker_response(greet, active_key)
+
+    # Log user message
+    _STORE.add_history(body.session_id, "user", msg, _current_plan_or_default(active_key))
+
+    # Greetings -> respond per-role
+    if _is_greeting_message(msg):
+        greet = _compose_role_greeting(role_key)
+        if role_limited:
+            resp = ChatMsgOut(
+                session_id=body.session_id,
+                response=greet,
+                current_plan=_current_plan_or_default(active_key),
+                show_plan_picker=False,
+                plan_options=[],
+                recent_plans=_recent_display_titles(body.session_id),
+            )
+            _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+            return resp
+        return _show_picker_response(greet, active_key)
+
+    # Noise / special chars -> generic hint (works for all roles)
+    if _is_noise_query(msg):
+        resp = ChatMsgOut(
+            session_id=body.session_id,
+            response=("I didn’t catch a question. Try a few keywords, e.g., "
+                      "“automatic enrollment status” or “loan types allowed”."),
+            current_plan=_current_plan_or_default(active_key),
+            show_plan_picker=(not role_limited and not active_key),
+            plan_options=_list_plan_display_titles() if (not role_limited and not active_key) else [],
+            recent_plans=_recent_display_titles(body.session_id),
+        )
+        _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+        return resp
+
+    # ------ Role-limited path (PM/SL): ONLY predefined QA ------
+    if role_limited:
+        hit = find_predefined_answer(
+            role_key=role_key,
+            user_question=msg,
+            threshold=float(os.getenv("PREDEF_QA_THRESHOLD", "0.82")),
+        )
+        if hit:
+            resp = ChatMsgOut(
+                session_id=body.session_id,
+                response=hit["answer"],
+                current_plan=_current_plan_or_default(active_key),
+                show_plan_picker=False,
+                plan_options=[],
+                recent_plans=_recent_display_titles(body.session_id),
+            )
+            _STORE.add_history(
+                body.session_id,
+                "assistant",
+                f"[predefined qa • {role_key} • score={hit['score']} • matched='{hit['matched_question']}'] {resp.response}",
+                resp.current_plan,
+            )
+            return resp
+
+        # Not a predefined question
+        resp = ChatMsgOut(
+            session_id=body.session_id,
+            response=("This view supports predefined questions for your role. "
+                      "Try asking one of your predefined queries (e.g., “How many 401(k) plans have a profit-sharing feature?”)."),
+            current_plan=_current_plan_or_default(active_key),
+            show_plan_picker=False,
+            plan_options=[],
+            recent_plans=_recent_display_titles(body.session_id),
+        )
+        _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+        return resp
+    # -----------------------------------------------------------
+
+    # ---------- CM (or no role): full flow ----------
+    # Try predefined QA first (CM also has role-specific cards)
+    hit = find_predefined_answer(
+        role_key=("clientmanager" if role_key == "" else role_key),
+        user_question=msg,
+        threshold=float(os.getenv("PREDEF_QA_THRESHOLD", "0.82")),
+    )
+    if hit:
+        resp = ChatMsgOut(
+            session_id=body.session_id,
+            response=hit["answer"],
+            current_plan=_current_plan_or_default(active_key),
+            show_plan_picker=False,
+            plan_options=[],
+            recent_plans=_recent_display_titles(body.session_id),
+        )
+        _STORE.add_history(
+            body.session_id,
+            "assistant",
+            f"[predefined qa • {role_key or 'clientmanager'} • score={hit['score']} • matched='{hit['matched_question']}'] {resp.response}",
+            resp.current_plan,
+        )
+        return resp
+
+    plan_keys = _available_plan_keys()
+    if not plan_keys:
+        raise HTTPException(status_code=404, detail="No plan indices available. Build indices first.")
+
+    # If expecting a plan selection, resolve immediately (HYBRID)
+    if sd.pending_plan_selection:
+        display_titles = _list_plan_display_titles()
+        chosen_display = _resolve_plan_hybrid(msg, display_titles)
+        if chosen_display:
+            chosen_key = None
+            low_chosen = chosen_display.lower()
+            for k in plan_keys:
+                if low_chosen == _display_name_for_plan_key(k).lower():
+                    chosen_key = k
+                    break
+            if chosen_key:
+                sd = _STORE.set_current_plan(body.session_id, chosen_key)
+                resp = ChatMsgOut(
+                    session_id=body.session_id,
+                    response=f"Great! Context set to {chosen_display}. All queries hereafter will use this plan.",
+                    current_plan=_current_plan_or_default(sd.current_plan_key),
+                    show_plan_picker=False,
+                    plan_options=[],
+                    recent_plans=_recent_display_titles(body.session_id),
+                )
+                _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+                return resp
+
+        return _show_picker_response(
+            "I couldn't match that to a plan. Please type more letters (e.g., 'joe fraz') or pick below.",
+            active_key
+        )
+
+    # No active plan yet — allow direct resolution from free text (HYBRID)
+    if not active_key:
+        display_titles = _list_plan_display_titles()
+        chosen_display = _resolve_plan_hybrid(msg, display_titles)
+        if chosen_display:
+            chosen_key = None
+            low_chosen = chosen_display.lower()
+            for k in plan_keys:
+                if low_chosen == _display_name_for_plan_key(k).lower():
+                    chosen_key = k
+                    break
+            if chosen_key:
+                sd = _STORE.set_current_plan(body.session_id, chosen_key)
+                resp = ChatMsgOut(
+                    session_id=body.session_id,
+                    response=f"Great! Context set to {chosen_display}. All queries hereafter will use this plan.",
+                    current_plan=_current_plan_or_default(sd.current_plan_key),
+                    show_plan_picker=False,
+                    plan_options=[],
+                    recent_plans=_recent_display_titles(body.session_id),
+                )
+                _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+                return resp
+
+        greet = _compose_role_greeting(role_key)
+        return _show_picker_response(greet, None)
+
+    # Explicit switch intent mid-chat (CM only)
+    if _intent_is_switch_plan(msg):
+        display_titles = _list_plan_display_titles()
+        chosen_display = _resolve_plan_hybrid(msg, display_titles)
+        if chosen_display:
+            chosen_key = None
+            low_chosen = chosen_display.lower()
+            for k in plan_keys:
+                if low_chosen == _display_name_for_plan_key(k).lower():
+                    chosen_key = k
+                    break
+            if chosen_key:
+                sd = _STORE.set_current_plan(body.session_id, chosen_key)
+                resp = ChatMsgOut(
+                    session_id=body.session_id,
+                    response=f"Great! Context set to {chosen_display}. All queries hereafter will use this plan.",
+                    current_plan=_current_plan_or_default(sd.current_plan_key),
+                    show_plan_picker=False,
+                    plan_options=[],
+                    recent_plans=_recent_display_titles(body.session_id),
+                )
+                _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+                return resp
+
+        return _show_picker_response(
+            "Got it. Tell me the Plan Name (you can type partial like 'jo fr'), or pick from the options below.",
+            active_key
+        )
+
+    # Normal Q&A within the active plan (RAG)
+    qtype: Literal["plan", "service"] = _classify_query_type(msg)
+    chunks: List[PromptChunk] = _retrieve_chunks(active_key, msg, k=10)
+    if not chunks:
+        resp = ChatMsgOut(
+            session_id=body.session_id,
+            response="Result\nNo relevant context found.",
+            current_plan=_current_plan_or_default(active_key),
+            show_plan_picker=False,
+            plan_options=[],
+            recent_plans=_recent_display_titles(body.session_id),
+        )
+        _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+        return resp
+
+    _save_chunks_for_answer(
+        session_id=body.session_id,
+        plan_key=active_key,
+        qtype=qtype,
+        query=msg,
+        chunks=chunks,
+    )
+
+    # Optional demo snippet (by display name)
+    plan_display_name = _display_name_for_plan_key(active_key)
+    plan_display_norm = _normalize(plan_display_name)
+    demo_chunk_text = None
+    if plan_display_norm == "tri state":
+        demo_chunk_text = "The effective date of the active Annual Schedule of Fees is 1/1/2018."
+    elif plan_display_norm == "joe frazier":
+        demo_chunk_text = "The effective date of the fees for Joe Frazier is 2/1/2018."
+    elif plan_display_norm == "knight train":
+        demo_chunk_text = "The effective date of the fees for Knight Train is 1/1/2023."
+
+    pre_prompt = create_service_prompt(msg, chunks) if qtype == "service" else create_plan_prompt(msg, chunks)
+    prompt = (demo_chunk_text + "\n\n" + pre_prompt) if demo_chunk_text else pre_prompt
+    log.debug("FINAL PROMPT TO CLAUDE 4 (answer): %s", prompt)
+
+    answer = (_answer_infer(prompt).strip() or "Result\nNo answer could be generated from the provided context.")
+    resp = ChatMsgOut(
+        session_id=body.session_id,
+        response=answer,
+        current_plan=_current_plan_or_default(active_key),
+        show_plan_picker=False,
+        plan_options=[],
+        recent_plans=_recent_display_titles(body.session_id),
+    )
+    _STORE.add_history(body.session_id, "assistant", resp.response, resp.current_plan)
+    return resp

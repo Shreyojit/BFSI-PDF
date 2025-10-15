@@ -1,0 +1,108 @@
+# mca_chatbot/auth_role.py
+from __future__ import annotations
+
+import os
+import time
+from typing import Dict, Any, Optional
+import boto3
+import requests
+from jose import jwt
+from fastapi import APIRouter, HTTPException, Header, Request
+
+router = APIRouter()
+
+# ---- Cognito config (envs) ----
+AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
+COGNITO_USER_POOL_ID = os.getenv("COGNITO_USER_POOL_ID", "us-east-1_qg5ZFROwO")
+COGNITO_CLIENT_ID = os.getenv("COGNITO_CLIENT_ID", "1hq4mk552i5unji5b1rc3t3pdj")
+
+ISSUER = f"https://cognito-idp.{AWS_REGION}.amazonaws.com/{COGNITO_USER_POOL_ID}"
+JWKS_URL = f"{ISSUER}/.well-known/jwks.json"
+
+# ---- Tiny JWKS cache ----
+_JWKS: Dict[str, Any] = {}
+_JWKS_TS = 0.0
+_JWKS_TTL = 3600
+
+def _get_jwks() -> Dict[str, Any]:
+    global _JWKS, _JWKS_TS
+    now = time.time()
+    if not _JWKS or now - _JWKS_TS > _JWKS_TTL:
+        r = requests.get(JWKS_URL, timeout=5)
+        if r.status_code != 200:
+            raise HTTPException(status_code=503, detail="Unable to fetch JWKS")
+        _JWKS = r.json()
+        _JWKS_TS = now
+    return _JWKS
+
+def _decode_and_verify_cognito_jwt(token: str) -> Dict[str, Any]:
+    headers = jwt.get_unverified_header(token)
+    kid = headers.get("kid")
+    if not kid:
+        raise HTTPException(status_code=401, detail="Invalid token header")
+
+    keys = _get_jwks().get("keys", [])
+    jwk = next((k for k in keys if k.get("kid") == kid), None)
+    if not jwk:
+        raise HTTPException(status_code=401, detail="Unknown key id")
+
+    try:
+        claims = jwt.decode(
+            token,
+            jwk,
+            algorithms=[jwk.get("alg", "RS256")],
+            issuer=ISSUER,
+            options={"verify_aud": False},
+        )
+    except Exception as e:
+        raise HTTPException(status_code=401, detail=f"Token verification failed: {e}")
+
+    token_use = claims.get("token_use")
+    if token_use == "id":
+        if claims.get("aud") != COGNITO_CLIENT_ID:
+            raise HTTPException(status_code=401, detail="Invalid audience for ID token")
+    elif token_use == "access":
+        if claims.get("client_id") != COGNITO_CLIENT_ID:
+            raise HTTPException(status_code=401, detail="Invalid client_id for Access token")
+    else:
+        raise HTTPException(status_code=401, detail="Unsupported token_use")
+
+    return claims
+
+@router.get("/user-role")
+def user_role(
+    request: Request,
+    authorization: Optional[str] = Header(default=None),
+):
+    if not authorization or not authorization.lower().startswith("bearer "):
+        raise HTTPException(status_code=401, detail="Missing Bearer token")
+
+    raw = authorization.split(" ", 1)[1].strip()
+    claims = _decode_and_verify_cognito_jwt(raw)
+
+    token_use = claims.get("token_use")
+    username = claims.get("cognito:username") or claims.get("username")
+    email = claims.get("email")
+    role = claims.get("custom:role")
+    groups = claims.get("cognito:groups") or []
+
+    if token_use == "access" and (not email or not role):
+        try:
+            cog = boto3.client("cognito-idp", region_name=AWS_REGION)
+            resp = cog.get_user(AccessToken=raw)
+            attrs = {a["Name"]: a["Value"] for a in resp.get("UserAttributes", [])}
+            email = email or attrs.get("email")
+            role = role or attrs.get("custom:role")
+            username = username or resp.get("Username")
+        except Exception:
+            pass
+
+    return {
+        "ok": True,
+        "username": username,
+        "email": email,
+        "role": role,
+        "groups": groups,
+        "token_use": token_use,
+        "sub": claims.get("sub"),
+    }

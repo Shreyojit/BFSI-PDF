@@ -1,0 +1,321 @@
+# mca_chatbot/predefined_qa.py
+from __future__ import annotations
+
+import re
+import threading
+from typing import Dict, List, Optional, Tuple
+
+from .rag_config import settings
+from langchain_community.embeddings import BedrockEmbeddings
+
+# =========================
+# Role-distributed QA DATA
+# =========================
+QA_DATA: Dict[str, List[Dict[str, str]]] = {
+    # -------- Senior Leader (from "Senior Manager" section) --------
+    "seniorleader": [
+        {
+            "q": "What product offers generate the highest revenue?",
+            "a": (
+                "There are 23 active product offers. The top 5 product offers by revenue are:\n\n"
+                "1. \"offer_id\": \"OF01\",  \n"
+                "\"product_offer_name\": \"Mega 401(k)\",  \n"
+                "\"revenue\": 166418092.80  \n\n"
+                "2. \"offer_id\": \"OF04\",  \n"
+                "\"product_offer_name\": \"Mid 401(k) Core\",  \n"
+                "\"revenue\": 94829340.18  \n\n"
+                "3. \"offer_id\": \"OF12\",  \n"
+                "\"product_offer_name\": \"Mid 403(b)\",  \n"
+                "\"revenue\": 83025000.00  \n\n"
+                "4. \"offer_id\": \"OF08\",  \n"
+                "\"product_offer_name\": \"Micro 401(k) Prime\",  \n"
+                "\"revenue\": 71130456.10  \n\n"
+                "5. \"offer_id\": \"OF14\",  \n"
+                "\"product_offer_name\": \"Small-Mid 401(a) PS\",  \n"
+                "\"revenue\": 58989480.00"
+            ),
+        },
+        {
+            "q": "Provide the details on the product offers based upon average plan revenue.",
+            "a": (
+                "Offer details by Average Plan Revenue:\n\n"
+                "1. \"offer_id\": \"OF01\",  \n"
+                "\"product_offer_name\": \"Product Offer Name\",  \n"
+                "\"average_plan_revenue\": 9245449.60  \n\n"
+                "2. \"offer_id\": \"OF04\",  \n"
+                "\"product_offer_name\": \"Mega 401(k)\",  \n"
+                "\"average_plan_revenue\": 4451445.77  \n\n"
+                "3. \"offer_id\": \"OF12\",  \n"
+                "\"product_offer_name\": \"Mid 401(k) Core\",  \n"
+                "\"average_plan_revenue\": 3869578.52  \n\n"
+                "4. \"offer_id\": \"OF08\",  \n"
+                "\"product_offer_name\": \"Mid 403(b)\",  \n"
+                "\"average_plan_revenue\": 1345000.00  \n\n"
+                "5. \"offer_id\": \"OF02\",  \n"
+                "\"product_offer_name\": \"Large 401(k) Core\",  \n"
+                "\"average_plan_revenue\": 1141108.76"
+            ),
+        },
+        {
+            "q": "How many active product offers allow automatic enrollment?",
+            "a": (
+                "There are currently 23 active product offers; 17 permit automatic enrollment "
+                "as a preferred or allowed feature."
+            ),
+        },
+        {
+            "q": "How many plans do not have automatic enrollment for these product offers?",
+            "a": (
+                "There are 3,538 plans without automatic enrollment in product offers that allow it. "
+                "Plan numbers for the 17 product offers are:\n\n"
+                "1. \"offer_id\": \"OF01\",  \n"
+                "\"product_offer_name\": \"Mega 401(k)\",  \n"
+                "\"plans\": 3  \n\n"
+                "2. \"offer_id\": \"OF02\",  \n"
+                "\"product_offer_name\": \"Large 401(k) Core\",  \n"
+                "\"plans\": 18  \n\n"
+                "3. \"offer_id\": \"OF03\",  \n"
+                "\"product_offer_name\": \"Large 401(k) Select\",  \n"
+                "\"plans\": 22  \n\n"
+                "4. \"offer_id\": \"OF04\",  \n"
+                "\"product_offer_name\": \"Mid 401(k) Core\",  \n"
+                "\"plans\": 95  \n\n"
+                "5. \"offer_id\": \"OF05\",  \n"
+                "\"product_offer_name\": \"Mid 401(k) Select\",  \n"
+                "\"plans\": 5  \n\n"
+                "6. \"offer_id\": \"OF06\",  \n"
+                "\"product_offer_name\": \"Small 401(k) Select A\",  \n"
+                "\"plans\": 192  \n\n"
+                "7. \"offer_id\": \"OF07\",  \n"
+                "\"product_offer_name\": \"Small 401(k) Select B\",  \n"
+                "\"plans\": 150  \n\n"
+                "8. \"offer_id\": \"OF08\",  \n"
+                "\"product_offer_name\": \"Micro 401(k) Prime\",  \n"
+                "\"plans\": 1895  \n\n"
+                "9. \"offer_id\": \"OF09\",  \n"
+                "\"product_offer_name\": \"Micro 401(k) Platinum\",  \n"
+                "\"plans\": 752  \n\n"
+                "10. \"offer_id\": \"OF10\",  \n"
+                "\"product_offer_name\": \"Large 403(b) Prime\",  \n"
+                "\"plans\": 5  \n\n"
+                "11. \"offer_id\": \"OF11\",  \n"
+                "\"product_offer_name\": \"Large 403(b) Platinum\",  \n"
+                "\"plans\": 3  \n\n"
+                "12. \"offer_id\": \"OF12\",  \n"
+                "\"product_offer_name\": \"Mid 403(b)\",  \n"
+                "\"plans\": 123  \n\n"
+                "13. \"offer_id\": \"OF13\",  \n"
+                "\"product_offer_name\": \"Small 403(b)\",  \n"
+                "\"plans\": 150  \n\n"
+                "14. \"offer_id\": \"OF14\",  \n"
+                "\"product_offer_name\": \"Small-Mid 401(a)\",  \n"
+                "\"plans\": 125  \n\n"
+                "15. \"offer_id\": \"OF18\",  \n"
+                "\"product_offer_name\": \"MaxRetire MEP\",  \n"
+                "\"plans\": 0  \n\n"
+                "16. \"offer_id\": \"OF19\",  \n"
+                "\"product_offer_name\": \"MaxRetire PEP\",  \n"
+                "\"plans\": 0  \n\n"
+                "17. \"offer_id\": \"(total)\",  \n"
+                "\"product_offer_name\": \"(sum across 17 offers)\",  \n"
+                "\"plans\": 3538"
+            ),
+        },
+    ],
+
+    # -------- Project Manager (from "Product Manager" section) --------
+    "projectmanager": [
+        {
+            "q": "How many 401(k) plans have a profit-sharing feature?",
+            "a": (
+                "There are 18,058 401(k) type plans of record; 1,935 of those plans have "
+                "profit-sharing money sources."
+            ),
+        },
+        {
+            "q": "List the top five 401(k) plans by assets with profit-sharing money sources.",
+            "a": (
+                "1. \"plan_id\": \"9993046-001\",  \n"
+                "\"plan_name\": \"Apex LLP 401(K) Profit Sharing Plan\",  \n"
+                "\"plan_type\": \"401(k)\",  \n"
+                "\"assets\": 1167545227.05  \n\n"
+                "2. \"plan_id\": \"9950328-001\",  \n"
+                "\"plan_name\": \"Optima Corporation 401(k) Matching & Profit Sharing Contribution Plan\",  \n"
+                "\"plan_type\": \"401(k)\",  \n"
+                "\"assets\": 432564246.67  \n\n"
+                "3. \"plan_id\": \"9950206-001\",  \n"
+                "\"plan_name\": \"Quantum Systems, Inc. Profit Sharing Plan\",  \n"
+                "\"plan_type\": \"401(k)\",  \n"
+                "\"assets\": 369984948.74  \n\n"
+                "4. \"plan_id\": \"9950451-001\",  \n"
+                "\"plan_name\": \"Nova Technologies, Inc. 401(k) Savings Plan\",  \n"
+                "\"plan_type\": \"401(k)\",  \n"
+                "\"assets\": 338138407.65  \n\n"
+                "5. \"plan_id\": \"9950297-001\",  \n"
+                "\"plan_name\": \"Catalyst Women's Care, PLC Profit Sharing Plan\",  \n"
+                "\"plan_type\": \"401(k)\",  \n"
+                "\"assets\": 51550758.89"
+            ),
+        },
+        {
+            "q": "How many 401(k) plans permit loans?",
+            "a": (
+                "There are 18,058 401(k) type plans of record; 15,298 of those plans permit loans."
+            ),
+        },
+        {
+            "q": "Provide the number of plans by loan types permitted.",
+            "a": (
+                "1. \"loan_type\": \"Regular loans\",  \n"
+                "\"plans\": 15298  \n\n"
+                "2. \"loan_type\": \"Primary residence loans\",  \n"
+                "\"plans\": 10675  \n\n"
+                "3. \"loan_type\": \"Hardship loans\",  \n"
+                "\"plans\": 3258"
+            ),
+        },
+        {
+            "q": "What is the average number of active loans permitted for participants in these plans?",
+            "a": "The average number of active loans permitted is 2.3 loans per participant.",
+        },
+    ],
+
+    # -------- Client Manager (Book of Business + Single Plan) --------
+    "clientmanager": [
+        # Book of Business (45 plans)
+        {
+            "q": "How many plans do not permit participant Roth contributions?",
+            "a": (
+                "There are 2 of 45 plans that have not elected participant Roth contributions.\n\n"
+                "1. \"plan_id\": \"9950356-001\",  \n"
+                "\"plan_name\": \"Joe Frazier Retirement Plan\",  \n"
+                "\"plan_type\": \"401(k)\"  \n\n"
+                "2. \"plan_id\": \"9999999-001\",  \n"
+                "\"plan_name\": \"Knight Train 401(k) Plan\",  \n"
+                "\"plan_type\": \"401(k)\""
+            ),
+        },
+
+        # Single plan (Joe Frazier)
+        {
+            "q": "What types of contributions can be made to this plan?",
+            "a": (
+                "The contribution types permitted for the plan are Pre-Tax Deferrals, "
+                "Non-elective employer contributions, and Safe Harbor employer contributions."
+            ),
+        },
+        {
+            "q": "Are Roth contributions permitted?",
+            "a": "No. There is no Roth contributions election made in the Adoption Agreement on file for this plan.",
+        },
+        {
+            "q": "Are loans permitted in the plan?",
+            "a": (
+                "Yes. Loans are available to participants. The plan allows for General Purpose and Primary Residence loans. "
+                "The administrative details for loans are described in the Loan Policy."
+            ),
+        },
+    ],
+}
+
+# =========================
+# Embedding + matching
+# =========================
+_TITAN_V2 = "amazon.titan-embed-text-v2:0"
+
+def _make_embeddings() -> BedrockEmbeddings:
+    model_id = settings.EMBEDDING_MODEL_ID or _TITAN_V2
+    if model_id != _TITAN_V2:
+        import logging
+        logging.getLogger(__name__).warning(
+            "Overriding EMBEDDING_MODEL_ID=%s to %s for consistency.",
+            model_id, _TITAN_V2
+        )
+        model_id = _TITAN_V2
+    return BedrockEmbeddings(region_name=settings.AWS_REGION, model_id=model_id)
+
+
+class _Index:
+    def __init__(self, role_key: str, items: List[Dict[str, str]]):
+        self.role_key = role_key
+        self.items = items
+        self.embeddings = _make_embeddings()
+        self.vecs: List[List[float]] = []
+        self._build()
+
+    def _build(self):
+        qs = [it["q"] for it in self.items]
+        self.vecs = self.embeddings.embed_documents(qs) if qs else []
+
+    def best_match(self, query: str) -> Tuple[int, float]:
+        qv = self.embeddings.embed_query(query)
+        best_i, best_s = -1, 0.0
+        for i, dv in enumerate(self.vecs):
+            s = _cos(qv, dv)
+            if s > best_s:
+                best_i, best_s = i, s
+        return best_i, best_s
+
+
+def _cos(a: List[float], b: List[float]) -> float:
+    dot = sum(x*y for x, y in zip(a, b))
+    na = (sum(x*x for x in a)) ** 0.5 or 1e-9
+    nb = (sum(y*y for y in b)) ** 0.5 or 1e-9
+    return dot / (na * nb)
+
+
+_IDX_LOCK = threading.Lock()
+_ROLE_INDEX: Dict[str, _Index] = {}
+
+
+def _get_index(role: str) -> Optional[_Index]:
+    role = (role or "").strip().lower()
+    with _IDX_LOCK:
+        if role not in QA_DATA:
+            return None
+        if role in _ROLE_INDEX:
+            return _ROLE_INDEX[role]
+        _ROLE_INDEX[role] = _Index(role, QA_DATA[role])
+        return _ROLE_INDEX[role]
+
+
+def find_predefined_answer(
+    role_key: Optional[str],
+    user_question: str,
+    threshold: float = 0.82,
+) -> Optional[Dict[str, str]]:
+    """
+    role_key must be one of: 'seniorleader' | 'projectmanager' | 'clientmanager'
+    Returns { 'answer': str, 'score': float, 'matched_question': str } or None.
+    """
+    idx = _get_index(role_key)
+    if not idx or not idx.vecs:
+        return None
+
+    # First pass (verbatim)
+    i, score = idx.best_match(user_question)
+
+    # If it barely misses, try a normalized second pass (paraphrase-friendly)
+    if (i < 0 or score < threshold) and user_question:
+        qn = user_question.lower()
+        qn = re.sub(r"[^a-z0-9\s\(\)]", " ", qn)   # keep spaces + parentheses for 401(k)
+        qn = re.sub(r"\s+", " ", qn).strip()
+        qn = (
+            qn.replace("largest", "top")
+              .replace("biggest", "top")
+              .replace("five", "5")
+              .replace(" top five ", " top 5 ")
+              .replace("401 k", "401(k)")
+        )
+        j, score2 = idx.best_match(qn)
+        if j >= 0 and score2 > score:
+            i, score = j, score2
+
+    if i < 0 or score < threshold:
+        # soft-accept close misses
+        soft_margin = max(0.04, threshold * 0.05)  # 4% abs or 5% relative
+        if i < 0 or score < (threshold - soft_margin):
+            return None
+
+    item = idx.items[i]
+    return {"answer": item["a"], "score": round(score, 4), "matched_question": item["q"]}
