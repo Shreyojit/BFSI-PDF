@@ -1,0 +1,184 @@
+EDA Strategy for ServiceNow Incident Data
+Introduction and Objectives
+ServiceNow incident data provides a rich source of information to evaluate IT service performance. Our goal is to perform a comprehensive Exploratory Data Analysis (EDA) on the Incident table to uncover business insights and key performance indicators (KPIs). The insights will help IT Service Management (ITSM) managers and data scientists understand how well the support process is working and identify improvement opportunities. Ultimately, this analysis will inform a strategy for better SLA compliance, faster resolutions, and higher customer satisfaction.
+
+Scope: We have a single logical table incident containing all incident records (with various fields like descriptions, timestamps, priorities, relationships, etc.). We will analyze historical incident data (aggregated monthly and daily) to find trends and patterns, and develop a dashboard that shows both current snapshot metrics and changes over time.
+
+Data Overview
+The incident table includes a wide array of columns covering different aspects of the ticket life cycle. Key categories of fields include:
+
+Descriptive text – e.g. short description, full description, work notes, comments. These capture the issue details and actions taken.
+
+Relationship links – e.g. parent incident, child incidents, linked Problem (problem_id), Change (rfc), etc. These indicate if an incident is part of a larger problem or change.
+
+SLA and performance – e.g. made_sla flag, SLA due date, first-contact resolution indicator, reopen count. These fields track compliance with Service Level Agreements and quality of resolution.
+
+Core identifiers and states – e.g. incident number, unique sys_id, state (New / In Progress / Resolved / Closed), active flag. These help track the incident’s status through its lifecycle.
+
+Timestamp fields – e.g. opened_at, resolved_at, closed_at, and duration (calendar_duration). These enable calculation of time-to-resolve and aging of tickets.
+
+User and assignment data – e.g. caller (who reported), opened_by, assigned_to, assignment_group, plus fields like contact type (phone, email, portal), reassignment count, escalation flag. These describe who is involved and how the ticket is being handled.
+
+Categorization – e.g. category, subcategory, business area, line of business, configuration item (cmdb_ci), business service, location. These classify the incident’s context (useful for finding frequent issue areas).
+
+Priority and impact – e.g. priority, impact, urgency, severity, major incident flag. These indicate the criticality of the incident. For example, a major incident flag and high priority denote a significant outage or issueatomicwork.com. The relationship between Impact, Urgency, and Priority should follow a defined matrix; part of our analysis will be to verify if any incidents deviate from the expected priority given their impact/urgency (an anomaly might be, say, Low impact & Low urgency ticket marked as “Critical”).
+
+With this data in hand, we can perform EDA to answer questions like: How many incidents are we handling? Are we meeting our SLAs? What is our average resolution time? Which categories or business services generate the most incidents? How often do tickets get reopened or escalated?
+
+EDA Plan and Steps
+To thoroughly explore the dataset and generate insights, we propose the following step-by-step strategy:
+
+Data Preparation & Quality Check:
+
+Load the incident data and check for any data quality issues. Ensure timestamps are in proper datetime format and key fields (like sys_id, opened_at, etc.) are not missing.
+
+Verify that categorical fields use consistent values (e.g. incident states, priorities). Clean or normalize text fields if necessary (for example, removing HTML tags from the *_display_value text).
+
+If the dataset contains both the raw values and display values (e.g. short_description_value vs short_description_display_value), decide which to use for analysis (usually the “_display_value” is human-readable). Remove any duplicate or irrelevant columns to simplify analysis.
+
+Understand Volume and Distribution (Univariate Analysis):
+
+Incident Volume: Calculate the total number of incidents and examine how many incidents are created per day, week, and month. Plot incidents over time to identify patterns or seasonalityatomicwork.com. This will show if there are peaks (e.g. spikes on Mondays or end of month) or long-term trends (increasing/decreasing ticket volumes).
+
+Incident State: Look at the breakdown of current states – how many are New, In Progress, On Hold, Resolved, Closed, etc. This gives a snapshot of the backlog of active tickets vs. closed ones. The incident backlog (open unresolved incidents) is a key metric to monitor workloadatomicwork.com.
+
+Priority Distribution: Examine the proportion of incidents by priority (Critical, High, Moderate, Low) and by the major incident flag. A high proportion of critical incidents (% of incidents that are major) indicates significant business impactatomicwork.com. Additionally, analyze Impact vs Urgency vs Priority to ensure the priority assignment aligns with the ITIL-defined matrix (no anomalies where low-impact issues are mislabeled as high priority, etc.). A surge in high-priority issues can strain the team and lead to SLA breachesperspectium.com, so understanding this mix is important.
+
+Categorical Breakdown: Review which categories, subcategories, or business services have the most incidents. Identifying the top incident categories or affected services can reveal systemic problem areasperspectium.com (e.g., if "Email" or a specific application generates many tickets, it might need a root cause fix or a dedicated focus). Similarly, see which locations or departments report the most incidents, which can inform targeted improvements or training.
+
+Channel (Contact Type): Analyze how incidents are reported: via phone, email, self-service portal, chat, etc. This can offer insight into user behavior and channel effectiveness. For example, if a very high percentage come via phone, perhaps the self-service knowledge base could be improved to deflect common issues.
+
+Performance & Time-Based Analysis:
+
+Resolution Time (MTTR): Calculate the Mean Time to Resolution for incidents (the time from opened to resolved) and also look at the distribution of resolution timesatomicwork.com. This can be done by subtracting opened_at from resolved_at for resolved tickets. Evaluate median and 90th percentile times as well, since averages can be skewed by outliers. Shorter resolution times generally indicate a more efficient incident management process.
+
+SLA Compliance: Determine the percentage of incidents that met their SLA vs those that breached. The field made_sla (True/False or 0/1) can be used to compute SLA compliance rateatomicwork.com. For breaches, the sla_due timestamp compared to actual resolution can be analyzed to see by how much SLAs are missed. It’s useful to break this down by priority or assignment group as well (are P1 issues breaching SLAs more often? Is a particular team struggling to meet SLAs?).
+
+First Response Time: If data is available for first assignment or first comment, measure how quickly the team acknowledges new incidents (MTTA – Mean Time to Acknowledge). Although not explicitly listed in the columns, first response can sometimes be inferred (e.g., time difference between opened_at and first entry in work notes or first state change out of "New"). A fast response can prevent SLA breaches in resolution downstreamperspectium.com.
+
+Incident Timeline Analysis: For a more granular view, analyze key timestamps (opened, resolved, closed) to see if there are delays in any stage. For example, measure the lag between resolved_at and closed_at (some incidents might be resolved but not formally closed for days). Also check how long incidents stay in certain states (like "On Hold" or "In Progress") by leveraging the sys_updated_on field or audit data if available. This can identify process bottlenecksatomicwork.com.
+
+Time-specific patterns: Examine if certain times of day or days of week see slower responses or resolution. For instance, do incidents opened after hours or on weekends have a longer resolution due to reduced staffing? Also, compare metrics month-by-month to see if service is improving (e.g., is average resolution time trending down over the past 6 months? Is SLA compliance improving?).
+
+Quality and Rework Metrics:
+
+Reopen Rate: Analyze how many incidents were reopened after being resolved/closed. The dataset provides reopen_count and reopened_time. Compute the Reopen Rate = (number of reopened incidents / total closed incidents) × 100%atomicwork.com. This metric reflects the quality of resolutions – a high reopen rate suggests that issues were not fully resolved the first timeblog.invgate.com. We should identify patterns: are certain categories or support groups associated with more reopens? Do specific agents have higher reopen counts (indicating possible training needs)? Each reopen adds to workload and frustrates users, so the goal is to minimize this.
+
+First Contact Resolution (FCR): Using the field u_was_this_first_contact_resol (first-contact resolution flag), calculate the FCR rate – the percentage of incidents resolved on the first contact or without any reassignment. This is an important service desk KPI: a higher FCR means the frontline is able to handle issues without escalation, leading to faster resolutions and often happier customersperspectium.comatomicwork.com. We will see what portion of tickets achieve FCR, and again which categories or teams have low FCR (perhaps complex issues that always require escalation).
+
+Reassignments & Escalations: Look at the reassignment_count and u_escalated fields. Determine the average number of hand-offs per ticket and the Escalation rate (what percentage of incidents get escalated to higher support tiers)atomicwork.com. Frequent reassignments or escalations can indicate unclear initial categorization or insufficient expertise at lower support levels. High escalation or reassignment counts for a particular group might highlight knowledge gaps or misrouting of tickets.
+
+Attachments and Work Notes: Check what fraction of tickets have u_has_attachment = True (indicating files like screenshots or logs were attached). Often, tickets with attachments are more complex (possibly longer resolution times). Similarly, we can analyze average sys_mod_count (number of updates) – tickets with very high update counts could be problematic incidents that required a lot of back-and-forth. These could be case studies to examine individually for process improvements.
+
+Categorical Relationships & Correlations (Bivariate Analysis):
+
+Cross-analyze some of the above measures by different dimensions. For example: Priority vs Resolution Time – do high-priority incidents actually get resolved faster as one would expect, or are there cases where low-priority issues are taking resources? Assignment Group vs SLA – which teams have the best vs worst SLA compliance? Category vs Reopen Rate – which issue types tend to come back? Contact Type vs FCR – are incidents reported via certain channels (chatbot or portal) more likely to be solved on first contact (perhaps because they might be simpler issues) compared to those via phone?
+
+Also consider Incident Volume vs. Business Area – some business areas might generate a disproportionately high number of tickets relative to others, indicating where IT might focus improvement efforts or user training.
+
+If data allows, examine incidents linked to Problems or Changes (fields problem_id and rfc). For instance, if many incidents link to the same Problem record, that indicates a major underlying issue – solving that Problem could prevent those incidents. Tracking how many incidents are tied to Problems can measure the effectiveness of Problem Managementperspectium.com. Similarly, incidents caused by changes (perhaps via caused_by field or linked RFCs) could reveal change management issues.
+
+Outlier and Anomaly Detection:
+
+Identify any outlier incidents that stand out: extremely long resolution times (perhaps SLA exceptions or major incidents), unusually high reopen counts, or tickets that were reopened many times. Investigating these can provide qualitative insights – e.g., maybe a particular incident kept bouncing between teams, revealing a process gap.
+
+Check for data anomalies such as negative or zero durations (if any timestamps are mis-ordered), or incidents with missing critical fields. Ensure that priority coding is consistent (e.g., no priority "0" if using 1-5, etc.). Any anomalies should be corrected or noted, as they might skew the analysis.
+
+Throughout these steps, maintain a focus on the business implications of the findings. The EDA is not just about generating charts, but about understanding how the support process is performing and where it can be improved.
+
+Key Metrics and KPIs to Track
+Based on the above analysis, we will derive several important metrics/KPIs that measure service desk performance and can be monitored over time. These include:
+
+Incident Volume: Total number of incidents logged in a given period (daily, monthly). Tracking volume helps in resource planning and identifying unusual spikesatomicwork.com. For example, if monthly incident count is rising, it may indicate growing user base or underlying issues; a sudden spike on a particular day might correlate with a major outage.
+
+Number of Resolved Incidents: How many incidents are closed/resolved in the period. Comparing opened vs. resolved counts shows if the team is keeping up with inflow. Ideally, resolved should match or exceed new incidents to prevent backlog growthatomicwork.com.
+
+Backlog of Open Incidents: The count of incidents that remain open (active) at period end. This is a snapshot KPI indicating workload and potential delays. A rising backlog trend might signal understaffing or inefficiencies, whereas a low stable backlog suggests timely resolution of tickets.
+
+Mean Time to Resolution (MTTR): The average time taken to resolve incidents (from open to resolve)atomicwork.com. This is a critical performance indicator – a lower MTTR means issues are being fixed faster, reducing downtime. We will also consider median time to mitigate the effect of outliers. MTTR can be broken down by priority (e.g., P1 incidents MTTR vs P4 incidents) to ensure critical issues are indeed resolved faster.
+
+First Contact Resolution Rate (FCR): The percentage of incidents resolved on the first contact or first level without needing escalationatomicwork.com. A higher FCR is desirable as it means the helpdesk is efficient and knowledgeable. High FCR often correlates with high customer satisfaction (CSAT)perspectium.com, because users get their issues solved quickly in one interaction. This KPI can be improved by training front-line agents and providing better knowledge bases.
+
+SLA Compliance Rate: The proportion of incidents resolved within the agreed SLA target time. This can be calculated as: # of incidents resolved within SLA / total incidents closed (for the period)atomicwork.com. It shows how well the team meets its service commitments. We will highlight the SLA compliance overall and by priority (most organizations set stricter SLAs for high-priority tickets). A related metric is SLA Breach Count – how many tickets missed the SLA, and by how long. Consistently missed SLAs point to either unrealistic targets or process issues that need addressing.
+
+Reopen Rate: The percentage of incidents that were closed but later reopenedatomicwork.com. This is a key quality metric – reopened tickets indicate the initial resolution might have been incomplete or temporary. A high reopen rate suggests issues with the quality of initial resolutionsblog.invgate.com, and it incurs extra effort and frustration. We will monitor the overall reopen rate and aim to drill into causes (e.g., specific categories with high reopens).
+
+Reassignment Count / Handoff Rate: Average number of times an incident is transferred between assignees or groups. This reflects process efficiency – too many handoffs can prolong resolution and annoy users. We may also track the percentage of tickets that needed more than one reassignment. Reducing unnecessary reassignments (through better initial triage and training) can improve MTTR.
+
+Escalation Rate: The percentage of incidents that get escalated to a higher support tier or managementatomicwork.com. Frequent escalations might mean the first-line support lacks the expertise or authority to resolve many issues, or that ticket routing rules could be improved. This metric ties to FCR (low FCR often means high escalations).
+
+Priority Distribution & Major Incident Percentage: Monitoring the breakdown of tickets by priority level helps ensure we’re not overwhelmed with critical issues. The % of Major Incidents (those flagged as major or highest severity) is an important KPIatomicwork.com – it shows how often serious outages occur. Each major incident typically has high impact; minimizing this percentage (or handling those effectively when they occur) is crucial for the business.
+
+Category/Service Impact: Though not a single KPI, tracking incidents by category or service is vital. For example, if 25% of monthly incidents relate to a particular application, that’s a hotspot to invest in. We can identify top 5 incident categories each month. This ties into Problem Management KPIs: a high volume of repeat issues in one area suggests a root cause needs resolutionperspectium.com. Over time, we’d want to see recurring incident counts go down as underlying problems are fixed.
+
+Customer Satisfaction (if available): The dataset doesn’t list CSAT fields, but if post-resolution survey data exists, CSAT score or survey ratings would be a key outcome metric. High FCR and low resolution time generally drive higher satisfaction. Even without explicit CSAT data, we use FCR and Reopen Rate as proxies for user satisfaction (quick, one-touch resolutions vs. issues coming back).
+
+Other Metrics: We will also consider metrics like Average First Response Time (time to first work note or contact back to user), MTTA (Mean Time to Acknowledge) if data supports it, and Incident Recurrence (how many incidents are repeat issues – possibly inferred via the correlation_id field or by grouping similar short descriptions). If we find a way to identify similar incidents or use the correlation_id, we could quantify repeat incident rates which highlight where permanent fixes are needed. Additionally, computing a “ticket load” index (for instance, weighting open incidents by priority) can help communicate overall workload severity at a glance.
+
+Each of these KPIs will be tracked over time (trending month by month) and segmented by relevant dimensions (such as by priority, by team, by category) to derive deeper insights. The chosen metrics align with industry best practices for incident management and together give a balanced view of efficiency, quality, and effectiveness of the IT support process.
+
+Business Insights and Actions
+Performing this EDA and tracking the KPIs can drive numerous valuable business insights for ITSM decision-makers:
+
+Resource and Workload Management: By monitoring incident volume trends and backlog, managers can determine if the support team is keeping up or if more staff are needed during peak periods. For example, if we see consistently higher ticket counts on Mondays or at end of quarter, schedules can be adjusted or additional temp staff allocated to those periods. Volume by category might reveal the need for specialized roles (e.g., a surge in network-related tickets could justify a dedicated network support specialist).
+
+SLA and Performance Improvement: SLA compliance tracking will highlight if certain teams or shifts struggle to meet targets. Perhaps the night shift has lower compliance – indicating a need for better handoff procedures or more staffing after hours. If P1 incidents are breaching SLAs frequently, one might revise the incident response process for critical incidents (like having an on-call team for P1s to ensure rapid action). Metrics like MTTR will show whether past process improvements (new tools or training) are actually reducing resolution times. A rising MTTR would prompt investigation into what's slowing the team down.
+
+Quality of Resolutions: Reopen rate is a direct signal of resolution quality. If the analysis finds that a significant percentage of incidents reopen (or certain categories have high reopen rates), the IT team should perform root cause analysis on why issues weren’t fixed correctly initially. It could indicate insufficient troubleshooting, rushed ticket closures to meet SLAs (only to have the issue resurface), or knowledge gaps. Actions could include additional training for support staff on those problem areas, updating knowledge base articles, or improving change/permanent fix processes. Reducing reopen rate improves efficiency (less rework) and user trust.
+
+First Contact Resolution & Training Needs: FCR rate by team or agent can highlight expertise gaps. If one service desk team has a much lower FCR than others, management can investigate whether that team needs more training or if they’re getting disproportionately complex issues. High FCR is linked with better user experience, so investing in skills and tools (like improved diagnostics or access to knowledge) for front-line agents can pay off in higher FCR and lower escalationsperspectium.com.
+
+Prioritization and Major Incident Handling: By examining priority distribution and major incident frequency, the business can gauge if the incident management process is effectively prioritizing work. For instance, if a lot of incidents are marked high priority, the team might be over-prioritizing (which dilutes focus) or truly the environment is unstable. Frequent major incidents (as a percentage of all incidents) could signal underlying infrastructure issues or insufficient preventative maintenance. This would prompt deeper problem management or resilience engineering efforts. Monitoring this metric also ensures that when a major incident occurs, post-incident reviews are done and lessons learned to avoid recurrence.
+
+Process Bottlenecks: The analysis of incident timelines and handoffs may reveal that certain stages are slow (e.g., waiting for user response, or slow assignment to the correct group). If, say, we find that incidents spend a long time in the "Awaiting User Info" state, perhaps the team can improve how they gather information upfront from the caller. If multiple reassignments are common, perhaps the categorization at intake needs refining so tickets go to the right group initially. Each insight points to a specific improvement (process change, training, tool enhancement) that can streamline support.
+
+Strategic Improvements (Problem Management & Automation): By identifying categories with many repeat incidents, IT leadership can prioritize those areas for problem management – addressing root causes instead of repeatedly fixing symptoms. For example, if the “VPN connectivity” issue appears 50 times a month, a permanent fix or a self-service solution could drastically reduce that volume. Additionally, common low-complexity incidents might be good targets for automation (such as password resets or simple requests via self-service). The data might also highlight where creating new knowledge base articles could deflect tickets (e.g., if many incidents are questions rather than faults).
+
+Business Area Impact: Understanding which business units or locations have the most incidents can guide stakeholder communication and targeted support. If the Sales department has many issues with a certain application, IT can liaise with that department to offer training or dedicate support during critical times. This alignment of IT metrics with business units ensures IT is focusing on what the business cares about.
+
+Benchmarking and Continual Improvement: The KPIs established (SLA compliance, MTTR, FCR, etc.) provide a baseline. Over time, the organization can set targets (e.g., improve FCR to 80%, reduce MTTR by 20%, keep SLA compliance above 95%). Continuous monitoring will show if changes in process or tools are yielding improvements, fostering a culture of data-driven continuous improvementblog.invgate.com in IT support.
+
+In summary, the EDA not only measures current performance but also uncovers why certain issues exist, enabling managers to take informed actions. For instance, if SLA compliance is dropping, we might find it’s because the ticket backlog grew (too many tickets per agent) or because reopen rates went up (fixes not sticking)perspectium.com. Each metric ties into a story and an action plan, ensuring the business gains tangible value from the analysis.
+
+Dashboard Strategy (Static KPIs & Trends Over Time)
+To effectively communicate the findings and enable ongoing monitoring, we will design a dashboard with two main components: current snapshot metrics and historical trend visuals. The dashboard will be useful for both operational teams and management to quickly grasp performance and drill down into details.
+
+1. KPI Summary Section (Static View):
+At the top of the dashboard, present key metrics as headline figures for the latest period (for example, for the current month to date, or last full month). These could be shown as big number widgets or cards, possibly with an indicator of change from the previous period. For example:
+
+Total Incidents (Month-to-Date): X (with an arrow showing +/– % vs last month)
+
+Incidents Resolved: Y (and perhaps how many are still open)
+
+SLA Compliance: Z% (with target line, e.g. 95% target)
+
+Average Resolution Time: N hours (and show if this is improving or worsening compared to last period)
+
+First Contact Resolution Rate: M% (indicator showing trend)
+
+Reopen Rate: R% (indicator of improvement or not)
+
+Backlog (Open Incidents Now): B count (perhaps with a sparkline of the last 30 days backlog trend next to it)
+
+Each of these gives a quick health check. For instance, an ITSM manager glancing at the dashboard can immediately see if SLA compliance is green or red, or if reopen rate spiked.
+
+2. Trends Over Time:
+Include line charts or bar charts to show how metrics change over time, supporting the historical analysis:
+
+Incidents over Time: A line or bar chart by month (or week) showing number of new incidents vs. number of resolved incidents. This visualization will highlight trends (e.g., seasonal peaks) and whether the team is keeping up with volume. We might also show a rolling 3- or 6-month trend on open backlog here, to see if it’s accumulating or being maintained.
+
+SLA Compliance Trend: A line chart of monthly SLA compliance percentage, perhaps broken down by priority (stacked or multiple lines for P1, P2, etc. compliance rates). This lets us see if recent initiatives are improving the rate or if a particular month had issues (and we can correlate that with events like major incidents or staffing changes).
+
+MTTR Trend: A chart showing average resolution time each month. We could include separate lines for high priority vs low priority incidents, since they might have different targets. A downward trend would indicate improvement. If data supports, we could also show MTTA or first response time trends similarly.
+
+FCR and Reopen Trend: Perhaps a dual-axis chart – bars for % FCR and a line for % Reopened, by month. This can illustrate the relationship between first-time fix and rework. Ideally, we want FCR trending up and reopen trending down over time. If we see anomalies (e.g., one month FCR dropped sharply or reopen spiked), that flags a need to investigate what happened (maybe a change in process or a surge in a tricky issue that month).
+
+Incident Priority and Category Breakdown: Use a stacked bar or pie charts for the current period to show distribution by priority and by top categories. For example, a pie chart of incidents by Category for the last quarter, highlighting the top 5 categories (this emphasizes where most issues are coming from). Another pie could show incidents by Priority level (e.g., 5% P1, 20% P2, etc.), or even a stacked bar per month showing the count of P1/P2/P3 incidents each month to visualize if there's an increasing trend in high-severity incidents.
+
+Assignment Group Performance: Potentially include a bar chart for average resolution time or SLA compliance by each assignment group (or support team). This can be a static comparison showing which teams are fast or slow. It can drive conversations like why one team might need process improvements or help from others.
+
+Time-of-day/Week Analysis (optional): If relevant, a heatmap or line chart showing, say, average response or resolution time by hour of day, or number of incidents by hour. Another could be incidents opened by weekday. This can uncover if, for example, weekends have fewer tickets but much slower responses (due to fewer staff), which might breach SLAs – actionable insight for scheduling.
+
+3. Interactive Filters and Details: (If the dashboard is interactive) allow filtering by date range, by business area, or by priority to let users drill down. For example, an IT manager might filter to only P1&P2 incidents to see metrics for high-impact issues specifically. Or filter by a specific business unit to see their ticket stats. While our plan focuses on the high-level, making the dashboard interactive ensures it remains useful for various questions. We will also ensure that for any summary metric, the user can click through to a detailed report listing the underlying incidents if needed (to investigate outliers, etc.).
+
+4. Static vs Change Over Time: The dashboard will clearly separate current static metrics (point-in-time values) from trends. The static KPIs section gives a quick snapshot (e.g., “Currently, we are at 93% SLA compliance this month”), whereas the trend charts answer “how did we get here, and are things improving or deteriorating over time?” This combination addresses both operational monitoring and strategic analysis. For instance, a static indicator might show backlog is 50 open tickets now, but a historical chart might reveal that 50 is actually a 6-month low after peaking at 120 three months ago – a success story. Both views are important.
