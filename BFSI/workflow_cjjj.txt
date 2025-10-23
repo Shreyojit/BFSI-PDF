@@ -1,0 +1,443 @@
+ 
+
+
+ 
+
+			IMPLEMENTATION WORKFLOW
+
+
+•	Bridge: link each ServiceNow incident to the most relevant device/app/day slice with a calibrated match score.
+•	Insights: turn the bridged table into KPIs (MTTA, MTTR, reopen rate, SLA risk) and diagnostic views (device/app health vs incidents).
+
+
+
+
+
+
+DATA PRE-PROCESSING
+1) Pre-merge data (staging & modeling)
+1.1 Source → Staging (idempotent)
+•	Normalize timestamps to UTC; keep source_tz.
+•	Lowercase & trim emails; strip +aliases.
+•	Create surrogate keys and hash PII in analytics layers.
+1.2 Minimal schemas (star-ish)
+dim_employee(employee_sk, email_hash, email_raw_sec, dept, title, location, hire_date, manager_email_hash, …)
+dim_device(device_sk, device_name_norm, device_aliases[], serial_hash, os_version, cpu_model, is_virtual, site, country, …)
+dim_application(app_sk, app_name, vendor)
+dim_date(date_sk, calendar_date, week, month, dow, …)
+fct_incident(incident_sk, incident_number, sys_id, opened_at_utc, closed_at_utc, priority, severity, urgency, category, subcategory, assignment_group, opened_for_employee_sk, location, time_worked_mins, reopened_count, …)
+fct_device_day(device_sk, date_sk, health_score, boot_score, cpu_util_avg, mem_util_avg, disk_q_max, bitlocker_status, …)
+fct_device_app_day(device_sk, app_sk, date_sk, app_usage_s, app_crashes, activity_backend_ms, remote_display_latency_ms, …)
+Explode/flatten Aternity’s *_set arrays here.
+alias maps: device_alias_map(source_name, device_name_norm, rule), email_alias_map(source_email, canonical_email)
+
+2) Candidate generation (blocking)
+Goal: reduce comparisons from millions to dozens per incident.
+Windows (defaults)
+•	pre: −48h → open
+•	during: open → close
+•	post: close → +24h
+Primary blocks (any hit qualifies)
+1.	opened_for_email == canonical_email (exact, via alias map)
+2.	device_name_norm fuzzy match within ±3 days of incident open
+3.	Same employee_sk & |incident_open_date − calendar_date| ≤ 3
+Secondary filters
+•	If incident text hints an app (from a small curated dictionary), restrict to that app_sk.
+•	Keep device days with activity (e.g., app_usage_s>0 or health_score present).
+
+ML PIPELINE
+
+3) Feature building (no LLM needed)
+We compute features for each (incident, candidate) pair.
+3.1 Identity & string similarity
+•	sim_email_exact ∈ {0,1}
+•	Device name:
+o	jw_device = Jaro–Winkler(name_incident, name_candidate)
+o	jaccard_3gram on character trigrams
+o	soft_tfidf (TF-IDF cosine over 3-grams with soft matching)
+•	Auxiliary: same_department, same_site, same_country, is_virtual_match (XOR penalty)
+3.2 Temporal alignment
+•	delta_open_vs_day_mins (0 means aligned)
+•	is_pre / is_during / is_post
+•	days_since_last_boot, time_to_close_mins buckets
+3.3 Device posture & anomalies (z-scores)
+•	cpu_util_avg_z3d, mem_util_avg_z3d, disk_q_max_z3d
+(candidate value minus rolling 3-day mean divided by std)
+•	health_score_delta_3d (today − mean of previous 3 days)
+3.4 App usage & performance
+•	app_usage_s, app_crashes, remote_display_latency_ms, activity_backend_ms
+•	app_latency_z3d, crash_rate_per_hr (normalize by usage)
+•	is_app_active_flag (usage > threshold)
+3.5 Incident text (lightweight, optional)
+•	Keyword detectors (no LLM): binary flags for {teams, outlook, vpn, citrix, printer, zoom} found in short_description|work_notes|category|subcategory.
+•	keyword_app_match ∈ {0,1} (dictionary map → app_sk)
+3.6 Quality & missingness
+•	missing_device_info_ratio, missing_app_metrics_ratio (penalize)
+All features are numeric/categorical and stable. Store them as a features_json alongside each predicted link for audit.
+________________________________________
+4) Similarity → Match score
+4.1 Baseline composite (for transparent fallback)
+If you need a deterministic score before ML ships:
+S = 0.55*sim_email_exact
+  + 0.20*max(jw_device, soft_tfidf)
+  + 0.10*(1 - min(|delta_open_vs_day_mins|, 1440)/1440)
+  + 0.05*keyword_app_match
+  + 0.05*clip(health_score_delta_3d_pos, 0, 1)
+  + 0.05*is_app_active_flag
+•	Accept Top-1 if S ≥ 0.80; 0.60–0.80 → low-confidence queue.
+4.2 ML scoring (recommended)
+Use LightGBM binary classifier on the full feature set; output p(match).
+•	Loss: binary_logloss with class weights (pos_weight≈10–30)
+•	CV: time-based splits (train on older weeks, test on newer)
+•	Calibration: isotonic (reliable p)
+Threshold selection
+•	Choose τ to optimize Fβ, β<1 to favor precision (e.g., β=0.5) OR set τ so that Precision@1 ≥ 0.97 while maximizing Coverage.
+Advanced (optional later)
+•	Siamese char-encoder for device names + MLP for numerics; cosine similarity head; trained with contrastive loss. Gives robustness to noisy device strings.
+________________________________________
+5) Training data creation
+5.1 Positive pairs (weak labels)
+•	(incident, candidate) where:
+o	opened_for_email exact equals candidate email AND
+o	|incident_open_date − candidate_date| ≤ 1 AND
+o	device name similarity ≥0.9 OR same device_sk.
+These are high-precision seed positives.
+5.2 Negatives (hard and realistic)
+•	Same incident paired with:
+o	Same email, different device same day (hard negative)
+o	Same device, different email/user same day (shared device case)
+o	Nearby days with no activity in relevant app
+•	Ratio: start 1:5 (pos:neg), tune via AUC/PR.
+5.3 Active learning loop
+•	Sample low-confidence predictions (0.6–0.8) to label 50–200 pairs/week.
+•	Retrain monthly; re-calibrate.
+________________________________________
+6) Edge cases & rules (baked into features/decisioning)
+1.	Shared/pooled devices (call centers/VDI):
+o	Penalize when same device but email mismatch and is_virtual=True.
+o	Require either keyword_app_match=1 or strong temporal proximity to accept.
+2.	Renamed devices / aliasing:
+o	Maintain device_alias_map (regex & learned pairs).
+o	Give extra weight to historical co-occurrence (email, device_name).
+3.	No email on incident (created by desk):
+o	Rely on assignment_group + location + keyword_app_match + temporal proximity + device activity.
+4.	Multiple incidents same day:
+o	Allow one device day to link to multiple incidents; evidence JSON preserves traceability.
+5.	Missing telemetry (device offline):
+o	If missing_app_metrics_ratio>0.8, down-weight score; only accept with very strong identity/temporal match.
+6.	Time zone drift:
+o	All to UTC; include tz_offset_minutes feature (helps model learn systematic shifts).
+7.	Duplicates/reopens:
+o	Use (incident_number, sys_id) uniqueness; for reopens, keep separate rows but add a is_reopen flag to features.
+________________________________________
+7) Evaluation framework
+Pairwise/Ranking
+•	PR-AUC, ROC-AUC, Precision@1, Recall@τ, MRR@10, Hits@1
+•	Coverage = % incidents with ≥1 candidate above τ
+•	Calibration: Brier score, reliability curves
+Business KPIs (post-bridge)
+•	Delta in MTTR explained by device/app metrics (R² of regression)
+•	Reopen Rate lift for incidents with poor device/app signals
+•	Assignment accuracy improvement in pilot (if used to route)
+Slices (must-have)
+•	By assignment_group, location, priority, app (e.g., Teams/VPN), is_virtual
+
+1) Canonicalize first (don’t let taxonomy noise leak into ML)
+Goal: one stable “language” across ServiceNow and Aternity/Bridge.
+•	Crosswalk table taxonomy_map(system, raw_category, raw_subcategory, raw_assignment_group) → canonical_{l1,l2,l3}
+o	Build with rules + data: exact rules, synonym lists, and fuzzy merges (Jaro–Winkler ≥0.92 on normalized strings).
+o	Hierarchy backoff: if l2/l3 unknown, map to parent (canonical_l1="Endpoint", l2="OTHER").
+o	Store versioned; any “unknown” stays explicit: canonical="UNKNOWN" (never silently dropped).
+•	Weekly propose-merge job: TF-IDF on category strings + mini-batch k-means to surface candidates for human approval. 10 minutes/week of curation keeps drift under control.
+Opinionated: Don’t train on raw labels. Train on canonical + raw encodings (see §2) for resilience.
+2) Feature encoders built for unknowns & drift
+We treat categories/assignment groups as features (the target for the matcher is still binary “is this the right device/app/day?”).
+For every high-card categorical (category, subcategory, assignment_group, site, device_model, app_name):
+1.	Frequency / count encoding
+o	freq_x = log1p(count(x)) — always defined, good signal, no leakage.
+2.	Target encoding (TE) with OOF & Bayesian shrinkage
+o	OOF (K-fold) to avoid leakage.
+o	Smoothed:
+[
+\text{TE}(x)=\frac{\sum y + \alpha \cdot \mu}{n + \alpha}
+]
+with (\mu)=global mean, (\alpha) tuned.
+o	Unseen at inference → n=0 ⇒ TE = global mean (safe default).
+o	Hierarchical backoff: if category:l2 unseen, backoff to category:l1, then global.
+3.	Hashing trick (one-hot via feature hashing)
+o	2¹⁴–2¹⁶ dims (e.g., 16384).
+o	Unseen → auto-mapped to a bucket; no retrain needed for vocabulary growth.
+o	Works great with LightGBM on sparse CSR.
+4.	CatBoost encoding (optional)
+o	If you prefer boosting-native encoding, CatBoost’s ordered target stats give similar robustness.
+5.	Char-CNN/Sentence SVD (optional deep-lite)
+o	For raw strings (device names, assignment group text), a tiny char-CNN→avg-pool→32d embedding or TF-IDF→TruncatedSVD(64) gives generalization to typos/never-seen tokens.
+We keep both canonical and raw encodings. Canonical gives stability; raw encoders catch new variants fast.
+3) LightGBM handling of unknown categories
+•	If you pass pandas “category” dtype, unseen categories at inference are treated as missing → go default split direction. We explicitly add:
+o	an is_unknown_* flag, and
+o	a hashed feature for that field,
+so the model has signal instead of only “missing”.
+•	Net effect: no crash, predictable behavior, and unknowns get reasonable, data-driven scores.
+4) Similarity features & final match score (precision-first)
+We aggressively anchor the score on identity/time/usage (which generalize), letting categories be supporting signals.
+Key similarity features (all numeric):
+•	Identity
+o	sim_email_exact ∈ {0,1}
+o	jw_device, jaccard_3gram_device, device_seen_with_user_past30d
+•	Temporal
+o	|Δ(open_time, candidate_day)| (mins), is_pre/is_during/is_post
+•	Usage/Health
+o	app_usage_s, app_crashes, latency_z3d, health_score_delta_3d
+•	Category encodings
+o	Canonical L1/L2 TE (OOF), freq enc, hash vector
+o	Assignment group TE + hash
+•	Text-lite
+o	keyword_app_match (tiny dictionary)
+Scoring
+•	Model: LightGBM (binary), class_weight to fight imbalance.
+•	Calibration: Isotonic over validation → p_match.
+•	Decision bands:
+o	p ≥ 0.90 → ACCEPT (Top-1)
+o	0.70 ≤ p < 0.90 → REVIEW (active-learning pool)
+o	< 0.70 → REJECT
+Strong stance: we optimize Precision@1 ≥ 0.97 first. Coverage grows via active learning.
+5) Edge cases (hard-coded heuristics + features)
+1.	Shared/VDI devices
+o	Feature: is_virtual, users_on_device_7d, concurrent_users_flag
+o	Rule: require either strong time proximity or app keyword match; otherwise down-weight.
+2.	No user on incident
+o	Backoff on assignment_group, site, and app signals; increase threshold to 0.93 for acceptance.
+3.	Renamed devices
+o	device_alias_map (regex + learned pairs from prior links), plus device_seen_with_user_past30d feature.
+4.	Missing telemetry
+o	missing_ratio > 0.8 adds a penalty; only accept if email+time are very strong.
+5.	Multiple incidents same day
+o	Allow many-to-one; we still produce evidence JSON per link.
+6) Training data that survives drift
+•	Positives (seed, high-precision): email exact + |Δday| ≤ 1 + (device sim ≥0.9 or historical co-occurrence).
+•	Negatives (hard): same incident with wrong device/user, nearby days, or inactive app.
+•	Imbalance: start 1:5 pos:neg; tune via PR-AUC.
+•	Active learning: label 100–200 “review band” pairs/week → retrain monthly → re-calibrate.
+7) Evaluation you’ll actually trust
+•	Pairwise/ranking: PR-AUC, ROC-AUC, Precision@1, Recall@τ, MRR@10, Coverage.
+•	Calibration: Brier score + reliability curve.
+•	Slices: by canonical L1/L2, assignment group, site, VM flag.
+•	Ablations: drop category features → ensure score doesn’t collapse (it shouldn’t).
+8) Aggressive unknowns strategy (TL;DR)
+•	Before training: force every raw label to one of {KNOWN, OTHER, UNKNOWN}; keep raw string encoders.
+•	During training: OOF target encodings + hashing + is_unknown_*.
+•	At inference: unseen → TE backoff to prior, hashing provides signal, LightGBM treats category as missing but still uses hash+flags.
+•	Over time: weekly taxonomy merges + monthly retrain keep the model sharp.
+9) Implementation sketch (ready to build)
+# fit_encoders.py
+class TEEncoder:
+    def __init__(self, alpha=50, n_splits=5, random_state=42):
+        ...
+    def fit_transform(self, X, y, col):   # OOF mean with smoothing
+        ...
+    def transform(self, X, col, fallback_prior=True):
+        ...
+
+def make_cat_features(df, y, cols_hash, cols_te):
+    feats = {}
+    for c in cols_te:
+        feats[f"te_{c}"] = TEEncoder(alpha=50).fit_transform(df, y, c)
+        feats[f"freq_{c}"] = np.log1p(df[c].map(df[c].value_counts()).fillna(0))
+        feats[f"is_unknown_{c}"] = (df[c].isin(["UNKNOWN","OTHER"]) | df[c].isna()).astype(int)
+    X_hash = FeatureHasher(n_features=2**15, input_type='string').transform(
+        df[cols_hash].astype(str).agg('|'.join, axis=1)
+    )
+    return feats, X_hash  # dense dict + sparse CSR
+# train_lgbm.py
+lgbm = lgb.LGBMClassifier(
+    n_estimators=1500, learning_rate=0.03, num_leaves=63,
+    min_data_in_leaf=100, subsample=0.9, colsample_bytree=0.8,
+    objective='binary', class_weight={0:1, 1:10}, n_jobs=-1
+)
+lgbm.fit(X_train, y_train, eval_set=[(X_val,y_val)], verbose=200)
+cal = IsotonicRegression(out_of_bounds="clip").fit(lgbm.predict_proba(X_val)[:,1], y_val)
+# inference.py
+p_raw = lgbm.predict_proba(X)[:,1]
+p = cal.predict(p_raw)
+decision = np.where(p >= 0.90, "ACCEPT", np.where(p >= 0.70, "REVIEW", "REJECT"))
+10) Where categories “matter” downstream (insights)
+•	We keep both canonical and raw-encoded forms in the bridge output.
+•	Analytics uses canonical to avoid dashboard churn; the model still benefits from raw hashing/TE under the hood.
+________________________________________
+Bottom line
+Yes—this works, and it’s aggressive against unknown/diverse classes:
+•	Canonicalize early,
+•	Encode with OOF target + hashing + unknown flags,
+•	Anchor match on identity/time/usage,
+•	Calibrate the score, and
+•	Continuously merge & retrain.
+
+
+1) Pre-merge data you’ll produce
+Staging facts/dims (as we aligned earlier) plus a temporary candidate_pairs table:
+•	candidate_pairs (pre-merge working table)
+o	Keys: incident_sk, device_sk, date_sk, app_sk (nullable)
+o	Raw features: email/device strings, times, site, dept, app metrics, device health
+o	Derived features: (see §3)
+o	label_soft (float, 0..1; initially from weak supervision), label_source (fs_em, snorkel, pseudo, human)
+o	split_tag (time-based fold), run_id
+This table is the substrate for both unsupervised and supervised training.
+________________________________________
+2) No-label bootstrapping (three tracks)
+Run these in parallel; ensemble them later for stability.
+Track A — Unsupervised Fellegi–Sunter (FS) with EM
+Treat field agreements as latent-variable record linkage:
+•	Agreements: email_exact, device_sim_bin ∈ {high,med,low}, |Δtime| bucket, site_match, keyword_app_match.
+•	EM learns m/u probabilities (match/non-match) without labels.
+•	Output: LLR score per pair and a calibrated p_fs.
+Track B — Weak supervision (Snorkel-style)
+Write labeling functions (LFs) (high-precision rules), e.g.:
+•	LF_email_exact_time≤1d ⇒ MATCH
+•	LF_device_sim≥0.92 & same_user & time≤2d ⇒ MATCH
+•	LF_diff_email & same_device & time≤1d ⇒ NONMATCH (hard negative)
+•	LF_virtual & diff_user & no_app_usage ⇒ NONMATCH
+•	Combine LFs via a label model to produce probabilistic labels p_ws.
+•	Save label_soft=p_ws and label_source='snorkel' in candidate_pairs.
+Track C — Self/contrastive pretraining (strings only)
+Learn robust device/email string embeddings without labels:
+•	Positives: (device_name of same user across adjacent weeks), (alias pairs from historical co-occurrence)
+•	Negatives: random users/devices, shuffled names
+•	Train char-CNN/GRU Siamese with triplet/InfoNCE loss → emb_device(·)
+•	Use cosine similarity as a feature, not the final scorer.
+Result: You now have p_fs (FS), p_ws (weak supervision), and string embeddings to enrich features.
+________________________________________
+3) Feature building (unknown-friendly, taxonomy-agnostic)
+For each (incident, candidate):
+Identity & strings
+•	sim_email_exact ∈ {0,1}
+•	jw_device, jaccard3_device, cosine(emb_device_inc, emb_device_cand)
+•	device_seen_with_user_30d (co-occurrence count)
+Temporal
+•	delta_open_vs_day_mins, flags is_pre/is_during/is_post
+Aternity usage/health
+•	app_usage_s, app_crashes, remote_display_latency_ms,
+•	z-scores: cpu_util_avg_z3d, latency_z3d, health_score_delta_3d
+Categoricals (diverse/unknown-proof)
+•	Hashing trick on raw category/subcategory/assignment_group/site/app_name → 2¹⁵ buckets (works for unseen).
+•	OOF Target Encoding (smoothed) for canonicalized L1/L2 if/when you adopt a crosswalk; fallback to global mean for unseen.
+•	is_unknown_* flags when values are NULL/OTHER/UNKNOWN.
+Weak-signals
+•	keyword_app_match from a tiny dictionary (Teams/VPN/Outlook/Zoom/Citrix/Printer)
+Weak-supervision priors
+•	p_fs, p_ws from §2 (as features only; final model still decides).
+________________________________________
+4) Discriminative model & scoring
+Model: LightGBM binary classifier on the full feature set (dense + sparse hashed).
+Training labels: use label_soft from Track-B; weight each pair by w = 2*|label_soft-0.5| (confident LFs weigh more).
+Imbalance: class_weight {nonmatch:1, match:10}.
+Splits: strictly time-based (train on older weeks, validate on newer).
+Calibration: Isotonic on the validation fold → reliable p_match.
+Final match score
+•	p_match = Calibrate(LGBM(features, weights))
+•	Decision bands (precision-first):
+o	p ≥ 0.90 → ACCEPT (Top-1)
+o	0.70 ≤ p < 0.90 → REVIEW (active-learning queue)
+o	< 0.70 → REJECT
+Optional: blend with FS by stacking: train LGMB on features + [p_fs, p_ws]; this usually boosts stability when taxonomies drift.
+________________________________________
+5) “No mapping” handling for categories (aggressive)
+You said there’s no mapping between ServiceNow and the Bridge/DEX taxonomy. That’s fine.
+•	The model does not require a crosswalk to start; it uses:
+o	Hashing (vocabulary-free) to encode raw category/group strings;
+o	Unknown flags for missing/novel labels;
+o	Identity/temporal/usage features (which dominate).
+•	If/when you want cleaner analytics, add a canonicalization crosswalk later; the model already has slots for canonical TE but safely falls back to the global prior when unseen.
+________________________________________
+6) Negatives, hard negatives, and PU learning
+Expect positive scarcity. We’ll inflate the negative side without poisoning:
+•	Hard negatives: same incident + (same user but different device) same day; or same device but different user; or time-far pairs.
+•	PU variant (optional): estimate class prior (Elkan–Noto) on weak-labels; adjust decision threshold to keep Precision@1 ≥ 0.97 even if some positives are unlabeled.
+________________________________________
+7) Active learning loop (small, powerful)
+Every run, take the review band (0.70–0.90):
+•	Sample 100–200 pairs/week across slices (site, VM, category).
+•	Human label → write back to candidate_pairs with label_source='human'.
+•	Retrain monthly; re-calibrate; thresholds stay stable.
+________________________________________
+8) Edge cases (encoded + guarded)
+•	Shared/VDI devices: features is_virtual, users_on_device_7d, concurrent_users_flag; rule: require stronger temporal alignment or app keyword; else keep in review band.
+•	No user on incident: boost reliance on site/assignment_group/app metrics; raise accept threshold to 0.93 for this subset.
+•	Missing telemetry: missing_ratio>0.8 adds penalty; accept only if identity+time are strong.
+•	Renamed devices: learn alias pairs from historic co-occurrence; feed into Siamese positives; keep device_alias_map to hard-boost.
+________________________________________
+9) Evaluation (with no gold labels… yet)
+You still get trustworthy signals:
+•	FS internal: posterior calibration curves; convergence checks.
+•	Discriminative: PR-AUC, ROC-AUC, Precision@1, Coverage on weak-label validation (time-based).
+•	Two-view agreement: Agreement between FS and LGBM ≥ X% on high scores.
+•	Human spot-checks: 300–500 pairs as a tiny golden set → report true Prec@1/Coverage; iterate thresholds.
+•	Business proxies post-merge: bridged links should explain variance in MTTR/Reopen (increases trust).
+________________________________________
+10) Deliverables you can run
+•	dbt models for staging + candidate_pairs materialization.
+•	Python package:
+o	blocking.py, features.py, unsup_fs.py (EM), snorkel_label.py,
+string_embed.py, train_lgbm.py, calibrate.py, inference.py
+•	CLI:
+o	bridge bootstrap --since 30d (build candidates, FS EM, LFs → label_soft)
+o	bridge train --fold weekly (train + calibrate)
+o	bridge score --threshold 0.90 (write bridge table + evidence JSON)
+o	bridge review-sample --n 200 (dump review band for labeling)
+________________________________________
+Bottom line (my take)
+•	You don’t need mappings or gold labels to start.
+•	Use FS-EM + weak supervision to get probabilistic “silver” labels,
+•	Train LightGBM with unknown-tolerant encodings and calibration,
+•	Gate with precision-first thresholds, and
+•	Tighten via small, targeted human labels over time.
+
+
+FLOW UNDERSTANDING
+1.	Stage & normalize (idempotent)
+o	UTC timestamps; lowercase emails; strip +aliases.
+o	Facts: fct_incident, fct_device_day, fct_device_app_day (explode Aternity sets).
+o	Dims & maps: dim_employee, dim_device, dim_application, device_alias_map, email_alias_map.
+2.	Candidate generation (blocking)
+o	Blocks (any hit): email exact; fuzzy device name ±3 days; same employee ±3 days.
+o	Filters: require activity/health on candidate day; restrict by app keyword if present.
+3.	Unsupervised link evidence (no labels)
+o	Fellegi–Sunter with EM on agreement bins (email, device-sim bands, time buckets, site, keyword).
+o	Output: p_fs (posterior match probability per pair).
+4.	Weak supervision (Snorkel-style)
+o	High-precision labeling functions (e.g., email+Δtime≤1d ⇒ match; diff-email+same-device ⇒ nonmatch).
+o	Label model → p_ws (probabilistic label).
+o	Write candidate_pairs with label_soft=p_ws, label_source.
+5.	Self/contrastive pre-training for strings
+o	Siamese char-CNN/GRU on device names using co-occurrence positives; produce embeddings.
+o	Use cosine(emb_inc, emb_cand) as a feature (not classifier).
+6.	Feature building (unknown-proof)
+o	Identity: email exact; Jaro-Winkler & 3-gram Jaccard; device-seen-with-user-30d.
+o	Temporal: Δ(open vs day), flags pre/during/post.
+o	Usage/health: app_usage_s, crashes, latency_z3d, health_delta_3d.
+o	Categoricals (diverse taxonomies):
+	Hashing trick on raw category/subcategory/group/site/app.
+	OOF target encoding on optional canonical L1/L2 (fallback to global mean).
+	is_unknown_* flags.
+o	Priors: include p_fs, p_ws as inputs (stacking).
+7.	Discriminative model & calibration
+o	LightGBM (binary) with class imbalance handling; train on features with sample weight = 2*|label_soft−0.5|.
+o	Time-based CV; Isotonic calibration on validation → reliable p_match.
+8.	Decision bands (business-safe)
+o	p_match ≥ 0.90 → ACCEPT Top-1 and write bridge_incident_device_app.
+o	0.70 ≤ p_match < 0.90 → REVIEW (active learning queue).
+o	< 0.70 → REJECT.
+o	Persist features_json (“why it matched”) with each ACCEPT.
+9.	Active learning loop
+o	Weekly sample from REVIEW band (stratified by site/VM/category), human-label 100–200 pairs.
+o	Append to candidate_pairs; monthly retrain & recalibrate.
+10.	Edge cases baked in
+•	Shared/VDI: require stronger time/app evidence or keep in REVIEW.
+•	No user on incident: boost site/group/app signals; raise accept threshold to 0.93.
+•	Renamed devices: alias map + embedding similarity + historical co-occurrence.
+•	Missing telemetry: penalize; accept only with strong identity+time.
+11.	Evaluation you can trust
+•	PR-AUC, ROC-AUC, Precision@1, Coverage, MRR@10, Brier score (calibration).
+•	Slices by VM/site/group/category.
+•	Small golden set (300–500) to verify true Prec@1.
+ 
